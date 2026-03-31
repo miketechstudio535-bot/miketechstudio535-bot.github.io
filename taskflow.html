@@ -26,7 +26,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;cursor:none}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;cursor:pointer}
 
 /* CURSOR */
 #cur{width:10px;height:10px;background:var(--accent);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s}
@@ -184,7 +184,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.1rem 5%;display:fl
 .price-features li::before{content:'✓';color:var(--accent);font-weight:700;font-size:.8rem;flex-shrink:0}
 .price-features li.no::before{content:'✕';color:var(--muted);font-weight:400}
 .price-features li.no{color:var(--muted);opacity:.5}
-.price-cta{display:block;width:100%;padding:.9rem;border-radius:100px;text-align:center;font-weight:700;font-size:.9rem;text-decoration:none;transition:all .2s;font-family:var(--font-body);border:none;cursor:none}
+.price-cta{display:block;width:100%;padding:.9rem;border-radius:100px;text-align:center;font-weight:700;font-size:.9rem;text-decoration:none;transition:all .2s;font-family:var(--font-body);border:none;cursor:pointer}
 .price-cta-main{background:var(--accent);color:#000}
 .price-cta-main:hover{box-shadow:0 0 30px var(--accent-glow)}
 .price-cta-ghost{background:transparent;color:var(--text);border:1px solid var(--border2)}
@@ -525,35 +525,35 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
   </div>
   <div class="faq-list">
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
+      <button class="faq-q">
         Do I need a credit card to start?
         <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
       </button>
       <div class="faq-a"><p>No. Start your 7-day free trial with just your email address. You only need to add payment details if you decide to continue after the trial.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
+      <button class="faq-q">
         Can I invite my whole team during the trial?
         <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
       </button>
       <div class="faq-a"><p>Yes — invite as many people as you want during the trial. We want you to test it as a real team, not solo.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
+      <button class="faq-q">
         What happens to my data if I cancel?
         <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
       </button>
       <div class="faq-a"><p>Your data stays safe for 30 days after cancellation. You can export everything before you leave. We don't hold your data hostage.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
+      <button class="faq-q">
         Can I switch from Pro to Team later?
         <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
       </button>
       <div class="faq-a"><p>Absolutely. Upgrade or downgrade any time from your account settings. Changes take effect at the start of your next billing cycle.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
+      <button class="faq-q">
         Who built TaskFlow?
         <div class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
       </button>
