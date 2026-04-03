@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MikeTechStudio — Email Automation, Web Design & Growth Systems</title>
-<meta name="description" content="Michael Fabiyi helps e-commerce brands grow with email marketing automation, web design, SEO and communication systems. Available worldwide.">
+<title>MikeTechStudio Email Automation, Web Design & Growth Systems</title>
+<meta name="description" content="Michael Fabiyi helps businesses grow with email marketing automation, web design, SEO, Twilio systems and custom software. Available worldwide.">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -53,7 +53,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 
 /* ── HERO ── */
 .hero{min-height:100vh;padding:8rem 5% 5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(27,79,216,.05),transparent);pointer-events:none}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(200,75,47,.04),transparent);pointer-events:none}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--a2l);border:1px solid rgba(200,75,47,.22);padding:.38rem .9rem;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--a2);letter-spacing:.05em;margin-bottom:1.6rem}
 .hero-tag::before{content:'';width:6px;height:6px;background:var(--a2);border-radius:50%;animation:pulse 1.6s infinite}
 .hero h1{font-family:var(--fh);font-size:clamp(2.4rem,4.5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--text);margin-bottom:1.4rem}
@@ -70,46 +70,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .trust-badge::before{content:'✓';color:var(--a3);font-weight:700;font-size:.7rem}
 .trust-sep{width:4px;height:4px;background:var(--border2);border-radius:50%}
 
-/* HERO RIGHT — visual mockups */
-.hero-right{position:relative;display:flex;flex-direction:column;gap:1rem}
-.mockup-main{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.07)}
-.mockup-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:.6rem 1rem;display:flex;align-items:center;gap:6px}
-.m-dot{width:9px;height:9px;border-radius:50%}
-.mockup-body{padding:1.1rem}
-
-/* Email mockup */
-.em-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
-.em-title{font-size:.75rem;font-weight:700;color:var(--text)}
-.em-badge{font-size:.6rem;font-weight:700;background:var(--a3l);color:var(--a3);padding:2px 8px;border-radius:100px}
-.em-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:.9rem}
-.em-stat{background:var(--bg2);border-radius:8px;padding:.6rem;text-align:center}
-.em-stat-n{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--text)}
-.em-stat-l{font-size:.58rem;color:var(--muted);margin-top:2px}
-.em-chart{height:50px;display:flex;align-items:flex-end;gap:3px;padding:0 2px}
-.em-bar{flex:1;border-radius:3px 3px 0 0;background:var(--a1);opacity:.25;transition:opacity .2s}
-.em-bar.hi{opacity:1;background:var(--a1)}
-.em-bar.mid{opacity:.55}
-
-/* Small mockup cards */
-.mockup-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
-.mock-sm{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);padding:.9rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
-.mock-sm-head{display:flex;align-items:center;gap:7px;margin-bottom:.65rem}
-.mock-sm-icon{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-.mock-sm-title{font-size:.72rem;font-weight:700;color:var(--text)}
-.mock-bar-wrap{display:flex;flex-direction:column;gap:5px}
-.mock-bar-item{display:flex;align-items:center;gap:6px}
-.mock-bar-label{font-size:.6rem;color:var(--muted);width:32px;flex-shrink:0}
-.mock-bar-track{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden}
-.mock-bar-fill{height:100%;border-radius:3px}
-.mock-bar-val{font-size:.6rem;font-weight:600;color:var(--text2);width:26px;text-align:right}
-/* Shopify mockup */
-.shop-row{display:flex;align-items:center;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:.65rem}
-.shop-row:last-child{border:none}
-.shop-name{color:var(--text2);font-weight:500}
-.shop-val{font-weight:700;color:var(--text)}
-.shop-badge{font-size:.55rem;padding:2px 6px;border-radius:100px;font-weight:600}
-.up{background:var(--a3l);color:var(--a3)}
-.down{background:var(--a2l);color:var(--a2)}
+/* ── HERO RIGHT — PHOTO ── */
+.hero-right{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-photo-wrap{position:relative;width:100%;max-width:460px}
+.hero-photo-wrap::before{content:'';position:absolute;inset:-3px;border-radius:24px;background:linear-gradient(135deg,rgba(200,75,47,0.3),rgba(27,79,216,0.1),transparent 60%);z-index:0}
+.hero-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:22px;position:relative;z-index:1;border:2px solid var(--border2);display:block}
+.hero-photo-badge{position:absolute;bottom:24px;left:-16px;z-index:2;background:var(--card);border:1.5px solid var(--border);border-radius:14px;padding:.75rem 1rem;box-shadow:0 4px 20px rgba(0,0,0,.1);display:flex;align-items:center;gap:.6rem}
+.hero-photo-badge-dot{width:8px;height:8px;background:var(--a3);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+.hero-photo-badge-text{font-size:.72rem;font-weight:600;color:var(--text)}
+.hero-photo-badge-sub{font-size:.62rem;color:var(--muted)}
+.hero-photo-tag{position:absolute;top:20px;right:-14px;z-index:2;background:var(--a2);color:#fff;border-radius:100px;padding:.45rem .9rem;font-size:.7rem;font-weight:700;box-shadow:0 4px 16px rgba(200,75,47,.3)}
 
 /* ── MARQUEE ── */
 .mq{background:var(--text);padding:.8rem 0;overflow:hidden}
@@ -139,17 +109,15 @@ section{padding:5.5rem 5%}
 .svc-card.c4::before{background:var(--a4)}
 .svc-card.c5::before{background:var(--a1)}
 .svc-card.c6::before{background:var(--a3)}
+.svc-card.c7::before{background:var(--a4)}
 .svc-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:1.1rem;flex-shrink:0}
-.ic1{background:var(--a1l)}
-.ic2{background:var(--a2l)}
-.ic3{background:var(--a3l)}
-.ic4{background:var(--a4l)}
+.ic1{background:var(--a1l)}.ic2{background:var(--a2l)}.ic3{background:var(--a3l)}.ic4{background:var(--a4l)}
 .svc-card h3{font-family:var(--fh);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.55rem}
 .svc-card p{font-size:.82rem;color:var(--text2);line-height:1.7}
 .svc-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.9rem}
 .stag{font-size:.62rem;font-weight:600;padding:2px 9px;border-radius:100px;background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
 
-/* ── RESULTS / MOCKUP SECTION ── */
+/* ── RESULTS ── */
 .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-top:2.75rem}
 .results-visuals{display:flex;flex-direction:column;gap:1rem}
 .rv-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.25rem;box-shadow:0 2px 16px rgba(0,0,0,.05)}
@@ -168,10 +136,9 @@ section{padding:5.5rem 5%}
 .funnel-pct{font-size:.6rem;font-weight:700;color:#fff}
 .funnel-label{font-size:.65rem;color:var(--text2);width:52px;flex-shrink:0}
 .funnel-val{font-size:.62rem;font-weight:600;color:var(--text);width:28px;text-align:right;flex-shrink:0}
-
-/* Web design showcase */
 .web-mock{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06)}
 .web-mock-bar{background:var(--bg3);border-bottom:1px solid var(--border);padding:.55rem 1rem;display:flex;align-items:center;gap:6px}
+.m-dot{width:9px;height:9px;border-radius:50%}
 .web-mock-url{background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:.2rem .75rem;font-size:.62rem;color:var(--muted);flex:1;max-width:180px}
 .web-mock-body{padding:1rem}
 .web-hero-mock{background:linear-gradient(135deg,var(--a1) 0%,#0F3BAA 100%);border-radius:10px;padding:1.25rem;margin-bottom:.85rem;color:#fff}
@@ -184,8 +151,6 @@ section{padding:5.5rem 5%}
 .web-card-img{height:28px;border-radius:5px;margin-bottom:.4rem}
 .web-card-name{font-size:.6rem;font-weight:600;color:var(--text);margin-bottom:2px}
 .web-card-price{font-size:.58rem;color:var(--a3);font-weight:700}
-
-/* Results text side */
 .result-items{display:flex;flex-direction:column;gap:1.25rem}
 .result-item{display:flex;align-items:flex-start;gap:1rem;padding:1.1rem;background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);transition:border-color .2s}
 .result-item:hover{border-color:var(--border2)}
@@ -250,7 +215,6 @@ section{padding:5.5rem 5%}
 .contact-link{display:flex;align-items:center;gap:.75rem;font-size:.83rem;color:var(--text2);padding:.65rem .9rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);transition:all .18s}
 .contact-link:hover{border-color:var(--a2);color:var(--a2);background:var(--a2l)}
 .contact-link-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-/* Contact Form */
 .contact-form{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:2rem}
 .contact-form h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:.35rem;color:var(--text)}
 .contact-form p{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
@@ -327,9 +291,9 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-left">
-    <div class="hero-tag">Available worldwide · Remote</div>
-    <h1>Automation &amp; systems that <span class="it">grow your business.</span></h1>
-    <p class="hero-sub">I help e-commerce brands and small businesses scale with <strong>email marketing automation</strong>, <strong>web design</strong>, <strong>SEO</strong> and <strong>communication systems</strong> — built to run without you.</p>
+    <div class="hero-tag">Available worldwide · Remote · Based in Nigeria</div>
+    <h1>Hi, I'm Michael.<br>I build systems that <span class="it">grow your business.</span></h1>
+    <p class="hero-sub">I help business owners worldwide scale with <strong>email marketing automation</strong>, <strong>web design</strong>, <strong>Twilio &amp; VoIP systems</strong>, <strong>SEO</strong>, <strong>workflow automation</strong> and <strong>custom software</strong> — built to run without you.</p>
     <div class="hero-acts">
       <a href="#contact" class="btn-p">Start a project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="#work" class="btn-s">See my work</a>
@@ -339,83 +303,24 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
       <div class="trust-sep"></div>
       <div class="trust-badge">Web design</div>
       <div class="trust-sep"></div>
-      <div class="trust-badge">SEO growth</div>
+      <div class="trust-badge">Twilio &amp; VoIP</div>
       <div class="trust-sep"></div>
-      <div class="trust-badge">VoIP &amp; SMS</div>
+      <div class="trust-badge">Custom software</div>
     </div>
   </div>
 
-  <!-- HERO RIGHT — Email marketing dashboard mockup -->
+  <!-- HERO RIGHT — Michael's Photo -->
   <div class="hero-right">
-    <div class="mockup-main">
-      <div class="mockup-bar">
-        <div class="m-dot" style="background:#FF5F57"></div>
-        <div class="m-dot" style="background:#FEBC2E"></div>
-        <div class="m-dot" style="background:#28C840"></div>
-        <span style="font-size:.68rem;color:var(--muted);margin-left:.4rem">Email Campaign Dashboard</span>
-      </div>
-      <div class="mockup-body">
-        <div class="em-header">
-          <div class="em-title">Welcome sequence — 7 emails</div>
-          <div class="em-badge">Active ✓</div>
-        </div>
-        <div class="em-stat-row">
-          <div class="em-stat"><div class="em-stat-n" style="color:var(--a1)">68%</div><div class="em-stat-l">Open rate</div></div>
-          <div class="em-stat"><div class="em-stat-n" style="color:var(--a3)">24%</div><div class="em-stat-l">Click rate</div></div>
-          <div class="em-stat"><div class="em-stat-n" style="color:var(--a2)">$4.2k</div><div class="em-stat-l">Revenue</div></div>
-        </div>
-        <div class="em-chart">
-          <div class="em-bar" style="height:35%"></div>
-          <div class="em-bar mid" style="height:52%"></div>
-          <div class="em-bar hi" style="height:88%"></div>
-          <div class="em-bar hi" style="height:75%"></div>
-          <div class="em-bar mid" style="height:60%"></div>
-          <div class="em-bar hi" style="height:95%"></div>
-          <div class="em-bar mid" style="height:68%"></div>
-          <div class="em-bar" style="height:42%"></div>
-          <div class="em-bar hi" style="height:82%"></div>
-          <div class="em-bar mid" style="height:55%"></div>
-          <div class="em-bar hi" style="height:90%"></div>
-          <div class="em-bar" style="height:30%"></div>
+    <div class="hero-photo-wrap">
+      <img src="michael.jpg" alt="Michael Fabiyi — MikeTechStudio" class="hero-photo">
+      <div class="hero-photo-badge">
+        <div class="hero-photo-badge-dot"></div>
+        <div>
+          <div class="hero-photo-badge-text">Michael Fabiyi</div>
+          <div class="hero-photo-badge-sub">Founder · MikeTechStudio</div>
         </div>
       </div>
-    </div>
-
-    <div class="mockup-row">
-      <!-- SEO mockup -->
-      <div class="mock-sm">
-        <div class="mock-sm-head">
-          <div class="mock-sm-icon ic3">📈</div>
-          <div class="mock-sm-title">SEO Rankings</div>
-        </div>
-        <div class="mock-bar-wrap">
-          <div class="mock-bar-item">
-            <div class="mock-bar-label" style="font-size:.58rem;color:var(--muted)">Pos 1</div>
-            <div class="mock-bar-track"><div class="mock-bar-fill" style="width:92%;background:var(--a3)"></div></div>
-            <div class="mock-bar-val">92%</div>
-          </div>
-          <div class="mock-bar-item">
-            <div class="mock-bar-label" style="font-size:.58rem;color:var(--muted)">Traffic</div>
-            <div class="mock-bar-track"><div class="mock-bar-fill" style="width:78%;background:var(--a1)"></div></div>
-            <div class="mock-bar-val">+78%</div>
-          </div>
-          <div class="mock-bar-item">
-            <div class="mock-bar-label" style="font-size:.58rem;color:var(--muted)">Conv.</div>
-            <div class="mock-bar-track"><div class="mock-bar-fill" style="width:45%;background:var(--a2)"></div></div>
-            <div class="mock-bar-val">4.5%</div>
-          </div>
-        </div>
-      </div>
-      <!-- Shopify mockup -->
-      <div class="mock-sm">
-        <div class="mock-sm-head">
-          <div class="mock-sm-icon ic1">🛍️</div>
-          <div class="mock-sm-title">Store Sales</div>
-        </div>
-        <div class="shop-row"><span class="shop-name">Today</span><span class="shop-val">$847</span><span class="shop-badge up">+34%</span></div>
-        <div class="shop-row"><span class="shop-name">Orders</span><span class="shop-val">23</span><span class="shop-badge up">+12%</span></div>
-        <div class="shop-row"><span class="shop-name">Cart rec.</span><span class="shop-val">28%</span><span class="shop-badge up">↑</span></div>
-      </div>
+      <div class="hero-photo-tag">Available for projects ✓</div>
     </div>
   </div>
 </section>
@@ -423,8 +328,8 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 <!-- MARQUEE -->
 <div class="mq">
   <div class="mq-inner">
-    <span class="mqi">Email Marketing</span><span class="mqi">Klaviyo</span><span class="mqi">Mailchimp</span><span class="mqi">Zapier Automation</span><span class="mqi">Shopify Design</span><span class="mqi">WordPress</span><span class="mqi">SEO Optimization</span><span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Web Design</span><span class="mqi">TaskFlow App</span>
-    <span class="mqi">Email Marketing</span><span class="mqi">Klaviyo</span><span class="mqi">Mailchimp</span><span class="mqi">Zapier Automation</span><span class="mqi">Shopify Design</span><span class="mqi">WordPress</span><span class="mqi">SEO Optimization</span><span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Web Design</span><span class="mqi">TaskFlow App</span>
+    <span class="mqi">Email Marketing</span><span class="mqi">Klaviyo</span><span class="mqi">Mailchimp</span><span class="mqi">Zapier Automation</span><span class="mqi">Shopify Design</span><span class="mqi">WordPress</span><span class="mqi">SEO Optimization</span><span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Web Design</span><span class="mqi">React</span><span class="mqi">Supabase</span><span class="mqi">JavaScript</span><span class="mqi">TaskFlow App</span><span class="mqi">SaaS Development</span><span class="mqi">REST APIs</span>
+    <span class="mqi">Email Marketing</span><span class="mqi">Klaviyo</span><span class="mqi">Mailchimp</span><span class="mqi">Zapier Automation</span><span class="mqi">Shopify Design</span><span class="mqi">WordPress</span><span class="mqi">SEO Optimization</span><span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Web Design</span><span class="mqi">React</span><span class="mqi">Supabase</span><span class="mqi">JavaScript</span><span class="mqi">TaskFlow App</span><span class="mqi">SaaS Development</span><span class="mqi">REST APIs</span>
   </div>
 </div>
 
@@ -432,7 +337,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 <section class="sbg" id="services">
   <div class="ey rv">What I do</div>
   <h2 class="st rv d1">Services that <span class="it">actually move the needle</span></h2>
-  <p class="sec-sub rv d2">Every service I offer is built to generate measurable results — more traffic, more revenue, more time back in your day.</p>
+  <p class="sec-sub rv d2">Every service I offer is built to generate measurable results more traffic, more revenue, more time back in your day.</p>
   <div class="svc-grid">
     <div class="svc-card c1 rv">
       <div class="svc-icon ic1">📧</div>
@@ -443,19 +348,19 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
     <div class="svc-card c2 rv d1">
       <div class="svc-icon ic2">🌐</div>
       <h3>Web Design &amp; Shopify Stores</h3>
-      <p>Fast, mobile-first websites and Shopify stores that look premium and convert visitors into customers. WordPress, Elementor, Shopify and custom HTML/CSS.</p>
-      <div class="svc-tags"><span class="stag">Shopify</span><span class="stag">WordPress</span><span class="stag">Elementor</span><span class="stag">Carrd</span></div>
+      <p>Fast, mobile-first websites and Shopify stores that look premium and convert visitors into customers. WordPress, Elementor, Shopify and custom HTML/CSS/React.</p>
+      <div class="svc-tags"><span class="stag">Shopify</span><span class="stag">WordPress</span><span class="stag">React</span><span class="stag">HTML/CSS</span></div>
     </div>
     <div class="svc-card c3 rv d2">
       <div class="svc-icon ic3">📈</div>
       <h3>SEO &amp; E-Commerce Growth</h3>
-      <p>Get your Shopify or WooCommerce store ranking on Google. Product page optimisation, keyword research, technical fixes and backlink strategy.</p>
+      <p>Get your store ranking on Google. Product page optimisation, keyword research, technical fixes and backlink strategy for Shopify and WooCommerce.</p>
       <div class="svc-tags"><span class="stag">On-page SEO</span><span class="stag">WooCommerce</span><span class="stag">Technical SEO</span></div>
     </div>
     <div class="svc-card c4 rv">
       <div class="svc-icon ic4">⚡</div>
       <h3>Zapier &amp; Workflow Automation</h3>
-      <p>Connect your tools so they talk to each other. CRM to email, Shopify to fulfilment, calendar sync, multi-step Zapier workflows — no more copy-paste.</p>
+      <p>Connect your tools so they talk to each other. CRM to email, Shopify to fulfilment, multi-step Zapier workflows no more copy-paste or manual work.</p>
       <div class="svc-tags"><span class="stag">Zapier</span><span class="stag">Make.com</span><span class="stag">REST APIs</span><span class="stag">Google Suite</span></div>
     </div>
     <div class="svc-card c5 rv d1">
@@ -465,7 +370,13 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
       <div class="svc-tags"><span class="stag">Twilio Studio</span><span class="stag">Telnyx VoIP</span><span class="stag">10DLC</span><span class="stag">ClickSend</span></div>
     </div>
     <div class="svc-card c6 rv d2">
-      <div class="svc-icon ic3">🎨</div>
+      <div class="svc-icon ic3">💻</div>
+      <h3>Custom Software &amp; SaaS</h3>
+      <p>Full-stack web apps built with React, Supabase and modern APIs. From landing pages to full SaaS products like TaskFlow built, deployed and live.</p>
+      <div class="svc-tags"><span class="stag">React</span><span class="stag">Supabase</span><span class="stag">JavaScript</span><span class="stag">Vercel</span></div>
+    </div>
+    <div class="svc-card c7 rv">
+      <div class="svc-icon ic4">🎨</div>
       <h3>Graphic Design &amp; Branding</h3>
       <p>Brand identities, social media graphics, pitch decks and marketing materials. Canva Pro, Figma and Adobe tools. Fast turnaround, unlimited revisions.</p>
       <div class="svc-tags"><span class="stag">Canva Pro</span><span class="stag">Figma</span><span class="stag">Branding</span><span class="stag">Social media</span></div>
@@ -478,9 +389,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
   <div class="ey rv">Why it works</div>
   <h2 class="st rv d1">Real results from <span class="it">real projects</span></h2>
   <div class="results-grid">
-    <!-- Visuals side -->
     <div class="results-visuals rv">
-      <!-- Email funnel KPIs -->
       <div class="rv-card">
         <div class="rv-head">
           <div class="rv-title">Abandoned cart email sequence — e-commerce client</div>
@@ -499,7 +408,6 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
           <div class="funnel-row"><div class="funnel-label">Bought</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:28%;background:var(--a2)"><span class="funnel-pct">28%</span></div></div><div class="funnel-val">161</div></div>
         </div>
       </div>
-      <!-- Web design mockup -->
       <div class="web-mock">
         <div class="web-mock-bar">
           <div class="m-dot" style="background:#FF5F57"></div>
@@ -522,14 +430,12 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
         </div>
       </div>
     </div>
-
-    <!-- Results text side -->
     <div class="result-items rv d1">
       <div class="result-item">
         <div class="result-num n1">340%</div>
         <div class="result-text">
           <h4>Organic traffic increase</h4>
-          <p>Full SEO overhaul for a fashion e-commerce brand — keyword research, product descriptions, schema markup and site speed. Result in 3 months.</p>
+          <p>Full SEO overhaul for a fashion e-commerce brand, keyword research, product descriptions, schema markup and site speed. Result in 3 months.</p>
         </div>
       </div>
       <div class="result-item">
@@ -543,7 +449,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
         <div class="result-num n3">13+</div>
         <div class="result-text">
           <h4>Twilio flows deployed</h4>
-          <p>Voice and SMS flows for TV Messenger (US caregiving platform). Subflow architecture, Liquid templating, HTTP integrations — all in production.</p>
+          <p>Voice and SMS flows for TV Messenger (US caregiving platform). Subflow architecture, Liquid templating, HTTP integrations, all in production.</p>
         </div>
       </div>
       <div class="result-item">
@@ -562,10 +468,10 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
   <div class="ey rv">How I work</div>
   <h2 class="st rv d1">Simple. Fast. <span class="it">No surprises.</span></h2>
   <div class="proc-list rv d2">
-    <div class="proc-item"><div class="proc-n">01</div><div><h4>Discovery call — free, 30 mins</h4><p>We talk about your goals, your current setup and what's blocking growth. I tell you honestly if and how I can help before we agree on anything.</p></div></div>
-    <div class="proc-item"><div class="proc-n">02</div><div><h4>Proposal &amp; clear scope</h4><p>You get a written proposal — what we build, what it costs, how long it takes. No hidden fees, no scope creep surprises halfway through.</p></div></div>
-    <div class="proc-item"><div class="proc-n">03</div><div><h4>Build with regular updates</h4><p>I get to work and send you progress updates every 1-2 days. You see what's happening as it happens — not just at the end when it's too late to change things.</p></div></div>
-    <div class="proc-item"><div class="proc-n">04</div><div><h4>Review &amp; free revisions</h4><p>I don't consider a project done until you're happy with it. Free revisions are included — I don't charge extra for reasonable adjustments.</p></div></div>
+    <div class="proc-item"><div class="proc-n">01</div><div><h4>Discovery call  free, 30 mins</h4><p>We talk about your goals, your current setup and what's blocking growth. I tell you honestly if and how I can help before we agree on anything.</p></div></div>
+    <div class="proc-item"><div class="proc-n">02</div><div><h4>Proposal &amp; clear scope</h4><p>You get a written proposal what we build, what it costs, how long it takes. No hidden fees, no scope creep surprises halfway through.</p></div></div>
+    <div class="proc-item"><div class="proc-n">03</div><div><h4>Build with regular updates</h4><p>I get to work and send you progress updates every 1-2 days. You see what's happening as it happens  not just at the end when it's too late to change things.</p></div></div>
+    <div class="proc-item"><div class="proc-n">04</div><div><h4>Review &amp; free revisions</h4><p>I don't consider a project done until you're happy with it. Free revisions are included  I don't charge extra for reasonable adjustments.</p></div></div>
     <div class="proc-item"><div class="proc-n">05</div><div><h4>Handover &amp; 30-day support</h4><p>Full handover with documentation you can actually understand. I stay available for questions for 30 days after delivery. No ghosting after payment.</p></div></div>
   </div>
 </section>
@@ -581,7 +487,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
       </div>
       <div class="port-body">
         <div class="port-type">Email Marketing Automation</div>
-        <h3>7-email welcome sequence — e-commerce brand</h3>
+        <h3>7-email welcome sequence  e-commerce brand</h3>
         <p>Built a complete welcome + abandoned cart sequence in Klaviyo. Integrated with Shopify, automated segmentation, timezone-aware scheduling.</p>
         <div class="port-result">68% open rate · 28% cart recovery</div>
       </div>
@@ -593,7 +499,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
       <div class="port-body">
         <div class="port-type">Web Design &amp; SEO</div>
         <h3>Shopify redesign + SEO for fashion brand</h3>
-        <p>Full redesign of a Shopify fashion store plus complete SEO overhaul — product page optimisation, keyword strategy, schema markup and speed fixes.</p>
+        <p>Full redesign of a Shopify fashion store plus complete SEO overhaul, product page optimisation, keyword strategy, schema markup and speed fixes.</p>
         <div class="port-result">340% organic traffic increase in 3 months</div>
       </div>
     </div>
@@ -603,7 +509,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
       </div>
       <div class="port-body">
         <div class="port-type">Telephony Automation</div>
-        <h3>13+ Twilio Studio flows — TV Messenger</h3>
+        <h3>13+ Twilio Studio flows TV Messenger</h3>
         <p>Designed, debugged and deployed 13+ voice and SMS flows for a US-based caregiving platform. Subflow architecture, Liquid templating, HTTP integrations.</p>
         <div class="port-result">13 production flows live for US client</div>
       </div>
@@ -616,10 +522,10 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
   <div class="tf-wrap">
     <div>
       <div class="ey rv">My own product</div>
-      <h2 class="st rv d1">TaskFlow — project management that doesn't <span class="it">slow you down</span></h2>
+      <h2 class="st rv d1">TaskFlow  project management that doesn't <span class="it">slow you down</span></h2>
       <p class="sec-sub rv d2">Built for small teams and freelancers who find Asana and Jira overwhelming. Kanban boards, team collaboration, progress tracking. 7-day free trial, no card needed.</p>
       <div style="display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.6rem" class="rv d3">
-        <a href="taskflow.html" class="btn-p">Try free for 7 days</a>
+        <a href="https://taskflow-tau-roan.vercel.app" class="btn-p">Try free for 7 days</a>
         <a href="taskflow.html" class="btn-s">See pricing</a>
       </div>
     </div>
@@ -679,10 +585,9 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
   <div class="ey rv">Get in touch</div>
   <h2 class="st rv d1">Ready to <span class="it">grow your business?</span></h2>
   <div class="contact-grid">
-    <!-- Left: info + direct links -->
     <div class="contact-info rv">
       <h3>Let's talk about your project</h3>
-      <p>Tell me what you're building or what problem you're trying to solve. I'll tell you honestly if I can help — and if I can, we move fast. Free 30-minute discovery call, no commitment needed.</p>
+      <p>Tell me what you're building or what problem you're trying to solve. I'll tell you honestly if I can help  and if I can, we move fast. Free 30-minute discovery call, no commitment needed.</p>
       <div class="contact-links">
         <a href="mailto:miketechstudio535@gmail.com" class="contact-link">
           <div class="contact-link-icon" style="background:var(--a2l)">📧</div>
@@ -702,8 +607,6 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
         </a>
       </div>
     </div>
-
-    <!-- Right: working contact form -->
     <div class="contact-form rv d1">
       <h3>Send a message</h3>
       <p>Fill this in and I'll get back to you within 24 hours.</p>
@@ -721,6 +624,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
             <option>SEO &amp; e-commerce growth</option>
             <option>Zapier / workflow automation</option>
             <option>Telephony / SMS systems</option>
+            <option>Custom software / SaaS</option>
             <option>Graphic design &amp; branding</option>
             <option>TaskFlow subscription</option>
             <option>Something else</option>
@@ -744,7 +648,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
   <div class="ft-top">
     <div>
       <div class="ft-brand"><span class="ft-brand-dot"></span>MikeTechStudio</div>
-      <div class="ft-desc">Email automation, web design, SEO and communication systems for businesses that want to grow. Available worldwide. Based in Nigeria.</div>
+      <div class="ft-desc">Email automation, web design, Twilio systems, custom software and SEO for businesses that want to grow. Available worldwide. Based in Nigeria.</div>
     </div>
     <div class="ft-col">
       <h4>Services</h4>
@@ -753,13 +657,14 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
       <a href="#services">SEO growth</a>
       <a href="#services">Zapier workflows</a>
       <a href="#services">Telephony &amp; SMS</a>
+      <a href="#services">Custom software</a>
     </div>
     <div class="ft-col">
       <h4>Product</h4>
       <a href="taskflow.html">TaskFlow app</a>
       <a href="taskflow.html#pricing">Pricing</a>
       <a href="taskflow.html#faq">FAQ</a>
-      <a href="https://taskflow-tau-roan.vercel.app/signup" target="_blank" rel="noopener">Start free trial</a>
+      <a href="https://taskflow-tau-roan.vercel.app" target="_blank" rel="noopener">Start free trial</a>
     </div>
     <div class="ft-col">
       <h4>Connect</h4>
@@ -784,40 +689,26 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 </footer>
 
 <script>
-// Mobile menu
 const hbg=document.getElementById('hbg'),mm=document.getElementById('mm');
 hbg.addEventListener('click',()=>{hbg.classList.toggle('o');mm.classList.toggle('o');document.body.style.overflow=mm.classList.contains('o')?'hidden':''});
 document.querySelectorAll('.mml').forEach(l=>l.addEventListener('click',()=>{hbg.classList.remove('o');mm.classList.remove('o');document.body.style.overflow=''}));
-
-// Scroll reveal
 document.querySelectorAll('.rv').forEach(el=>el.classList.add('an'));
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vi')}),{threshold:0.07});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-
-// Active nav
 const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id});nls.forEach(a=>{a.classList.remove('act');if(a.getAttribute('href')==='#'+c)a.classList.add('act')});},{passive:true});
-
-// Contact form — opens Gmail with all fields pre-filled
 function submitForm(e) {
   e.preventDefault();
-  const name = document.getElementById('f-name').value.trim();
-  const email = document.getElementById('f-email').value.trim();
-  const service = document.getElementById('f-service').value;
-  const msg = document.getElementById('f-msg').value.trim();
+  const name=document.getElementById('f-name').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const service=document.getElementById('f-service').value;
+  const msg=document.getElementById('f-msg').value.trim();
   if(!name||!email||!msg){alert('Please fill in all required fields.');return;}
-  const subject = encodeURIComponent('Project enquiry — ' + (service||'General') + ' | MikeTechStudio');
-  const body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'Email: ' + email + '\n' +
-    'Service: ' + (service||'Not specified') + '\n\n' +
-    'Message:\n' + msg
-  );
-  // Open Gmail compose with pre-filled fields
-  window.location.href = 'mailto:miketechstudio535@gmail.com?subject=' + subject + '&body=' + body;
-  // Show success message
-  document.getElementById('contact-form').style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
+  const subject=encodeURIComponent('Project enquiry — '+(service||'General')+' | MikeTechStudio');
+  const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nService: '+(service||'Not specified')+'\n\nMessage:\n'+msg);
+  window.open('https://mail.google.com/mail/?view=cm&to=miketechstudio535@gmail.com&su='+subject+'&body='+body,'_blank');
+  document.getElementById('contact-form').style.display='none';
+  document.getElementById('form-success').style.display='block';
 }
 </script>
 </body>
