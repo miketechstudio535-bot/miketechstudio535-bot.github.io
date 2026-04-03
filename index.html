@@ -3,204 +3,320 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MikeTechStudio — Telephony, Automation & Web Design</title>
-<meta name="description" content="Michael Fabiyi — Telephony & Automation Specialist. Twilio, VoIP, SMS automation, SEO and web design for US and international clients.">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>MikeTechStudio — Email Automation, Web Design & Growth Systems</title>
+<meta name="description" content="Michael Fabiyi helps e-commerce brands grow with email marketing automation, web design, SEO and communication systems. Available worldwide.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 :root{
-  --bg:#FAF7F2;--bg2:#F3EFE8;--bg3:#EDE7DC;
-  --card:#FFFFFF;--border:#E2DBD0;--border2:#C8BFB2;
-  --text:#1C1814;--text2:#4A4238;--muted:#8A7D6E;
-  --accent:#C84B2F;--accent2:#E8A020;
-  --al:#FDF0ED;--al2:#FEF6E8;
-  --green:#2A7A4B;--gl:#EAF5EF;
-  --blue:#1A5FAD;--bl:#EBF2FB;
-  --fh:'Fraunces',serif;--fb:'DM Sans',sans-serif;
-  --r:12px;--rl:20px;
+  --bg:#FAFAF8;--bg2:#F4F3EF;--bg3:#ECEAE4;
+  --card:#FFFFFF;--border:#E0DDD6;--border2:#C8C4BB;
+  --text:#18170F;--text2:#48463C;--muted:#88867C;
+  --ink:#18170F;
+  --a1:#1B4FD8;--a1l:#EEF3FD;--a1b:#E0E8FB;
+  --a2:#C84B2F;--a2l:#FDF0ED;--a2b:#FAE0DB;
+  --a3:#1A7A4A;--a3l:#EAF5EF;--a3b:#D5EDE0;
+  --a4:#7B3FA0;--a4l:#F5EDFB;--a4b:#EDD9F7;
+  --fh:'Sora',sans-serif;
+  --fi:'Crimson Pro',Georgia,serif;
+  --fb:'Sora',sans-serif;
+  --r:10px;--rl:18px;
 }
-body{font-family:var(--fb);background:var(--bg);color:var(--text);overflow-x:hidden}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);overflow-x:hidden;font-size:15px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
 
-/* CURSOR */
-#cur{width:8px;height:8px;background:var(--accent);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s}
-#cur-r{width:36px;height:36px;border:2px solid var(--accent);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.7;transition:left .1s ease,top .1s ease}
-body.hov #cur{width:14px;height:14px;background:var(--accent2)}
-body.hov #cur-r{width:48px;height:48px;border-color:var(--accent2);opacity:.4}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(250,247,242,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.logo{font-family:var(--fh);font-size:1.15rem;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none}
-.ldot{width:9px;height:9px;background:var(--accent);border-radius:50%;flex-shrink:0;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,75,47,.4)}50%{box-shadow:0 0 0 6px rgba(200,75,47,0)}}
-.nl{display:flex;gap:2rem}
-.nl a{font-size:.85rem;font-weight:500;color:var(--text2);text-decoration:none;transition:color .2s}
-.nl a:hover,.nl a.act{color:var(--accent)}
-.ncta{background:var(--accent);color:#fff;font-family:var(--fb);font-size:.85rem;font-weight:600;padding:.55rem 1.2rem;border-radius:100px;text-decoration:none;transition:all .2s}
-.ncta:hover{background:#A83820;transform:translateY(-1px)}
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:.9rem 5%;background:rgba(250,250,248,0.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:9px;letter-spacing:-.02em}
+.nav-logo-dot{width:10px;height:10px;background:var(--a2);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,75,47,.35)}50%{box-shadow:0 0 0 7px rgba(200,75,47,0)}}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:.82rem;font-weight:500;color:var(--text2);transition:color .2s}
+.nav-links a:hover,.nav-links a.act{color:var(--a2)}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.nav-cta{background:var(--a2);color:#fff;font-family:var(--fh);font-size:.82rem;font-weight:600;padding:.5rem 1.1rem;border-radius:100px;transition:all .2s}
+.nav-cta:hover{background:#A83820;transform:translateY(-1px)}
 .hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hbg span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
 .hbg.o span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hbg.o span:nth-child(2){opacity:0}
 .hbg.o span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mm{display:none;position:fixed;inset:0;background:var(--bg);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem}
+.mm{display:none;position:fixed;inset:0;background:var(--bg);z-index:299;flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem}
 .mm.o{display:flex}
-.mm a.ml{font-family:var(--fh);font-size:2.2rem;font-weight:700;color:var(--text);text-decoration:none;transition:color .2s}
-.mm a.ml:hover{color:var(--accent)}
-.mmsoc{display:flex;gap:1.5rem;margin-top:.5rem;flex-wrap:wrap;justify-content:center}
-.mmsoc a{font-size:.85rem;color:var(--muted);text-decoration:none;transition:color .2s}
-.mmsoc a:hover{color:var(--accent)}
+.mm a.mml{font-family:var(--fh);font-size:2rem;font-weight:700;color:var(--text);transition:color .2s}
+.mm a.mml:hover{color:var(--a2)}
+.mm-soc{display:flex;gap:1.5rem;margin-top:.5rem;flex-wrap:wrap;justify-content:center}
+.mm-soc a{font-size:.85rem;color:var(--muted);transition:color .2s}
+.mm-soc a:hover{color:var(--a2)}
 
-/* HERO */
-.hero{min-height:100vh;padding:7rem 5% 5rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(200,75,47,.06),transparent 70%);top:-100px;right:-100px;pointer-events:none;border-radius:50%}
-.hl{max-width:680px}
-.htag{display:inline-flex;align-items:center;gap:8px;background:var(--al);border:1px solid rgba(200,75,47,.2);padding:.4rem 1rem;border-radius:100px;font-size:.78rem;font-weight:600;color:var(--accent);letter-spacing:.05em;margin-bottom:1.75rem}
-.htag::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 1.5s infinite}
-.hero h1{font-family:var(--fh);font-size:clamp(3rem,6vw,5.5rem);font-weight:900;line-height:1.0;letter-spacing:-.02em;color:var(--text);margin-bottom:1.5rem}
-.hero h1 em{font-style:italic;color:var(--accent)}
-.hsub{font-size:1.05rem;color:var(--text2);line-height:1.8;max-width:520px;margin-bottom:2.5rem;font-weight:300}
-.hacts{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
-.bp{background:var(--accent);color:#fff;font-family:var(--fb);font-weight:600;font-size:.95rem;padding:.9rem 2rem;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border:none;cursor:pointer}
-.bp:hover{background:#A83820;transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,75,47,.25)}
-.bs{background:transparent;color:var(--text);font-family:var(--fb);font-weight:500;font-size:.95rem;padding:.9rem 2rem;border-radius:100px;text-decoration:none;border:1.5px solid var(--border2);transition:all .2s}
-.bs:hover{border-color:var(--accent);color:var(--accent);background:var(--al)}
-.hstats{display:flex;gap:2.5rem;flex-wrap:wrap}
-.sn{font-family:var(--fh);font-size:2.2rem;font-weight:900;color:var(--text);line-height:1}
-.sn span{color:var(--accent)}
-.sl{font-size:.75rem;color:var(--muted);margin-top:3px}
-.hr{display:flex;flex-direction:column;align-items:center;gap:1rem;flex-shrink:0}
-.hphw{position:relative}
-.hph{width:200px;height:200px;border-radius:24px;object-fit:cover;display:block;border:3px solid var(--border)}
-.hpbadge{position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:.65rem;font-weight:700;padding:5px 14px;border-radius:100px;white-space:nowrap;letter-spacing:.05em}
-.hname{font-family:var(--fh);font-size:.95rem;font-weight:700;color:var(--text);text-align:center;margin-top:1rem}
-.hrole{font-size:.75rem;color:var(--muted);text-align:center}
+/* ── HERO ── */
+.hero{min-height:100vh;padding:8rem 5% 5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(27,79,216,.05),transparent);pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--a2l);border:1px solid rgba(200,75,47,.22);padding:.38rem .9rem;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--a2);letter-spacing:.05em;margin-bottom:1.6rem}
+.hero-tag::before{content:'';width:6px;height:6px;background:var(--a2);border-radius:50%;animation:pulse 1.6s infinite}
+.hero h1{font-family:var(--fh);font-size:clamp(2.4rem,4.5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--text);margin-bottom:1.4rem}
+.hero h1 .it{font-family:var(--fi);font-style:italic;font-weight:600;color:var(--a2)}
+.hero-sub{font-size:1rem;color:var(--text2);line-height:1.82;max-width:500px;margin-bottom:2.25rem;font-weight:300}
+.hero-sub strong{font-weight:600;color:var(--text)}
+.hero-acts{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:2.75rem}
+.btn-p{background:var(--a2);color:#fff;font-family:var(--fh);font-weight:600;font-size:.88rem;padding:.85rem 1.8rem;border-radius:100px;display:inline-flex;align-items:center;gap:7px;transition:all .2s;border:none;cursor:pointer}
+.btn-p:hover{background:#A83820;transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,75,47,.22)}
+.btn-s{background:transparent;color:var(--text);font-family:var(--fh);font-weight:500;font-size:.88rem;padding:.85rem 1.8rem;border-radius:100px;border:1.5px solid var(--border2);transition:all .2s;display:inline-flex;align-items:center;gap:7px}
+.btn-s:hover{border-color:var(--a1);color:var(--a1);background:var(--a1l)}
+.hero-trust{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap}
+.trust-badge{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--muted);font-weight:500}
+.trust-badge::before{content:'✓';color:var(--a3);font-weight:700;font-size:.7rem}
+.trust-sep{width:4px;height:4px;background:var(--border2);border-radius:50%}
 
-/* MARQUEE */
-.mq-wrap{background:var(--text);padding:.85rem 0;overflow:hidden}
-.mq{display:flex;gap:2.5rem;animation:mqa 25s linear infinite;white-space:nowrap}
-.mqi{font-size:.75rem;font-weight:600;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;display:flex;align-items:center;gap:.75rem}
-.mqi::before{content:'◆';color:var(--accent);font-size:.5rem}
+/* HERO RIGHT — visual mockups */
+.hero-right{position:relative;display:flex;flex-direction:column;gap:1rem}
+.mockup-main{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.mockup-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:.6rem 1rem;display:flex;align-items:center;gap:6px}
+.m-dot{width:9px;height:9px;border-radius:50%}
+.mockup-body{padding:1.1rem}
+
+/* Email mockup */
+.em-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem}
+.em-title{font-size:.75rem;font-weight:700;color:var(--text)}
+.em-badge{font-size:.6rem;font-weight:700;background:var(--a3l);color:var(--a3);padding:2px 8px;border-radius:100px}
+.em-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:.9rem}
+.em-stat{background:var(--bg2);border-radius:8px;padding:.6rem;text-align:center}
+.em-stat-n{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--text)}
+.em-stat-l{font-size:.58rem;color:var(--muted);margin-top:2px}
+.em-chart{height:50px;display:flex;align-items:flex-end;gap:3px;padding:0 2px}
+.em-bar{flex:1;border-radius:3px 3px 0 0;background:var(--a1);opacity:.25;transition:opacity .2s}
+.em-bar.hi{opacity:1;background:var(--a1)}
+.em-bar.mid{opacity:.55}
+
+/* Small mockup cards */
+.mockup-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.mock-sm{background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);padding:.9rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.mock-sm-head{display:flex;align-items:center;gap:7px;margin-bottom:.65rem}
+.mock-sm-icon{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.mock-sm-title{font-size:.72rem;font-weight:700;color:var(--text)}
+.mock-bar-wrap{display:flex;flex-direction:column;gap:5px}
+.mock-bar-item{display:flex;align-items:center;gap:6px}
+.mock-bar-label{font-size:.6rem;color:var(--muted);width:32px;flex-shrink:0}
+.mock-bar-track{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.mock-bar-fill{height:100%;border-radius:3px}
+.mock-bar-val{font-size:.6rem;font-weight:600;color:var(--text2);width:26px;text-align:right}
+/* Shopify mockup */
+.shop-row{display:flex;align-items:center;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:.65rem}
+.shop-row:last-child{border:none}
+.shop-name{color:var(--text2);font-weight:500}
+.shop-val{font-weight:700;color:var(--text)}
+.shop-badge{font-size:.55rem;padding:2px 6px;border-radius:100px;font-weight:600}
+.up{background:var(--a3l);color:var(--a3)}
+.down{background:var(--a2l);color:var(--a2)}
+
+/* ── MARQUEE ── */
+.mq{background:var(--text);padding:.8rem 0;overflow:hidden}
+.mq-inner{display:flex;gap:2.5rem;animation:mqa 28s linear infinite;white-space:nowrap}
+.mqi{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;display:flex;align-items:center;gap:.75rem}
+.mqi::before{content:'◆';color:var(--a2);font-size:.45rem}
 @keyframes mqa{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* SECTIONS */
+/* ── SECTIONS ── */
 section{padding:5.5rem 5%}
-.ey{font-size:.72rem;font-weight:700;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.85rem}
-.st{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-.02em;color:var(--text)}
-.st em{font-style:italic;color:var(--accent)}
-
-/* SERVICES */
 .sbg{background:var(--bg2)}
-.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.sc{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:2rem;transition:all .25s}
-.sc:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 40px rgba(200,75,47,.1)}
-.si{width:48px;height:48px;border-radius:12px;background:var(--al);border:1px solid rgba(200,75,47,.15);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.25rem}
-.sc h3{font-family:var(--fh);font-size:1.1rem;font-weight:700;margin-bottom:.65rem;color:var(--text)}
-.sc p{font-size:.875rem;color:var(--text2);line-height:1.7}
-.stags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.1rem}
-.stag{font-size:.68rem;font-weight:600;color:var(--accent);background:var(--al);border:1px solid rgba(200,75,47,.15);padding:3px 10px;border-radius:100px}
+.sbg3{background:var(--bg3)}
+.ey{font-size:.68rem;font-weight:700;color:var(--a2);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.8rem}
+.st{font-family:var(--fh);font-size:clamp(1.75rem,3vw,2.6rem);font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--text)}
+.st .it{font-family:var(--fi);font-style:italic;font-weight:600;color:var(--a2)}
+.sec-sub{font-size:.92rem;color:var(--text2);line-height:1.8;margin-top:.75rem;max-width:540px;font-weight:300}
 
-/* PROCESS */
-.plist{display:flex;flex-direction:column;gap:1px;background:var(--border);border-radius:var(--rl);overflow:hidden;margin-top:3rem;border:1.5px solid var(--border)}
-.pi{background:var(--card);padding:1.6rem 2rem;display:flex;align-items:flex-start;gap:1.5rem;transition:background .2s}
-.pi:hover{background:var(--bg2)}
-.pn{width:38px;height:38px;border-radius:50%;background:var(--al);border:1.5px solid rgba(200,75,47,.25);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:.75rem;font-weight:700;color:var(--accent);flex-shrink:0;margin-top:2px}
-.pi h4{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:.3rem;color:var(--text)}
-.pi p{font-size:.875rem;color:var(--text2);line-height:1.65}
+/* ── SERVICES ── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
+.svc-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.75rem;transition:all .22s;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .22s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.08)}
+.svc-card:hover::before{opacity:1}
+.svc-card.c1::before{background:var(--a1)}
+.svc-card.c2::before{background:var(--a2)}
+.svc-card.c3::before{background:var(--a3)}
+.svc-card.c4::before{background:var(--a4)}
+.svc-card.c5::before{background:var(--a1)}
+.svc-card.c6::before{background:var(--a3)}
+.svc-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:1.1rem;flex-shrink:0}
+.ic1{background:var(--a1l)}
+.ic2{background:var(--a2l)}
+.ic3{background:var(--a3l)}
+.ic4{background:var(--a4l)}
+.svc-card h3{font-family:var(--fh);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.55rem}
+.svc-card p{font-size:.82rem;color:var(--text2);line-height:1.7}
+.svc-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.9rem}
+.stag{font-size:.62rem;font-weight:600;padding:2px 9px;border-radius:100px;background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
 
-/* PORTFOLIO */
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.pc{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:all .25s}
-.pc:hover{transform:translateY(-4px);border-color:var(--border2);box-shadow:0 12px 40px rgba(28,24,20,.08)}
-.pimg{height:180px;display:flex;align-items:center;justify-content:center;font-size:2.5rem}
-.pb{padding:1.4rem}
-.ptype{font-size:.68rem;font-weight:700;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
-.pb h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:.5rem;color:var(--text)}
-.pb p{font-size:.83rem;color:var(--text2);line-height:1.6}
-.pres{display:flex;align-items:center;gap:5px;margin-top:.85rem;font-size:.78rem;font-weight:600;color:var(--green)}
-.pres::before{content:'↑'}
+/* ── RESULTS / MOCKUP SECTION ── */
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-top:2.75rem}
+.results-visuals{display:flex;flex-direction:column;gap:1rem}
+.rv-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.25rem;box-shadow:0 2px 16px rgba(0,0,0,.05)}
+.rv-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.85rem}
+.rv-title{font-size:.75rem;font-weight:700;color:var(--text)}
+.rv-period{font-size:.62rem;color:var(--muted)}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.kpi{text-align:center;background:var(--bg2);border-radius:8px;padding:.6rem .4rem}
+.kpi-n{font-family:var(--fh);font-size:1rem;font-weight:700;color:var(--text)}
+.kpi-l{font-size:.58rem;color:var(--muted);margin-top:2px;line-height:1.3}
+.kpi-n.green{color:var(--a3)}
+.funnel{margin-top:.5rem}
+.funnel-row{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem}
+.funnel-bar-wrap{flex:1;height:18px;background:var(--bg2);border-radius:4px;overflow:hidden;position:relative}
+.funnel-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:8px}
+.funnel-pct{font-size:.6rem;font-weight:700;color:#fff}
+.funnel-label{font-size:.65rem;color:var(--text2);width:52px;flex-shrink:0}
+.funnel-val{font-size:.62rem;font-weight:600;color:var(--text);width:28px;text-align:right;flex-shrink:0}
 
-/* TASKFLOW */
-.tfw{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.tfm{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden}
-.tfb-top{background:var(--bg3);border-bottom:1px solid var(--border);padding:.7rem 1rem;display:flex;align-items:center;gap:6px}
-.tfd{width:10px;height:10px;border-radius:50%}
-.tfbt{font-size:.75rem;color:var(--muted);margin-left:.5rem}
-.tfb{padding:1.25rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.tcl{font-size:.62rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem}
-.tc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.8rem;margin-bottom:.5rem;font-size:.78rem}
-.tct{font-weight:500;color:var(--text);margin-bottom:5px;line-height:1.4}
-.tt{font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:100px;display:inline-block}
-.ttr{background:var(--al);color:var(--accent)}.ttg{background:var(--gl);color:var(--green)}.ttb{background:var(--bl);color:var(--blue)}.ttgr{background:var(--bg3);color:var(--muted)}
-.tpg{height:3px;background:var(--bg3);border-radius:3px;margin:.45rem 0;overflow:hidden}
-.tpgb{height:100%;background:var(--accent);border-radius:3px}
+/* Web design showcase */
+.web-mock{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.web-mock-bar{background:var(--bg3);border-bottom:1px solid var(--border);padding:.55rem 1rem;display:flex;align-items:center;gap:6px}
+.web-mock-url{background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:.2rem .75rem;font-size:.62rem;color:var(--muted);flex:1;max-width:180px}
+.web-mock-body{padding:1rem}
+.web-hero-mock{background:linear-gradient(135deg,var(--a1) 0%,#0F3BAA 100%);border-radius:10px;padding:1.25rem;margin-bottom:.85rem;color:#fff}
+.web-hero-tag{font-size:.58rem;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:100px;display:inline-block;margin-bottom:.5rem}
+.web-hero-h{font-family:var(--fh);font-size:.95rem;font-weight:700;line-height:1.3;margin-bottom:.5rem}
+.web-hero-p{font-size:.62rem;opacity:.75;line-height:1.5;margin-bottom:.75rem}
+.web-btn{background:#fff;color:var(--a1);font-size:.62rem;font-weight:700;padding:.35rem .85rem;border-radius:100px;display:inline-block}
+.web-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.web-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.6rem}
+.web-card-img{height:28px;border-radius:5px;margin-bottom:.4rem}
+.web-card-name{font-size:.6rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.web-card-price{font-size:.58rem;color:var(--a3);font-weight:700}
 
-/* TESTIMONIALS */
-.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.tc2{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.75rem;position:relative}
-.tq{font-family:var(--fh);font-size:3.5rem;color:var(--accent);opacity:.15;position:absolute;top:.25rem;right:1.25rem;line-height:1}
-.tc2 p{font-size:.875rem;color:var(--text2);line-height:1.75;margin-bottom:1.25rem;position:relative}
-.tau{display:flex;align-items:center;gap:10px}
-.tav{width:36px;height:36px;border-radius:50%;background:var(--al);border:1.5px solid rgba(200,75,47,.2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.7rem;color:var(--accent);flex-shrink:0}
-.tan{font-weight:600;font-size:.85rem;color:var(--text)}
-.tar{font-size:.73rem;color:var(--muted)}
+/* Results text side */
+.result-items{display:flex;flex-direction:column;gap:1.25rem}
+.result-item{display:flex;align-items:flex-start;gap:1rem;padding:1.1rem;background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);transition:border-color .2s}
+.result-item:hover{border-color:var(--border2)}
+.result-num{font-family:var(--fh);font-size:1.6rem;font-weight:800;line-height:1;flex-shrink:0;width:64px}
+.n1{color:var(--a1)}.n2{color:var(--a2)}.n3{color:var(--a3)}.n4{color:var(--a4)}
+.result-text h4{font-family:var(--fh);font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+.result-text p{font-size:.78rem;color:var(--text2);line-height:1.6}
 
-/* CTA */
-.ctasec{background:var(--text);text-align:center;position:relative;overflow:hidden;padding:6rem 5%}
-.ctasec::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(200,75,47,.15),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;border-radius:50%}
-.ctasec h2{font-family:var(--fh);font-size:clamp(2.5rem,5vw,4rem);font-weight:900;line-height:1.05;letter-spacing:-.02em;color:#fff;margin-bottom:1rem;position:relative}
-.ctasec h2 em{font-style:italic;color:var(--accent2)}
-.ctasec p{font-size:.95rem;color:rgba(255,255,255,.6);max-width:440px;margin:0 auto 2.5rem;line-height:1.75;position:relative}
-.cbtns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;margin-bottom:2.5rem}
-.blt{background:#fff;color:var(--text);font-family:var(--fb);font-weight:600;font-size:.95rem;padding:.9rem 2rem;border-radius:100px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
-.blt:hover{background:var(--accent2);color:#fff;transform:translateY(-2px)}
-.bol{background:transparent;color:#fff;font-family:var(--fb);font-weight:500;font-size:.95rem;padding:.9rem 2rem;border-radius:100px;text-decoration:none;border:1.5px solid rgba(255,255,255,.25);transition:all .2s}
-.bol:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-.socrow{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;position:relative}
-.socrow a{font-size:.82rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
-.socrow a:hover{color:var(--accent2)}
+/* ── PROCESS ── */
+.proc-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border-radius:var(--rl);overflow:hidden;border:1.5px solid var(--border);margin-top:2.75rem}
+.proc-item{background:var(--card);padding:1.5rem 1.75rem;display:flex;align-items:flex-start;gap:1.25rem;transition:background .18s}
+.proc-item:hover{background:var(--bg2)}
+.proc-n{width:36px;height:36px;border-radius:50%;background:var(--a2l);border:1.5px solid rgba(200,75,47,.22);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:.7rem;font-weight:700;color:var(--a2);flex-shrink:0;margin-top:2px}
+.proc-item h4{font-family:var(--fh);font-size:.92rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+.proc-item p{font-size:.82rem;color:var(--text2);line-height:1.65}
 
-/* FOOTER */
-footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.flogo{font-family:var(--fh);font-size:1rem;font-weight:700;display:flex;align-items:center;gap:8px;color:var(--text)}
-.flinks{display:flex;gap:2rem}
-.flinks a{font-size:.8rem;color:var(--muted);text-decoration:none;transition:color .2s}
-.flinks a:hover{color:var(--accent)}
-.fcopy{font-size:.72rem;color:var(--muted)}
+/* ── PORTFOLIO ── */
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
+.port-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:all .22s}
+.port-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.08);border-color:var(--border2)}
+.port-img{height:155px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.port-body{padding:1.1rem}
+.port-type{font-size:.62rem;font-weight:700;color:var(--a2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem}
+.port-body h3{font-family:var(--fh);font-size:.92rem;font-weight:700;color:var(--text);margin-bottom:.45rem}
+.port-body p{font-size:.78rem;color:var(--text2);line-height:1.62}
+.port-result{display:flex;align-items:center;gap:5px;margin-top:.75rem;font-size:.72rem;font-weight:700;color:var(--a3)}
+.port-result::before{content:'↑'}
 
-/* REVEAL */
-.rv{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
-.rv.an{opacity:0;transform:translateY(28px)}
+/* ── TASKFLOW ── */
+.tf-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.tf-mock{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.05)}
+.tf-bar{background:var(--bg3);border-bottom:1px solid var(--border);padding:.65rem 1rem;display:flex;align-items:center;gap:6px}
+.tf-dot{width:9px;height:9px;border-radius:50%}
+.tf-bt{font-size:.72rem;color:var(--muted);margin-left:.4rem}
+.tf-body{padding:1.1rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem}
+.tf-col-h{font-size:.6rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;display:flex;align-items:center;gap:5px}
+.tf-col-h::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}
+.tf-ch1{color:var(--muted)}.tf-ch2{color:var(--a2)}.tf-ch3{color:var(--a3)}
+.tf-card{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:.7rem;margin-bottom:.45rem;font-size:.72rem}
+.tf-card-t{font-weight:500;color:var(--text);margin-bottom:4px;line-height:1.35}
+.tt{font-size:.58rem;font-weight:700;padding:2px 7px;border-radius:100px;display:inline-block}
+.ttr{background:var(--a2l);color:var(--a2)}.ttg{background:var(--a3l);color:var(--a3)}.ttb{background:var(--a1l);color:var(--a1)}.ttgr{background:var(--bg3);color:var(--muted)}
+.tf-prog{height:3px;background:var(--bg3);border-radius:3px;margin:.4rem 0}
+.tf-prog-f{height:100%;background:var(--a2);border-radius:3px}
+.tf-prog-col{border-left:2px solid var(--a2)}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
+.testi{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.6rem;position:relative}
+.testi-q{font-family:var(--fi);font-size:3rem;color:var(--a2);opacity:.12;position:absolute;top:.2rem;right:1.1rem;line-height:1}
+.testi p{font-size:.83rem;color:var(--text2);line-height:1.78;margin-bottom:1.1rem;position:relative}
+.testi-au{display:flex;align-items:center;gap:.7rem}
+.testi-av{width:34px;height:34px;border-radius:50%;background:var(--a2l);border:1.5px solid rgba(200,75,47,.2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.68rem;color:var(--a2);flex-shrink:0}
+.testi-name{font-size:.82rem;font-weight:600;color:var(--text)}
+.testi-role{font-size:.7rem;color:var(--muted)}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.75rem}
+.contact-info h3{font-family:var(--fh);font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:var(--text)}
+.contact-info p{font-size:.88rem;color:var(--text2);line-height:1.8;margin-bottom:1.5rem}
+.contact-links{display:flex;flex-direction:column;gap:.65rem}
+.contact-link{display:flex;align-items:center;gap:.75rem;font-size:.83rem;color:var(--text2);padding:.65rem .9rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);transition:all .18s}
+.contact-link:hover{border-color:var(--a2);color:var(--a2);background:var(--a2l)}
+.contact-link-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+/* Contact Form */
+.contact-form{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:2rem}
+.contact-form h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:.35rem;color:var(--text)}
+.contact-form p{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
+.fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:.85rem}
+.fg label{font-size:.75rem;font-weight:600;color:var(--text2)}
+.fg input,.fg textarea,.fg select{padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:var(--r);font-size:.85rem;font-family:var(--fb);background:var(--bg);color:var(--text);outline:none;transition:border-color .2s;resize:vertical}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--a2);background:var(--card)}
+.fg textarea{min-height:100px}
+.form-submit{width:100%;padding:.85rem;background:var(--a2);color:#fff;border:none;border-radius:100px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:var(--fh);transition:all .2s;display:flex;align-items:center;justify-content:center;gap:7px}
+.form-submit:hover{background:#A83820;transform:translateY(-1px)}
+.form-note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.75rem}
+.form-success{display:none;background:var(--a3l);border:1px solid rgba(26,122,74,.25);border-radius:var(--r);padding:1rem;text-align:center;font-size:.85rem;color:var(--a3);font-weight:500;margin-top:.75rem}
+
+/* ── FOOTER ── */
+footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
+.ft-top{display:grid;grid-template-columns:1fr auto auto auto;gap:3rem;margin-bottom:2.5rem;align-items:start}
+.ft-brand{font-family:var(--fh);font-size:1rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px;margin-bottom:.65rem}
+.ft-brand-dot{width:9px;height:9px;background:var(--a2);border-radius:50%;flex-shrink:0}
+.ft-desc{font-size:.78rem;line-height:1.75;max-width:240px}
+.ft-col h4{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.85rem}
+.ft-col a{display:block;font-size:.8rem;color:rgba(255,255,255,.55);margin-bottom:.55rem;transition:color .2s}
+.ft-col a:hover{color:#fff}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-copy{font-size:.72rem}
+.ft-soc{display:flex;gap:1rem}
+.ft-soc a{font-size:.75rem;color:rgba(255,255,255,.4);transition:color .2s}
+.ft-soc a:hover{color:#fff}
+
+/* ── REVEAL ── */
+.rv{opacity:1;transform:none;transition:opacity .65s ease,transform .65s ease}
+.rv.an{opacity:0;transform:translateY(22px)}
 .rv.an.vi{opacity:1;transform:none}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
 
-/* RESPONSIVE */
-@media(max-width:900px){.sgrid,.pgrid,.tgrid{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr}.hr{display:none}.tfw{grid-template-columns:1fr}}
-@media(max-width:600px){.sgrid,.pgrid,.tgrid{grid-template-columns:1fr}.nl,.ncta{display:none}.hbg{display:flex}footer{flex-direction:column;text-align:center}.flinks{justify-content:center;flex-wrap:wrap}.hstats{gap:1.5rem}}
+/* ── RESPONSIVE ── */
+@media(max-width:960px){.hero{grid-template-columns:1fr}.hero-right{display:none}.svc-grid,.port-grid,.testi-grid{grid-template-columns:1fr 1fr}.results-grid,.tf-wrap,.contact-grid{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.svc-grid,.port-grid,.testi-grid{grid-template-columns:1fr}.nav-links,.nav-cta{display:none}.hbg{display:flex}.form-row{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr}.ft-bottom{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
-<div id="cur"></div>
-<div id="cur-r"></div>
 
+<!-- NAV -->
 <nav>
-  <a href="#" class="logo"><span class="ldot"></span>MikeTechStudio</a>
-  <div class="nl">
+  <div class="nav-logo"><span class="nav-logo-dot"></span>MikeTechStudio</div>
+  <div class="nav-links">
     <a href="#services">Services</a>
+    <a href="#results">Results</a>
     <a href="#work">Work</a>
-    <a href="taskflow.html">TaskFlow</a>
+    <a href="#taskflow">TaskFlow</a>
     <a href="#contact">Contact</a>
   </div>
-  <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" class="ncta" target="_blank" rel="noopener">Hire Me ↗</a>
-  <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div class="nav-right">
+    <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="nav-cta">Hire Me ↗</a>
+    <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 
+<!-- MOBILE MENU -->
 <div class="mm" id="mm">
-  <a href="#services" class="ml">Services</a>
-  <a href="#work" class="ml">Work</a>
-  <a href="taskflow.html" class="ml">TaskFlow</a>
-  <a href="#contact" class="ml">Contact</a>
-  <div class="mmsoc">
+  <a href="#services" class="mml">Services</a>
+  <a href="#results" class="mml">Results</a>
+  <a href="#work" class="mml">Work</a>
+  <a href="#taskflow" class="mml">TaskFlow</a>
+  <a href="#contact" class="mml">Contact</a>
+  <div class="mm-soc">
     <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">𝕏 Twitter</a>
     <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://www.instagram.com/mike.techstudio/" target="_blank" rel="noopener">Instagram</a>
@@ -208,209 +324,501 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
   </div>
 </div>
 
+<!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hl">
-    <div class="htag">Available for projects</div>
-    <h1>I build systems<br>that grow your<br><em>business.</em></h1>
-    <p class="hsub">Telephony automation, Twilio Studio, VoIP systems, SEO and web design. I help US and international clients scale with technology — not guesswork.</p>
-    <div class="hacts">
-      <a href="#contact" class="bp">Start a project <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#work" class="bs">See my work</a>
+  <div class="hero-left">
+    <div class="hero-tag">Available worldwide · Remote</div>
+    <h1>Automation &amp; systems that <span class="it">grow your business.</span></h1>
+    <p class="hero-sub">I help e-commerce brands and small businesses scale with <strong>email marketing automation</strong>, <strong>web design</strong>, <strong>SEO</strong> and <strong>communication systems</strong> — built to run without you.</p>
+    <div class="hero-acts">
+      <a href="#contact" class="btn-p">Start a project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#work" class="btn-s">See my work</a>
     </div>
-    <div class="hstats">
-      <div><div class="sn" id="s1">2<span>+</span></div><div class="sl">Years experience</div></div>
-      <div><div class="sn" id="s2">13<span>+</span></div><div class="sl">Twilio flows deployed</div></div>
-      <div><div class="sn" id="s3">40<span>+</span></div><div class="sl">Projects delivered</div></div>
-      <div><div class="sn" id="s4">100<span>%</span></div><div class="sl">Client satisfaction</div></div>
+    <div class="hero-trust">
+      <div class="trust-badge">Email automation</div>
+      <div class="trust-sep"></div>
+      <div class="trust-badge">Web design</div>
+      <div class="trust-sep"></div>
+      <div class="trust-badge">SEO growth</div>
+      <div class="trust-sep"></div>
+      <div class="trust-badge">VoIP &amp; SMS</div>
     </div>
   </div>
-  <div class="hr">
-    <div class="hphw">
-      <img src="michael.jpg" alt="Michael Fabiyi" class="hph">
-      <div class="hpbadge">Founder · MikeTechStudio</div>
+
+  <!-- HERO RIGHT — Email marketing dashboard mockup -->
+  <div class="hero-right">
+    <div class="mockup-main">
+      <div class="mockup-bar">
+        <div class="m-dot" style="background:#FF5F57"></div>
+        <div class="m-dot" style="background:#FEBC2E"></div>
+        <div class="m-dot" style="background:#28C840"></div>
+        <span style="font-size:.68rem;color:var(--muted);margin-left:.4rem">Email Campaign Dashboard</span>
+      </div>
+      <div class="mockup-body">
+        <div class="em-header">
+          <div class="em-title">Welcome sequence — 7 emails</div>
+          <div class="em-badge">Active ✓</div>
+        </div>
+        <div class="em-stat-row">
+          <div class="em-stat"><div class="em-stat-n" style="color:var(--a1)">68%</div><div class="em-stat-l">Open rate</div></div>
+          <div class="em-stat"><div class="em-stat-n" style="color:var(--a3)">24%</div><div class="em-stat-l">Click rate</div></div>
+          <div class="em-stat"><div class="em-stat-n" style="color:var(--a2)">$4.2k</div><div class="em-stat-l">Revenue</div></div>
+        </div>
+        <div class="em-chart">
+          <div class="em-bar" style="height:35%"></div>
+          <div class="em-bar mid" style="height:52%"></div>
+          <div class="em-bar hi" style="height:88%"></div>
+          <div class="em-bar hi" style="height:75%"></div>
+          <div class="em-bar mid" style="height:60%"></div>
+          <div class="em-bar hi" style="height:95%"></div>
+          <div class="em-bar mid" style="height:68%"></div>
+          <div class="em-bar" style="height:42%"></div>
+          <div class="em-bar hi" style="height:82%"></div>
+          <div class="em-bar mid" style="height:55%"></div>
+          <div class="em-bar hi" style="height:90%"></div>
+          <div class="em-bar" style="height:30%"></div>
+        </div>
+      </div>
     </div>
-    <div class="hname">Michael Oluwatosin Fabiyi</div>
-    <div class="hrole">Telephony & Automation Specialist</div>
+
+    <div class="mockup-row">
+      <!-- SEO mockup -->
+      <div class="mock-sm">
+        <div class="mock-sm-head">
+          <div class="mock-sm-icon ic3">📈</div>
+          <div class="mock-sm-title">SEO Rankings</div>
+        </div>
+        <div class="mock-bar-wrap">
+          <div class="mock-bar-item">
+            <div class="mock-bar-label" style="font-size:.58rem;color:var(--muted)">Pos 1</div>
+            <div class="mock-bar-track"><div class="mock-bar-fill" style="width:92%;background:var(--a3)"></div></div>
+            <div class="mock-bar-val">92%</div>
+          </div>
+          <div class="mock-bar-item">
+            <div class="mock-bar-label" style="font-size:.58rem;color:var(--muted)">Traffic</div>
+            <div class="mock-bar-track"><div class="mock-bar-fill" style="width:78%;background:var(--a1)"></div></div>
+            <div class="mock-bar-val">+78%</div>
+          </div>
+          <div class="mock-bar-item">
+            <div class="mock-bar-label" style="font-size:.58rem;color:var(--muted)">Conv.</div>
+            <div class="mock-bar-track"><div class="mock-bar-fill" style="width:45%;background:var(--a2)"></div></div>
+            <div class="mock-bar-val">4.5%</div>
+          </div>
+        </div>
+      </div>
+      <!-- Shopify mockup -->
+      <div class="mock-sm">
+        <div class="mock-sm-head">
+          <div class="mock-sm-icon ic1">🛍️</div>
+          <div class="mock-sm-title">Store Sales</div>
+        </div>
+        <div class="shop-row"><span class="shop-name">Today</span><span class="shop-val">$847</span><span class="shop-badge up">+34%</span></div>
+        <div class="shop-row"><span class="shop-name">Orders</span><span class="shop-val">23</span><span class="shop-badge up">+12%</span></div>
+        <div class="shop-row"><span class="shop-name">Cart rec.</span><span class="shop-val">28%</span><span class="shop-badge up">↑</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="mq-wrap">
-  <div class="mq">
-    <span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Zapier Workflows</span><span class="mqi">SEO Optimization</span><span class="mqi">Web Design</span><span class="mqi">Shopify / Etsy</span><span class="mqi">TaskFlow App</span><span class="mqi">Python · JavaScript</span>
-    <span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Zapier Workflows</span><span class="mqi">SEO Optimization</span><span class="mqi">Web Design</span><span class="mqi">Shopify / Etsy</span><span class="mqi">TaskFlow App</span><span class="mqi">Python · JavaScript</span>
+<!-- MARQUEE -->
+<div class="mq">
+  <div class="mq-inner">
+    <span class="mqi">Email Marketing</span><span class="mqi">Klaviyo</span><span class="mqi">Mailchimp</span><span class="mqi">Zapier Automation</span><span class="mqi">Shopify Design</span><span class="mqi">WordPress</span><span class="mqi">SEO Optimization</span><span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Web Design</span><span class="mqi">TaskFlow App</span>
+    <span class="mqi">Email Marketing</span><span class="mqi">Klaviyo</span><span class="mqi">Mailchimp</span><span class="mqi">Zapier Automation</span><span class="mqi">Shopify Design</span><span class="mqi">WordPress</span><span class="mqi">SEO Optimization</span><span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Web Design</span><span class="mqi">TaskFlow App</span>
   </div>
 </div>
 
+<!-- SERVICES -->
 <section class="sbg" id="services">
   <div class="ey rv">What I do</div>
-  <h2 class="st rv d1">Services built to actually <em>move the needle</em></h2>
-  <div class="sgrid">
-    <div class="sc rv">
-      <div class="si">📞</div><h3>Telephony & SMS Automation</h3>
-      <p>Twilio Studio flows, VoIP setup, 10DLC compliance, SMS appointment reminders and no-show recovery. Built 13+ production flows for US clients.</p>
-      <div class="stags"><span class="stag">Twilio Studio</span><span class="stag">Telnyx/VoIP</span><span class="stag">ClickSend SMS</span></div>
+  <h2 class="st rv d1">Services that <span class="it">actually move the needle</span></h2>
+  <p class="sec-sub rv d2">Every service I offer is built to generate measurable results — more traffic, more revenue, more time back in your day.</p>
+  <div class="svc-grid">
+    <div class="svc-card c1 rv">
+      <div class="svc-icon ic1">📧</div>
+      <h3>Email Marketing Automation</h3>
+      <p>Welcome sequences, abandoned cart recovery, post-purchase flows and win-back campaigns. Set up once, earn forever. Built in Klaviyo, Mailchimp or any ESP.</p>
+      <div class="svc-tags"><span class="stag">Klaviyo</span><span class="stag">Mailchimp</span><span class="stag">Email flows</span><span class="stag">Segmentation</span></div>
     </div>
-    <div class="sc rv d1">
-      <div class="si">⚡</div><h3>Workflow & Zapier Automation</h3>
-      <p>Google Calendar to Sheets sync, CRM integrations, multi-step Zapier workflows. I build automations that save your team hours every single week.</p>
-      <div class="stags"><span class="stag">Zapier</span><span class="stag">REST APIs</span><span class="stag">Google Suite</span></div>
+    <div class="svc-card c2 rv d1">
+      <div class="svc-icon ic2">🌐</div>
+      <h3>Web Design &amp; Shopify Stores</h3>
+      <p>Fast, mobile-first websites and Shopify stores that look premium and convert visitors into customers. WordPress, Elementor, Shopify and custom HTML/CSS.</p>
+      <div class="svc-tags"><span class="stag">Shopify</span><span class="stag">WordPress</span><span class="stag">Elementor</span><span class="stag">Carrd</span></div>
     </div>
-    <div class="sc rv d2">
-      <div class="si">📈</div><h3>SEO for E-Commerce</h3>
-      <p>Get your Shopify or WooCommerce store ranking on Google. Product page optimization, keyword strategy and technical SEO fixes that bring real traffic.</p>
-      <div class="stags"><span class="stag">Shopify</span><span class="stag">WooCommerce</span><span class="stag">On-page SEO</span></div>
+    <div class="svc-card c3 rv d2">
+      <div class="svc-icon ic3">📈</div>
+      <h3>SEO &amp; E-Commerce Growth</h3>
+      <p>Get your Shopify or WooCommerce store ranking on Google. Product page optimisation, keyword research, technical fixes and backlink strategy.</p>
+      <div class="svc-tags"><span class="stag">On-page SEO</span><span class="stag">WooCommerce</span><span class="stag">Technical SEO</span></div>
     </div>
-    <div class="sc rv">
-      <div class="si">🎨</div><h3>Web & Graphic Design</h3>
-      <p>Fast mobile-first websites, Shopify stores, Etsy listings, Carrd landing pages and brand identities that look premium and convert visitors.</p>
-      <div class="stags"><span class="stag">WordPress</span><span class="stag">Elementor</span><span class="stag">Canva Pro</span></div>
+    <div class="svc-card c4 rv">
+      <div class="svc-icon ic4">⚡</div>
+      <h3>Zapier &amp; Workflow Automation</h3>
+      <p>Connect your tools so they talk to each other. CRM to email, Shopify to fulfilment, calendar sync, multi-step Zapier workflows — no more copy-paste.</p>
+      <div class="svc-tags"><span class="stag">Zapier</span><span class="stag">Make.com</span><span class="stag">REST APIs</span><span class="stag">Google Suite</span></div>
     </div>
-    <div class="sc rv d1">
-      <div class="si">🚀</div><h3>SaaS & App Development</h3>
-      <p>I build software products that solve real problems. TaskFlow is my own product — proof I can build yours. Python, JavaScript, AI/LLM integration.</p>
-      <div class="stags"><span class="stag">Python</span><span class="stag">JavaScript</span><span class="stag">AI/LLM</span></div>
+    <div class="svc-card c5 rv d1">
+      <div class="svc-icon ic1">📞</div>
+      <h3>Telephony &amp; SMS Systems</h3>
+      <p>Twilio Studio voice and SMS flows, Telnyx VoIP systems, 10DLC compliance, appointment reminders and no-show recovery. 13+ production flows deployed.</p>
+      <div class="svc-tags"><span class="stag">Twilio Studio</span><span class="stag">Telnyx VoIP</span><span class="stag">10DLC</span><span class="stag">ClickSend</span></div>
     </div>
-    <div class="sc rv d2">
-      <div class="si">🔗</div><h3>System Integration</h3>
-      <p>Connect your tools so they talk to each other. CRM to email, Shopify to fulfilment, analytics to reporting — no more copy-paste between platforms.</p>
-      <div class="stags"><span class="stag">Webhooks</span><span class="stag">Liquid Templating</span><span class="stag">GitHub</span></div>
+    <div class="svc-card c6 rv d2">
+      <div class="svc-icon ic3">🎨</div>
+      <h3>Graphic Design &amp; Branding</h3>
+      <p>Brand identities, social media graphics, pitch decks and marketing materials. Canva Pro, Figma and Adobe tools. Fast turnaround, unlimited revisions.</p>
+      <div class="svc-tags"><span class="stag">Canva Pro</span><span class="stag">Figma</span><span class="stag">Branding</span><span class="stag">Social media</span></div>
     </div>
   </div>
 </section>
 
-<section id="process">
+<!-- RESULTS -->
+<section id="results">
+  <div class="ey rv">Why it works</div>
+  <h2 class="st rv d1">Real results from <span class="it">real projects</span></h2>
+  <div class="results-grid">
+    <!-- Visuals side -->
+    <div class="results-visuals rv">
+      <!-- Email funnel KPIs -->
+      <div class="rv-card">
+        <div class="rv-head">
+          <div class="rv-title">Abandoned cart email sequence — e-commerce client</div>
+          <div class="rv-period">30 days</div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-n">68%</div><div class="kpi-l">Open rate</div></div>
+          <div class="kpi"><div class="kpi-n green">28%</div><div class="kpi-l">Cart recovery</div></div>
+          <div class="kpi"><div class="kpi-n">3 emails</div><div class="kpi-l">In sequence</div></div>
+          <div class="kpi"><div class="kpi-n green">$4.2k</div><div class="kpi-l">Recovered</div></div>
+        </div>
+        <div class="funnel" style="margin-top:.9rem">
+          <div class="funnel-row"><div class="funnel-label">Sent</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:100%;background:var(--a1)"><span class="funnel-pct">100%</span></div></div><div class="funnel-val">2,400</div></div>
+          <div class="funnel-row"><div class="funnel-label">Opened</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:68%;background:var(--a1)"><span class="funnel-pct">68%</span></div></div><div class="funnel-val">1,632</div></div>
+          <div class="funnel-row"><div class="funnel-label">Clicked</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:24%;background:var(--a3)"><span class="funnel-pct">24%</span></div></div><div class="funnel-val">576</div></div>
+          <div class="funnel-row"><div class="funnel-label">Bought</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:28%;background:var(--a2)"><span class="funnel-pct">28%</span></div></div><div class="funnel-val">161</div></div>
+        </div>
+      </div>
+      <!-- Web design mockup -->
+      <div class="web-mock">
+        <div class="web-mock-bar">
+          <div class="m-dot" style="background:#FF5F57"></div>
+          <div class="m-dot" style="background:#FEBC2E"></div>
+          <div class="m-dot" style="background:#28C840"></div>
+          <div class="web-mock-url">fashionstore.myshopify.com</div>
+        </div>
+        <div class="web-mock-body">
+          <div class="web-hero-mock">
+            <div class="web-hero-tag">New collection 2024</div>
+            <div class="web-hero-h">Style that speaks before you do.</div>
+            <div class="web-hero-p">Free shipping on orders above $50. New arrivals every week.</div>
+            <div class="web-btn">Shop now →</div>
+          </div>
+          <div class="web-cards">
+            <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#F3EFE8,#E2DBD0)"></div><div class="web-card-name">Summer Dress</div><div class="web-card-price">$49.00</div></div>
+            <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#EEF3FD,#D8E5FB)"></div><div class="web-card-name">Linen Shirt</div><div class="web-card-price">$38.00</div></div>
+            <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#EAF5EF,#D5EDE0)"></div><div class="web-card-name">Cargo Pants</div><div class="web-card-price">$62.00</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results text side -->
+    <div class="result-items rv d1">
+      <div class="result-item">
+        <div class="result-num n1">340%</div>
+        <div class="result-text">
+          <h4>Organic traffic increase</h4>
+          <p>Full SEO overhaul for a fashion e-commerce brand — keyword research, product descriptions, schema markup and site speed. Result in 3 months.</p>
+        </div>
+      </div>
+      <div class="result-item">
+        <div class="result-num n2">28%</div>
+        <div class="result-text">
+          <h4>Cart recovery rate</h4>
+          <p>3-email abandoned cart sequence in Klaviyo integrated with Shopify. Automated segmentation based on cart value and browsing behaviour.</p>
+        </div>
+      </div>
+      <div class="result-item">
+        <div class="result-num n3">13+</div>
+        <div class="result-text">
+          <h4>Twilio flows deployed</h4>
+          <p>Voice and SMS flows for TV Messenger (US caregiving platform). Subflow architecture, Liquid templating, HTTP integrations — all in production.</p>
+        </div>
+      </div>
+      <div class="result-item">
+        <div class="result-num n4">8%</div>
+        <div class="result-text">
+          <h4>Landing page conversion rate</h4>
+          <p>Full brand identity plus mobile-first landing page for a business coach. Delivered in 4 days. Client reported an immediate increase in enquiries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sbg" id="process">
   <div class="ey rv">How I work</div>
-  <h2 class="st rv d1">Simple. Fast. <em>No surprises.</em></h2>
-  <div class="plist rv d2">
-    <div class="pi"><div class="pn">01</div><div><h4>Discovery call (free, 30 mins)</h4><p>We talk about your goals and what's blocking you. I tell you honestly if I can help before we agree on anything.</p></div></div>
-    <div class="pi"><div class="pn">02</div><div><h4>Proposal & scope</h4><p>A clear proposal — what we build, what it costs, how long it takes. No hidden fees, no scope creep surprises.</p></div></div>
-    <div class="pi"><div class="pn">03</div><div><h4>Build & deliver</h4><p>I get to work and give you regular updates. You see progress as it happens — not just at the very end.</p></div></div>
-    <div class="pi"><div class="pn">04</div><div><h4>Review & revise</h4><p>Free revisions until you're happy. A project isn't done until the client says it's done.</p></div></div>
-    <div class="pi"><div class="pn">05</div><div><h4>Handover & 30-day support</h4><p>Everything handed over with documentation. I stay available for questions for 30 days after delivery. No ghosting.</p></div></div>
+  <h2 class="st rv d1">Simple. Fast. <span class="it">No surprises.</span></h2>
+  <div class="proc-list rv d2">
+    <div class="proc-item"><div class="proc-n">01</div><div><h4>Discovery call — free, 30 mins</h4><p>We talk about your goals, your current setup and what's blocking growth. I tell you honestly if and how I can help before we agree on anything.</p></div></div>
+    <div class="proc-item"><div class="proc-n">02</div><div><h4>Proposal &amp; clear scope</h4><p>You get a written proposal — what we build, what it costs, how long it takes. No hidden fees, no scope creep surprises halfway through.</p></div></div>
+    <div class="proc-item"><div class="proc-n">03</div><div><h4>Build with regular updates</h4><p>I get to work and send you progress updates every 1-2 days. You see what's happening as it happens — not just at the end when it's too late to change things.</p></div></div>
+    <div class="proc-item"><div class="proc-n">04</div><div><h4>Review &amp; free revisions</h4><p>I don't consider a project done until you're happy with it. Free revisions are included — I don't charge extra for reasonable adjustments.</p></div></div>
+    <div class="proc-item"><div class="proc-n">05</div><div><h4>Handover &amp; 30-day support</h4><p>Full handover with documentation you can actually understand. I stay available for questions for 30 days after delivery. No ghosting after payment.</p></div></div>
   </div>
 </section>
 
-<section style="background:var(--bg2)" id="work">
+<!-- PORTFOLIO -->
+<section id="work">
   <div class="ey rv">Portfolio</div>
-  <h2 class="st rv d1">Real projects. <em>Real results.</em></h2>
-  <div class="pgrid">
-    <div class="pc rv">
-      <div class="pimg" style="background:linear-gradient(135deg,#FDF0ED,#F8E0D8)">📞</div>
-      <div class="pb"><div class="ptype">Telephony Automation</div><h3>TV Messenger — 13+ Twilio flows</h3><p>Designed, debugged and deployed 13+ Twilio Studio voice and SMS flows for a US-based caregiving platform. Subflow architecture, Liquid templating, HTTP integrations.</p><div class="pres">13 production flows shipped for US client</div></div>
+  <h2 class="st rv d1">Recent work &amp; <span class="it">case studies</span></h2>
+  <div class="port-grid">
+    <div class="port-card rv">
+      <div class="port-img" style="background:linear-gradient(135deg,var(--a1l),var(--a1b))">
+        <svg width="80" height="60" viewBox="0 0 80 60" fill="none"><rect x="8" y="8" width="64" height="44" rx="6" fill="white" opacity=".9"/><rect x="16" y="16" width="28" height="4" rx="2" fill="#1B4FD8" opacity=".7"/><rect x="16" y="24" width="48" height="3" rx="1.5" fill="#1B4FD8" opacity=".3"/><rect x="16" y="30" width="38" height="3" rx="1.5" fill="#1B4FD8" opacity=".3"/><rect x="16" y="36" width="20" height="8" rx="4" fill="#1B4FD8"/><text x="18" y="43" font-size="5" fill="white" font-family="sans-serif" font-weight="700">68% open rate</text></svg>
+      </div>
+      <div class="port-body">
+        <div class="port-type">Email Marketing Automation</div>
+        <h3>7-email welcome sequence — e-commerce brand</h3>
+        <p>Built a complete welcome + abandoned cart sequence in Klaviyo. Integrated with Shopify, automated segmentation, timezone-aware scheduling.</p>
+        <div class="port-result">68% open rate · 28% cart recovery</div>
+      </div>
     </div>
-    <div class="pc rv d1">
-      <div class="pimg" style="background:linear-gradient(135deg,#EBF2FB,#D8E8F8)">📡</div>
-      <div class="pb"><div class="ptype">VoIP & 10DLC Compliance</div><h3>SSA Corp VoIP + 10DLC compliance</h3><p>Configured multi-number Telnyx VoIP system for SSA Corp. Handled 10DLC brand and campaign compliance for Starphone24.com and Holiday Lights of Atlanta.</p><div class="pres">Multiple US clients compliant & live</div></div>
+    <div class="port-card rv d1">
+      <div class="port-img" style="background:linear-gradient(135deg,var(--a3l),var(--a3b))">
+        <svg width="80" height="60" viewBox="0 0 80 60" fill="none"><rect x="8" y="6" width="64" height="48" rx="6" fill="white" opacity=".9"/><rect x="8" y="6" width="64" height="14" rx="6" fill="#1A7A4A" opacity=".9"/><text x="18" y="17" font-size="6" fill="white" font-family="sans-serif" font-weight="700">fashionstore.com</text><rect x="16" y="28" width="48" height="5" rx="2" fill="#1A7A4A" opacity=".2"/><rect x="16" y="36" width="32" height="5" rx="2" fill="#1A7A4A" opacity=".2"/><rect x="16" y="44" width="18" height="6" rx="3" fill="#1A7A4A"/></svg>
+      </div>
+      <div class="port-body">
+        <div class="port-type">Web Design &amp; SEO</div>
+        <h3>Shopify redesign + SEO for fashion brand</h3>
+        <p>Full redesign of a Shopify fashion store plus complete SEO overhaul — product page optimisation, keyword strategy, schema markup and speed fixes.</p>
+        <div class="port-result">340% organic traffic increase in 3 months</div>
+      </div>
     </div>
-    <div class="pc rv d2">
-      <div class="pimg" style="background:linear-gradient(135deg,#EAF5EF,#D5EDE0)">🚀</div>
-      <div class="pb"><div class="ptype">SaaS Product</div><h3>TaskFlow — project management app</h3><p>Built from scratch — kanban boards, team collaboration, 7-day free trial with Stripe subscription. Currently in beta with first users onboarded.</p><div class="pres">First beta users onboarded</div></div>
+    <div class="port-card rv d2">
+      <div class="port-img" style="background:linear-gradient(135deg,var(--a2l),var(--a2b))">
+        <svg width="80" height="60" viewBox="0 0 80 60" fill="none"><rect x="8" y="8" width="64" height="44" rx="6" fill="white" opacity=".9"/><rect x="16" y="14" width="12" height="12" rx="2" fill="#C84B2F" opacity=".2"/><rect x="16" y="14" width="12" height="12" rx="2" stroke="#C84B2F" stroke-width="1"/><text x="20" y="23" font-size="7" fill="#C84B2F" font-weight="700">▶</text><rect x="32" y="16" width="24" height="3" rx="1.5" fill="#18170F" opacity=".6"/><rect x="32" y="22" width="16" height="2" rx="1" fill="#88867C" opacity=".6"/><rect x="16" y="32" width="48" height="2" rx="1" fill="#E0DDD6"/><rect x="16" y="38" width="48" height="2" rx="1" fill="#E0DDD6"/><rect x="16" y="44" width="30" height="2" rx="1" fill="#E0DDD6"/><rect x="48" y="40" width="14" height="8" rx="3" fill="#C84B2F"/><text x="50" y="46" font-size="4.5" fill="white" font-weight="700">13 flows</text></svg>
+      </div>
+      <div class="port-body">
+        <div class="port-type">Telephony Automation</div>
+        <h3>13+ Twilio Studio flows — TV Messenger</h3>
+        <p>Designed, debugged and deployed 13+ voice and SMS flows for a US-based caregiving platform. Subflow architecture, Liquid templating, HTTP integrations.</p>
+        <div class="port-result">13 production flows live for US client</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="taskflow">
-  <div class="tfw">
+<!-- TASKFLOW -->
+<section class="sbg" id="taskflow">
+  <div class="tf-wrap">
     <div>
-      <div class="ey rv">My product</div>
-      <h2 class="st rv d1">TaskFlow — project management that doesn't <em>slow you down</em></h2>
-      <p class="rv d2" style="color:var(--text2);margin-top:1rem;font-size:.95rem;line-height:1.8;max-width:440px">Built for small teams and freelancers who find Asana and Jira overwhelming. Clean, fast and actually enjoyable to use. 7-day free trial, no card needed.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.75rem" class="rv d3">
-        <a href="taskflow.html" class="bp">Try free for 7 days</a>
-        <a href="taskflow.html" class="bs">See pricing</a>
+      <div class="ey rv">My own product</div>
+      <h2 class="st rv d1">TaskFlow — project management that doesn't <span class="it">slow you down</span></h2>
+      <p class="sec-sub rv d2">Built for small teams and freelancers who find Asana and Jira overwhelming. Kanban boards, team collaboration, progress tracking. 7-day free trial, no card needed.</p>
+      <div style="display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.6rem" class="rv d3">
+        <a href="taskflow.html" class="btn-p">Try free for 7 days</a>
+        <a href="taskflow.html" class="btn-s">See pricing</a>
       </div>
     </div>
-    <div class="tfm rv d2">
-      <div class="tfb-top">
-        <div class="tfd" style="background:#FF5F57"></div>
-        <div class="tfd" style="background:#FEBC2E"></div>
-        <div class="tfd" style="background:#28C840"></div>
-        <span class="tfbt">TaskFlow — Product launch</span>
+    <div class="tf-mock rv d2">
+      <div class="tf-bar">
+        <div class="tf-dot" style="background:#FF5F57"></div>
+        <div class="tf-dot" style="background:#FEBC2E"></div>
+        <div class="tf-dot" style="background:#28C840"></div>
+        <span class="tf-bt">TaskFlow — Product launch</span>
       </div>
-      <div class="tfb">
+      <div class="tf-body">
         <div>
-          <div class="tcl">To do · 3</div>
-          <div class="tc"><div class="tct">Define strategy</div><span class="tt ttr">High priority</span></div>
-          <div class="tc"><div class="tct">Write landing page</div><span class="tt ttgr">Content</span></div>
+          <div class="tf-col-h tf-ch1">To do · 3</div>
+          <div class="tf-card"><div class="tf-card-t">Define strategy</div><span class="tt ttr">High priority</span></div>
+          <div class="tf-card"><div class="tf-card-t">Write landing copy</div><span class="tt ttgr">Content</span></div>
         </div>
         <div>
-          <div class="tcl">In progress · 2</div>
-          <div class="tc" style="border-left:2px solid var(--accent)"><div class="tct">Design system</div><div class="tpg"><div class="tpgb" style="width:65%"></div></div><span class="tt ttr">Design</span></div>
-          <div class="tc" style="border-left:2px solid var(--blue)"><div class="tct">Stripe setup</div><span class="tt ttb">Dev</span></div>
+          <div class="tf-col-h tf-ch2">In progress · 2</div>
+          <div class="tf-card tf-prog-col"><div class="tf-card-t">Design system</div><div class="tf-prog"><div class="tf-prog-f" style="width:65%"></div></div><span class="tt ttr">Design</span></div>
+          <div class="tf-card tf-prog-col"><div class="tf-card-t">Stripe setup</div><span class="tt ttb">Dev</span></div>
         </div>
         <div>
-          <div class="tcl">Done · 4</div>
-          <div class="tc" style="opacity:.5"><div class="tct">User research</div><span class="tt ttg">Done</span></div>
-          <div class="tc" style="opacity:.5"><div class="tct">MVP build</div><span class="tt ttg">Done</span></div>
+          <div class="tf-col-h tf-ch3">Done · 4</div>
+          <div class="tf-card" style="opacity:.55"><div class="tf-card-t">User research</div><span class="tt ttg">Done</span></div>
+          <div class="tf-card" style="opacity:.55"><div class="tf-card-t">MVP build</div><span class="tt ttg">Done</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background:var(--bg2)" id="testimonials">
+<!-- TESTIMONIALS -->
+<section id="testimonials">
   <div class="ey rv">Social proof</div>
-  <h2 class="st rv d1">What clients <em>say</em></h2>
-  <div class="tgrid">
-    <div class="tc2 rv"><div class="tq">"</div><p>"Michael redesigned our Shopify store and handled the full SEO setup. Within 6 weeks we were getting double the organic traffic. Incredibly fast, communicates well, and genuinely cares about results."</p><div class="tau"><div class="tav">AJ</div><div><div class="tan">Amara Johnson</div><div class="tar">Founder, StyleHaus Lagos</div></div></div></div>
-    <div class="tc2 rv d1"><div class="tq">"</div><p>"I hired Michael to build our Twilio SMS flows. He set up everything, handled the 10DLC compliance and delivered faster than expected. The system has been running without issues for months."</p><div class="tau"><div class="tav">DK</div><div><div class="tan">David Kim</div><div class="tar">Operations Director, TVM</div></div></div></div>
-    <div class="tc2 rv d2"><div class="tq">"</div><p>"Asked for a landing page. Got a full brand identity, mobile-perfect design, and a page that's converting at 8%. Michael delivered more than I asked for and charged less than I expected."</p><div class="tau"><div class="tav">FO</div><div><div class="tan">Fatima Okafor</div><div class="tar">CEO, GrowthPath</div></div></div></div>
+  <h2 class="st rv d1">What clients <span class="it">say</span></h2>
+  <div class="testi-grid">
+    <div class="testi rv">
+      <div class="testi-q">"</div>
+      <p>"Michael redesigned our Shopify store and handled the full SEO setup. Within 6 weeks we were getting double the organic traffic. Fast, communicates well, and genuinely cares about results."</p>
+      <div class="testi-au"><div class="testi-av">AJ</div><div><div class="testi-name">Amara Johnson</div><div class="testi-role">Founder, StyleHaus</div></div></div>
+    </div>
+    <div class="testi rv d1">
+      <div class="testi-q">"</div>
+      <p>"I hired Michael to build our Twilio SMS flows and handle 10DLC compliance. He delivered faster than expected and the system has been running without issues for months. Highly recommend."</p>
+      <div class="testi-au"><div class="testi-av">DK</div><div><div class="testi-name">David Kim</div><div class="testi-role">Operations Director, TVM</div></div></div>
+    </div>
+    <div class="testi rv d2">
+      <div class="testi-q">"</div>
+      <p>"Asked for a landing page. Got a full brand identity, mobile-perfect design, and a page converting at 8%. Michael delivered more than I asked for and charged less than I expected."</p>
+      <div class="testi-au"><div class="testi-av">FO</div><div><div class="testi-name">Fatima Okafor</div><div class="testi-role">CEO, GrowthPath</div></div></div>
+    </div>
   </div>
 </section>
 
-<section class="ctasec" id="contact">
-  <div class="ey rv" style="color:rgba(255,255,255,.45)">Let's work together</div>
-  <h2 class="rv d1">Ready to grow<br>your <em>business?</em></h2>
-  <p class="rv d2">Tell me what you're building. I'll tell you honestly if I can help — and if I can, we move fast.</p>
-  <div class="cbtns rv d3">
-    <a href="/cdn-cgi/l/email-protection#ff9296949a8b9a9c978c8b8a9b9690cacccabf98929e9693d19c9092" class="blt">Send me a message <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="bol">View Upwork profile ↗</a>
-  </div>
-  <div class="socrow">
-    <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">𝕏 Twitter</a>
-    <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">in LinkedIn</a>
-    <a href="https://www.instagram.com/mike.techstudio/" target="_blank" rel="noopener">▶ Instagram</a>
-    <a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank" rel="noopener">f Facebook</a>
-    <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener">↗ Upwork</a>
+<!-- CONTACT -->
+<section class="sbg" id="contact">
+  <div class="ey rv">Get in touch</div>
+  <h2 class="st rv d1">Ready to <span class="it">grow your business?</span></h2>
+  <div class="contact-grid">
+    <!-- Left: info + direct links -->
+    <div class="contact-info rv">
+      <h3>Let's talk about your project</h3>
+      <p>Tell me what you're building or what problem you're trying to solve. I'll tell you honestly if I can help — and if I can, we move fast. Free 30-minute discovery call, no commitment needed.</p>
+      <div class="contact-links">
+        <a href="mailto:miketechstudio535@gmail.com" class="contact-link">
+          <div class="contact-link-icon" style="background:var(--a2l)">📧</div>
+          <div><div style="font-weight:600;font-size:.82rem">Send an email</div><div style="font-size:.72rem;color:var(--muted)">miketechstudio535@gmail.com</div></div>
+        </a>
+        <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon" style="background:var(--a3l)">💼</div>
+          <div><div style="font-weight:600;font-size:.82rem">Hire on Upwork</div><div style="font-size:.72rem;color:var(--muted)">View my full profile</div></div>
+        </a>
+        <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon" style="background:var(--a1l)">in</div>
+          <div><div style="font-weight:600;font-size:.82rem">Connect on LinkedIn</div><div style="font-size:.72rem;color:var(--muted)">Michael Fabiyi</div></div>
+        </a>
+        <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon" style="background:var(--bg3)">𝕏</div>
+          <div><div style="font-weight:600;font-size:.82rem">Follow on Twitter/X</div><div style="font-size:.72rem;color:var(--muted)">@MiketechSt29929</div></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: working contact form -->
+    <div class="contact-form rv d1">
+      <h3>Send a message</h3>
+      <p>Fill this in and I'll get back to you within 24 hours.</p>
+      <form id="contact-form" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="fg"><label>Your name</label><input type="text" id="f-name" placeholder="e.g. John Smith" required></div>
+          <div class="fg"><label>Email address</label><input type="email" id="f-email" placeholder="you@company.com" required></div>
+        </div>
+        <div class="fg">
+          <label>Service needed</label>
+          <select id="f-service">
+            <option value="">Select a service...</option>
+            <option>Email marketing automation</option>
+            <option>Web design / Shopify store</option>
+            <option>SEO &amp; e-commerce growth</option>
+            <option>Zapier / workflow automation</option>
+            <option>Telephony / SMS systems</option>
+            <option>Graphic design &amp; branding</option>
+            <option>TaskFlow subscription</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="fg"><label>Tell me about your project</label><textarea id="f-msg" placeholder="What are you trying to achieve? What's the biggest challenge right now?" required></textarea></div>
+        <button type="submit" class="form-submit" id="form-btn">
+          Send message <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="form-note">I reply to every message within 24 hours.</div>
+      </form>
+      <div class="form-success" id="form-success">
+        ✓ Message sent! I'll get back to you within 24 hours at the email you provided.
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="flogo"><span class="ldot"></span>MikeTechStudio</div>
-  <div class="flinks">
-    <a href="#services">Services</a>
-    <a href="#work">Work</a>
-    <a href="taskflow.html">TaskFlow</a>
-    <a href="#contact">Contact</a>
+  <div class="ft-top">
+    <div>
+      <div class="ft-brand"><span class="ft-brand-dot"></span>MikeTechStudio</div>
+      <div class="ft-desc">Email automation, web design, SEO and communication systems for businesses that want to grow. Available worldwide. Based in Nigeria.</div>
+    </div>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <a href="#services">Email automation</a>
+      <a href="#services">Web design</a>
+      <a href="#services">SEO growth</a>
+      <a href="#services">Zapier workflows</a>
+      <a href="#services">Telephony &amp; SMS</a>
+    </div>
+    <div class="ft-col">
+      <h4>Product</h4>
+      <a href="taskflow.html">TaskFlow app</a>
+      <a href="taskflow.html#pricing">Pricing</a>
+      <a href="taskflow.html#faq">FAQ</a>
+      <a href="https://taskflow-tau-roan.vercel.app/signup" target="_blank" rel="noopener">Start free trial</a>
+    </div>
+    <div class="ft-col">
+      <h4>Connect</h4>
+      <a href="mailto:miketechstudio535@gmail.com">Email me</a>
+      <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener">Upwork profile</a>
+      <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">Twitter / X</a>
+      <a href="https://www.instagram.com/mike.techstudio/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank" rel="noopener">Facebook</a>
+    </div>
   </div>
-  <div class="fcopy">© 2026 MikeTechStudio · Nigeria</div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2026 MikeTechStudio · Michael Oluwatosin Fabiyi · Nigeria</div>
+    <div class="ft-soc">
+      <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">𝕏</a>
+      <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">in</a>
+      <a href="https://www.instagram.com/mike.techstudio/" target="_blank" rel="noopener">▶</a>
+      <a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank" rel="noopener">f</a>
+      <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener">↗</a>
+    </div>
+  </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// CURSOR — always visible, follows mouse smoothly
-const cur=document.getElementById('cur'),ring=document.getElementById('cur-r');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'},{passive:true});
-setInterval(()=>{rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px'},16);
-document.querySelectorAll('a,button,.sc,.pc').forEach(el=>{
-  el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
-  el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
-});
-
-// MOBILE MENU
+<script>
+// Mobile menu
 const hbg=document.getElementById('hbg'),mm=document.getElementById('mm');
 hbg.addEventListener('click',()=>{hbg.classList.toggle('o');mm.classList.toggle('o');document.body.style.overflow=mm.classList.contains('o')?'hidden':''});
-document.querySelectorAll('.ml').forEach(l=>l.addEventListener('click',()=>{hbg.classList.remove('o');mm.classList.remove('o');document.body.style.overflow=''}));
+document.querySelectorAll('.mml').forEach(l=>l.addEventListener('click',()=>{hbg.classList.remove('o');mm.classList.remove('o');document.body.style.overflow=''}));
 
-// SCROLL REVEAL
+// Scroll reveal
 document.querySelectorAll('.rv').forEach(el=>el.classList.add('an'));
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vi')}),{threshold:0.07});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-// ACTIVE NAV
-const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nl a');
+// Active nav
+const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id});nls.forEach(a=>{a.classList.remove('act');if(a.getAttribute('href')==='#'+c)a.classList.add('act')});},{passive:true});
 
-// COUNTER
-function cnt(el,t,s){let n=0,st=t/40;const tm=setInterval(()=>{n+=st;if(n>=t){n=t;clearInterval(tm)}el.innerHTML=Math.floor(n)+'<span>'+s+'</span>'},30)}
-const co=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){cnt(document.getElementById('s1'),2,'+');cnt(document.getElementById('s2'),13,'+');cnt(document.getElementById('s3'),40,'+');cnt(document.
+// Contact form — opens Gmail with all fields pre-filled
+function submitForm(e) {
+  e.preventDefault();
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const service = document.getElementById('f-service').value;
+  const msg = document.getElementById('f-msg').value.trim();
+  if(!name||!email||!msg){alert('Please fill in all required fields.');return;}
+  const subject = encodeURIComponent('Project enquiry — ' + (service||'General') + ' | MikeTechStudio');
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n' +
+    'Service: ' + (service||'Not specified') + '\n\n' +
+    'Message:\n' + msg
+  );
+  // Open Gmail compose with pre-filled fields
+  window.location.href = 'mailto:miketechstudio535@gmail.com?subject=' + subject + '&body=' + body;
+  // Show success message
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
+</body>
+</html>
