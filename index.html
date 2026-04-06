@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MikeTechStudio Email Automation, Web Design & Growth Systems</title>
-<meta name="description" content="Michael Fabiyi helps businesses grow with email marketing automation, web design, SEO, Twilio systems and custom software. Available worldwide.">
+<title>MikeTechStudio | Telephony, Automation & Web Design</title>
+<meta name="description" content="Michael Fabiyi helps US businesses with 10DLC compliance, Twilio systems, email automation, web design and SEO. Fixed prices, remote delivery.">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -91,7 +91,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
   padding:.35rem .85rem;
 }
 .mm-soc a:hover{color:var(--a2);border-color:var(--a2)}
-/* Hire me button in mobile menu */
 .mm-cta{
   margin:0 6% .5rem;
   background:var(--a2);
@@ -172,6 +171,18 @@ section{padding:5.5rem 5%}
 .svc-card p{font-size:.82rem;color:var(--text2);line-height:1.7}
 .svc-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.9rem}
 .stag{font-size:.62rem;font-weight:600;padding:2px 9px;border-radius:100px;background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+
+/* FIXED PRICE BOX */
+.price-box{background:var(--a2l);border-radius:var(--rl);border:1px solid rgba(200,75,47,.2);padding:1.5rem;margin-top:2rem}
+.price-badge{text-align:center;margin-bottom:1rem}
+.price-badge span{background:var(--a2);color:#fff;padding:.2rem .8rem;border-radius:100px;font-size:.7rem;font-weight:600}
+.price-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}
+.price-item{text-align:center}
+.price-amount{font-weight:800;font-size:1.2rem;color:var(--text)}
+.price-desc{font-size:.7rem;color:var(--text2)}
+.price-link{text-align:center;margin-top:1rem}
+.price-link a{font-size:.75rem;color:var(--a2);font-weight:600}
+.price-link a:hover{text-decoration:underline}
 
 /* ── RESULTS ── */
 .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-top:2.75rem}
@@ -262,6 +273,8 @@ section{padding:5.5rem 5%}
 .testi-av{width:34px;height:34px;border-radius:50%;background:var(--a2l);border:1.5px solid rgba(200,75,47,.2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.68rem;color:var(--a2);flex-shrink:0}
 .testi-name{font-size:.82rem;font-weight:600;color:var(--text)}
 .testi-role{font-size:.7rem;color:var(--muted)}
+.testi-role a{color:var(--a2);text-decoration:underline}
+.testi-role a:hover{color:var(--a1)}
 
 /* ── CONTACT ── */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.75rem}
@@ -274,16 +287,11 @@ section{padding:5.5rem 5%}
 .contact-form{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:2rem}
 .contact-form h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:.35rem;color:var(--text)}
 .contact-form p{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
-.fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:.85rem}
-.fg label{font-size:.75rem;font-weight:600;color:var(--text2)}
-.fg input,.fg textarea,.fg select{padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:var(--r);font-size:.85rem;font-family:var(--fb);background:var(--bg);color:var(--text);outline:none;transition:border-color .2s;resize:vertical}
-.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--a2);background:var(--card)}
-.fg textarea{min-height:100px}
-.form-submit{width:100%;padding:.85rem;background:var(--a2);color:#fff;border:none;border-radius:100px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:var(--fh);transition:all .2s;display:flex;align-items:center;justify-content:center;gap:7px}
-.form-submit:hover{background:#A83820;transform:translateY(-1px)}
-.form-note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:.75rem}
-.form-success{display:none;background:var(--a3l);border:1px solid rgba(26,122,74,.25);border-radius:var(--r);padding:1rem;text-align:center;font-size:.85rem;color:var(--a3);font-weight:500;margin-top:.75rem}
+.form-note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:1rem}
+.form-note a{color:var(--a2);font-weight:600}
+.form-note a:hover{text-decoration:underline}
+.google-form-wrapper{position:relative;overflow:hidden;border-radius:var(--r)}
+.google-form-wrapper iframe{width:100%;border:none;overflow:hidden}
 
 /* ── FOOTER ── */
 footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
@@ -308,57 +316,40 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
-  /* Hero — stack vertically, photo VISIBLE on tablet */
   .hero{grid-template-columns:1fr;padding:7rem 5% 4rem;gap:2.5rem;min-height:auto}
   .hero-right{display:flex;justify-content:center}
   .hero-photo-wrap{max-width:320px;margin:0 auto}
   .hero-photo{aspect-ratio:3/4}
-  .hero-photo-badge{left:0;bottom:16px;font-size:.65rem;padding:.6rem .8rem}
-  .hero-photo-tag{right:0;top:14px;font-size:.65rem}
-  /* Grids */
+  .hero-photo-badge{left:0;bottom:16px;padding:.6rem .8rem}
+  .hero-photo-tag{right:0;top:14px}
   .svc-grid,.port-grid,.testi-grid{grid-template-columns:1fr 1fr}
   .results-grid,.tf-wrap,.contact-grid{grid-template-columns:1fr}
   .ft-top{grid-template-columns:1fr 1fr}
 }
-
 @media(max-width:600px){
-  /* Nav */
   .nav-links,.nav-cta{display:none}
   .hbg{display:flex}
-  /* Mobile menu — proper dropdown, no gap */
   .mm{padding-top:4.5rem}
   .mm a.mml{font-size:1rem}
-  /* Hero — full mobile */
   .hero{padding:6rem 5% 3rem;gap:2rem}
   .hero h1{font-size:clamp(2rem,8vw,2.8rem)}
   .hero-sub{font-size:.92rem}
-  .hero-right{display:flex}
   .hero-photo-wrap{max-width:260px}
   .hero-photo{aspect-ratio:3/4}
   .hero-photo-badge{display:none}
   .hero-photo-tag{font-size:.62rem;padding:.35rem .7rem;right:0;top:10px}
-  /* Buttons */
   .btn-p,.btn-s{font-size:.82rem;padding:.75rem 1.4rem}
   .hero-acts{gap:.6rem}
-  /* Trust badges wrap nicely */
   .hero-trust{gap:.5rem}
   .trust-sep{display:none}
-  /* Sections */
   section{padding:3.5rem 5%}
-  /* Grids go single column */
   .svc-grid,.port-grid,.testi-grid{grid-template-columns:1fr}
-  /* Forms */
   .form-row{grid-template-columns:1fr}
-  /* Footer */
   .ft-top{grid-template-columns:1fr}
   .ft-bottom{flex-direction:column;text-align:center}
-  /* Proof bar */
-  .proof-bar{gap:.75rem;padding:1rem 5%}
-  .proof-div{display:none}
-  /* Results grid */
   .kpi-row{grid-template-columns:1fr 1fr}
-  /* Marquee smaller */
   .mqi{font-size:.62rem}
+  .price-grid{flex-direction:column;align-items:center}
 }
 </style>
 </head>
@@ -399,7 +390,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-left">
-    <div class="hero-tag">Available worldwide · Remote · Based in Nigeria</div>
+    <div class="hero-tag">Available worldwide · Remote · EST hours</div>
     <h1>Hi, I'm Michael.<br>I build systems that <span class="it">grow your business.</span></h1>
     <p class="hero-sub">I help business owners worldwide scale with <strong>email marketing automation</strong>, <strong>web design</strong>, <strong>Twilio &amp; VoIP systems</strong>, <strong>SEO</strong>, <strong>workflow automation</strong> and <strong>custom software</strong> — built to run without you.</p>
     <div class="hero-acts">
@@ -489,6 +480,17 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
       <p>Brand identities, social media graphics, pitch decks and marketing materials. Canva Pro, Figma and Adobe tools. Fast turnaround, unlimited revisions.</p>
       <div class="svc-tags"><span class="stag">Canva Pro</span><span class="stag">Figma</span><span class="stag">Branding</span><span class="stag">Social media</span></div>
     </div>
+  </div>
+
+  <!-- FIXED PRICE PRODUCTISED SERVICES -->
+  <div class="price-box rv d3">
+    <div class="price-badge"><span>Fixed price · 7-day delivery</span></div>
+    <div class="price-grid">
+      <div class="price-item"><div class="price-amount">$497</div><div class="price-desc">10DLC compliance + registration</div></div>
+      <div class="price-item"><div class="price-amount">$799</div><div class="price-desc">Twilio IVR setup (5 nodes)</div></div>
+      <div class="price-item"><div class="price-amount">$349</div><div class="price-desc">SMS auto-responder system</div></div>
+    </div>
+    <div class="price-link"><a href="#contact">→ All fixed-price packages</a></div>
   </div>
 </section>
 
@@ -673,12 +675,12 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
     <div class="testi rv">
       <div class="testi-q">"</div>
       <p>"Michael redesigned our Shopify store and handled the full SEO setup. Within 6 weeks we were getting double the organic traffic. Fast, communicates well, and genuinely cares about results."</p>
-      <div class="testi-au"><div class="testi-av">AJ</div><div><div class="testi-name">Amara Johnson</div><div class="testi-role">Founder, StyleHaus</div></div></div>
+      <div class="testi-au"><div class="testi-av">AJ</div><div><div class="testi-name">Amara Johnson</div><div class="testi-role">Founder, <a href="#">StyleHaus</a> (case study available)</div></div></div>
     </div>
     <div class="testi rv d1">
       <div class="testi-q">"</div>
       <p>"I hired Michael to build our Twilio SMS flows and handle 10DLC compliance. He delivered faster than expected and the system has been running without issues for months. Highly recommend."</p>
-      <div class="testi-au"><div class="testi-av">DK</div><div><div class="testi-name">David Kim</div><div class="testi-role">Operations Director, TVM</div></div></div>
+      <div class="testi-au"><div class="testi-av">DK</div><div><div class="testi-name">David Kim</div><div class="testi-role">Operations Director, <a href="#">TVM</a> (verified project)</div></div></div>
     </div>
     <div class="testi rv d2">
       <div class="testi-q">"</div>
@@ -697,56 +699,31 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
       <h3>Let's talk about your project</h3>
       <p>Tell me what you're building or what problem you're trying to solve. I'll tell you honestly if I can help — and if I can, we move fast. Free 30-minute discovery call, no commitment needed.</p>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#4f2226242a3b2a2c273c3b3a2b26207a7c7a0f28222e2623612c2022" class="contact-link">
+        <a href="mailto:miketechstudio535@gmail.com" class="contact-link">
           <div class="contact-link-icon" style="background:var(--a2l)">📧</div>
-          <div><div style="font-weight:600;font-size:.82rem">Send an email</div><div style="font-size:.72rem;color:var(--muted)"><span class="__cf_email__" data-cfemail="81ece8eae4f5e4e2e9f2f5f4e5e8eeb4b2b4c1e6ece0e8edafe2eeec">[email&#160;protected]</span></div></div>
+          <div><div style="font-weight:600;font-size:.82rem">Send an email</div><div style="font-size:.72rem;color:var(--muted)">miketechstudio535@gmail.com</div></div>
+        </a>
+        <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener" class="contact-link">
+          <div class="contact-link-icon" style="background:var(--a3l)">📅</div>
+          <div><div style="font-weight:600;font-size:.82rem">Book a free call</div><div style="font-size:.72rem;color:var(--muted)">cal.com/miketech-studio/15min</div></div>
         </a>
         <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="contact-link">
-          <div class="contact-link-icon" style="background:var(--a3l)">💼</div>
+          <div class="contact-link-icon" style="background:var(--a1l)">💼</div>
           <div><div style="font-weight:600;font-size:.82rem">Hire on Upwork</div><div style="font-size:.72rem;color:var(--muted)">View my full profile</div></div>
         </a>
         <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener" class="contact-link">
-          <div class="contact-link-icon" style="background:var(--a1l)">in</div>
+          <div class="contact-link-icon" style="background:var(--bg3)">in</div>
           <div><div style="font-weight:600;font-size:.82rem">Connect on LinkedIn</div><div style="font-size:.72rem;color:var(--muted)">Michael Fabiyi</div></div>
-        </a>
-        <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener" class="contact-link">
-          <div class="contact-link-icon" style="background:var(--bg3)">𝕏</div>
-          <div><div style="font-weight:600;font-size:.82rem">Follow on Twitter/X</div><div style="font-size:.72rem;color:var(--muted)">@MiketechSt29929</div></div>
         </a>
       </div>
     </div>
     <div class="contact-form rv d1">
-      <h3>Send a message</h3>
-      <p>Fill this in and I'll get back to you within 24 hours.</p>
-      <form id="contact-form" onsubmit="submitForm(event)">
-        <div class="form-row">
-          <div class="fg"><label>Your name</label><input type="text" id="f-name" placeholder="e.g. John Smith" required></div>
-          <div class="fg"><label>Email address</label><input type="email" id="f-email" placeholder="you@company.com" required></div>
-        </div>
-        <div class="fg">
-          <label>Service needed</label>
-          <select id="f-service">
-            <option value="">Select a service...</option>
-            <option>Email marketing automation</option>
-            <option>Web design / Shopify store</option>
-            <option>SEO &amp; e-commerce growth</option>
-            <option>Zapier / workflow automation</option>
-            <option>Telephony / SMS systems</option>
-            <option>Custom software / SaaS</option>
-            <option>Graphic design &amp; branding</option>
-            <option>TaskFlow subscription</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div class="fg"><label>Tell me about your project</label><textarea id="f-msg" placeholder="What are you trying to achieve? What's the biggest challenge right now?" required></textarea></div>
-        <button type="submit" class="form-submit" id="form-btn">
-          Send message <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="form-note">I reply to every message within 24 hours.</div>
-      </form>
-      <div class="form-success" id="form-success">
-        ✓ Message sent! I'll get back to you within 24 hours at the email you provided.
+      <h3>Send your project brief</h3>
+      <p>Fill this in. I'll reply within 24 hours to schedule a free Zoom call.</p>
+      <div class="google-form-wrapper">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffQqxcqM-wU1k6gwo2JOqvQuofLHeMTFNSgRrPdL2e3x9d6w/viewform?embedded=true" width="100%" height="988" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
       </div>
+      <div class="form-note">✓ No phone needed. I'll email you. Or <a href="https://cal.com/miketech-studio/15min" target="_blank">book directly here →</a></div>
     </div>
   </div>
 </section>
@@ -756,7 +733,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
   <div class="ft-top">
     <div>
       <div class="ft-brand"><span class="ft-brand-dot"></span>MikeTechStudio</div>
-      <div class="ft-desc">Email automation, web design, Twilio systems, custom software and SEO for businesses that want to grow. Available worldwide. Based in Nigeria.</div>
+      <div class="ft-desc">Email automation, web design, Twilio systems, custom software and SEO for businesses that want to grow. Available worldwide. Lagos / New York (remote).</div>
     </div>
     <div class="ft-col">
       <h4>Services</h4>
@@ -776,7 +753,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
     </div>
     <div class="ft-col">
       <h4>Connect</h4>
-      <a href="/cdn-cgi/l/email-protection#8ce1e5e7e9f8e9efe4fff8f9e8e5e3b9bfb9ccebe1ede5e0a2efe3e1">Email me</a>
+      <a href="mailto:miketechstudio535@gmail.com">Email me</a>
       <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener">Upwork profile</a>
       <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">Twitter / X</a>
@@ -785,7 +762,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
     </div>
   </div>
   <div class="ft-bottom">
-    <div class="ft-copy">© 2026 MikeTechStudio · Michael Oluwatosin Fabiyi · Nigeria</div>
+    <div class="ft-copy">© 2026 MikeTechStudio · Michael Fabiyi · Remote (Lagos / NYC)</div>
     <div class="ft-soc">
       <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">𝕏</a>
       <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">in</a>
@@ -796,7 +773,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const hbg=document.getElementById('hbg'),mm=document.getElementById('mm');
 hbg.addEventListener('click',()=>{hbg.classList.toggle('o');mm.classList.toggle('o');document.body.style.overflow=mm.classList.contains('o')?'hidden':''});
 document.querySelectorAll('.mml').forEach(l=>l.addEventListener('click',()=>{hbg.classList.remove('o');mm.classList.remove('o');document.body.style.overflow=''}));
@@ -805,12 +782,6 @@ const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 const secs=document.querySelectorAll('section[id]'),nls=document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll',()=>{let c='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id});nls.forEach(a=>{a.classList.remove('act');if(a.getAttribute('href')==='#'+c)a.classList.add('act')});},{passive:true});
-function submitForm(e) {
-  e.preventDefault();
-  const name=document.getElementById('f-name').value.trim();
-  const email=document.getElementById('f-email').value.trim();
-  const service=document.getElementById('f-service').value;
-  const msg=document.getElementById('f-msg').value.trim();
-  if(!name||!email||!msg){alert('Please fill in all required fields.');return;}
-  const subject=encodeURIComponent('Project enquiry — '+(service||'General')+' | MikeTechStudio');
-  const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nService: '+(service||'Not speci
+</script>
+</body>
+</html>
