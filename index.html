@@ -45,70 +45,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .hbg.o span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* MOBILE MENU */
-.mm{
-  display:none;
-  position:fixed;
-  top:0;left:0;right:0;
-  background:var(--card);
-  z-index:301;
-  flex-direction:column;
-  padding:5rem 0 2rem;
-  border-bottom:2px solid var(--border);
-  box-shadow:0 8px 32px rgba(0,0,0,.12);
-  max-height:100vh;
-  overflow-y:auto;
-}
+.mm{display:none;position:fixed;top:0;left:0;right:0;background:var(--card);z-index:301;flex-direction:column;padding:5rem 0 2rem;border-bottom:2px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.12);max-height:100vh;overflow-y:auto;}
 .mm.o{display:flex}
-.mm a.mml{
-  font-family:var(--fh);
-  font-size:1.05rem;
-  font-weight:600;
-  color:var(--text);
-  padding:1rem 6%;
-  border-bottom:1px solid var(--border);
-  transition:all .2s;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  width:100%;
-}
+.mm a.mml{font-family:var(--fh);font-size:1.05rem;font-weight:600;color:var(--text);padding:1rem 6%;border-bottom:1px solid var(--border);transition:all .2s;display:flex;align-items:center;justify-content:space-between;width:100%;}
 .mm a.mml::after{content:'→';font-size:.9rem;color:var(--muted);transition:color .2s}
 .mm a.mml:hover{background:var(--bg2);color:var(--a2)}
 .mm a.mml:hover::after{color:var(--a2)}
-.mm-soc{
-  display:flex;
-  gap:.75rem;
-  padding:1.25rem 6%;
-  flex-wrap:wrap;
-}
-.mm-soc a{
-  font-size:.78rem;
-  color:var(--muted);
-  transition:color .2s;
-  background:var(--bg2);
-  border:1px solid var(--border);
-  border-radius:100px;
-  padding:.35rem .85rem;
-}
+.mm-soc{display:flex;gap:.75rem;padding:1.25rem 6%;flex-wrap:wrap;}
+.mm-soc a{font-size:.78rem;color:var(--muted);transition:color .2s;background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:.35rem .85rem;}
 .mm-soc a:hover{color:var(--a2);border-color:var(--a2)}
-.mm-cta{
-  margin:.5rem 6%;
-  background:var(--a2);
-  color:#fff;
-  font-family:var(--fh);
-  font-size:.88rem;
-  font-weight:600;
-  padding:.85rem 1.5rem;
-  border-radius:100px;
-  text-align:center;
-  display:block;
-  transition:background .2s;
-}
+.mm-cta{margin:.5rem 6%;background:var(--a2);color:#fff;font-family:var(--fh);font-size:.88rem;font-weight:600;padding:.85rem 1.5rem;border-radius:100px;text-align:center;display:block;transition:background .2s;}
 .mm-cta:hover{background:#A83820}
 
 /* ── HERO ── */
 .hero{min-height:100vh;padding:8rem 5% 5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;overflow:hidden;scroll-margin-top:64px}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(200,75,47,.04),transparent);pointer-events:none}
+/* Hero background image */
+.hero-bg-img{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.06;filter:grayscale(30%)}
+.hero-bg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 45%,transparent 100%)}
+.hero-left,.hero-right{position:relative;z-index:1}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--a3l);border:1px solid rgba(26,122,74,.22);padding:.38rem .9rem;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--a3);letter-spacing:.05em;margin-bottom:1.6rem}
 .hero-tag::before{content:'';width:6px;height:6px;background:var(--a3);border-radius:50%;animation:pulse 1.6s infinite}
 .hero h1{font-family:var(--fh);font-size:clamp(2.4rem,4.5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--text);margin-bottom:1.4rem}
@@ -152,10 +107,17 @@ section{padding:5.5rem 5%;scroll-margin-top:64px}
 .st .it{font-family:var(--fi);font-style:italic;font-weight:600;color:var(--a2)}
 .sec-sub{font-size:.92rem;color:var(--text2);line-height:1.8;margin-top:.75rem;max-width:540px;font-weight:300}
 
+/* SERVICES section with background image */
+.services-wrap{position:relative;overflow:hidden}
+.services-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.services-bg img{width:100%;height:100%;object-fit:cover;opacity:.04;filter:grayscale(20%)}
+.services-bg::after{content:'';position:absolute;inset:0;background:var(--bg2)}
+.services-inner{position:relative;z-index:1}
+
 /* SERVICES */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
-.svc-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.75rem;transition:all .22s;position:relative;overflow:hidden}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .22s}
+.svc-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:all .22s;position:relative}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .22s;z-index:1}
 .svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.08)}
 .svc-card:hover::before{opacity:1}
 .svc-card.c1::before{background:var(--a1)}
@@ -164,6 +126,9 @@ section{padding:5.5rem 5%;scroll-margin-top:64px}
 .svc-card.c4::before{background:var(--a4)}
 .svc-card.c5::before{background:var(--a1)}
 .svc-card.c6::before{background:var(--a3)}
+/* Service card image strip */
+.svc-img{width:100%;height:120px;object-fit:cover;object-position:center;display:block;border-bottom:1px solid var(--border)}
+.svc-body{padding:1.75rem}
 .svc-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:1.1rem;flex-shrink:0}
 .ic1{background:var(--a1l)}.ic2{background:var(--a2l)}.ic3{background:var(--a3l)}.ic4{background:var(--a4l)}
 .svc-card h3{font-family:var(--fh);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.55rem}
@@ -184,6 +149,11 @@ section{padding:5.5rem 5%;scroll-margin-top:64px}
 .price-link a:hover{text-decoration:underline}
 
 /* RESULTS */
+.results-section{position:relative;overflow:hidden}
+.results-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.results-bg img{width:100%;height:100%;object-fit:cover;opacity:.035;filter:grayscale(30%)}
+.results-bg::after{content:'';position:absolute;inset:0;background:var(--bg)}
+.results-inner{position:relative;z-index:1}
 .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-top:2.75rem}
 .results-visuals{display:flex;flex-direction:column;gap:1rem}
 .rv-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.25rem;box-shadow:0 2px 16px rgba(0,0,0,.05)}
@@ -226,6 +196,11 @@ section{padding:5.5rem 5%;scroll-margin-top:64px}
 .result-text p{font-size:.78rem;color:var(--text2);line-height:1.6}
 
 /* PROCESS */
+.process-section{position:relative;overflow:hidden}
+.process-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.process-bg img{width:100%;height:100%;object-fit:cover;opacity:.045;filter:grayscale(20%)}
+.process-bg::after{content:'';position:absolute;inset:0;background:var(--bg2)}
+.process-inner{position:relative;z-index:1}
 .proc-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border-radius:var(--rl);overflow:hidden;border:1.5px solid var(--border);margin-top:2.75rem}
 .proc-item{background:var(--card);padding:1.5rem 1.75rem;display:flex;align-items:flex-start;gap:1.25rem;transition:background .18s}
 .proc-item:hover{background:var(--bg2)}
@@ -237,7 +212,10 @@ section{padding:5.5rem 5%;scroll-margin-top:64px}
 .port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
 .port-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:all .22s}
 .port-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.08);border-color:var(--border2)}
-.port-img{height:155px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.port-img{height:175px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.port-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s ease}
+.port-card:hover .port-img img{transform:scale(1.04)}
+.port-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(24,23,15,.45) 100%);z-index:1}
 .port-body{padding:1.1rem}
 .port-type{font-size:.62rem;font-weight:700;color:var(--a2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem}
 .port-body h3{font-family:var(--fh);font-size:.92rem;font-weight:700;color:var(--text);margin-bottom:.45rem}
@@ -264,6 +242,11 @@ section{padding:5.5rem 5%;scroll-margin-top:64px}
 .tf-prog-col{border-left:2px solid var(--a2)}
 
 /* TESTIMONIALS */
+.testi-section{position:relative;overflow:hidden}
+.testi-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.testi-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.04;filter:grayscale(25%)}
+.testi-bg::after{content:'';position:absolute;inset:0;background:var(--bg)}
+.testi-inner{position:relative;z-index:1}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
 .testi{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.6rem;position:relative}
 .testi-q{font-family:var(--fi);font-size:3rem;color:var(--a2);opacity:.12;position:absolute;top:.2rem;right:1.1rem;line-height:1}
@@ -276,6 +259,11 @@ section{padding:5.5rem 5%;scroll-margin-top:64px}
 .testi-role a:hover{color:var(--a1)}
 
 /* CONTACT */
+.contact-section{position:relative;overflow:hidden}
+.contact-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.contact-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.04;filter:grayscale(20%)}
+.contact-bg::after{content:'';position:absolute;inset:0;background:var(--bg2)}
+.contact-inner{position:relative;z-index:1}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.75rem}
 .contact-info h3{font-family:var(--fh);font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:var(--text)}
 .contact-info p{font-size:.88rem;color:var(--text2);line-height:1.8;margin-bottom:1.5rem}
@@ -360,6 +348,8 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
   .result-num{font-size:1.3rem;width:52px}
   .tf-body{gap:.5rem;padding:.75rem}
   .tf-card{padding:.5rem}
+  .svc-img{height:90px}
+  .port-img{height:140px}
 }
 @media(max-width:400px){
   .hero h1{font-size:1.9rem}
@@ -405,6 +395,11 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 
 <!-- HERO -->
 <section class="hero" id="hero">
+  <!-- Hero background image (subtle) -->
+  <div class="hero-bg-img">
+    <img src="https://img.sanishtech.com/u/3cd1e966d439753d310e0aa8c71b75b6.jpg" alt="" aria-hidden="true" loading="eager">
+  </div>
+
   <div class="hero-left">
     <div class="hero-tag">✓ Available now · US &amp; UK clients · Remote worldwide</div>
     <h1>Stop losing leads.<br>I build systems that <span class="it">recover your revenue.</span></h1>
@@ -423,8 +418,10 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
       <div class="trust-badge">Fixed prices</div>
     </div>
   </div>
+
   <div class="hero-right">
     <div class="hero-photo-wrap">
+      <!-- YOUR PHOTO — untouched -->
       <img src="michael.jpg" alt="Michael Fabiyi — Founder, MikeTechStudio" class="hero-photo" loading="eager">
       <div class="hero-photo-badge">
         <div class="hero-photo-badge-dot"></div>
@@ -447,144 +444,181 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 </div>
 
 <!-- SERVICES -->
-<section class="sbg" id="services">
-  <div class="ey rv an">What I build</div>
-  <h2 class="st rv an d1">Services that <span class="it">actually move the needle</span></h2>
-  <p class="sec-sub rv an d2">Every service is built to solve a real business problem — more leads captured, more revenue recovered, more time saved. Not just deliverables, but results.</p>
-  <div class="svc-grid">
-    <div class="svc-card c1 rv an">
-      <div class="svc-icon ic1">📞</div>
-      <h3>Telephony &amp; SMS Systems</h3>
-      <p>Twilio Studio voice and SMS flows, Telnyx VoIP multi-number routing, 10DLC compliance registration and fixes, appointment reminders, missed-call text-back and no-show recovery. 13+ production flows live for US clients.</p>
-      <div class="svc-tags"><span class="stag">Twilio Studio</span><span class="stag">Telnyx VoIP</span><span class="stag">10DLC</span><span class="stag">ClickSend</span><span class="stag">SMS flows</span></div>
-    </div>
-    <div class="svc-card c2 rv an d1">
-      <div class="svc-icon ic2">📧</div>
-      <h3>Email Marketing Automation</h3>
-      <p>Welcome sequences, abandoned cart recovery, post-purchase flows, lead nurturing and win-back campaigns. Built in Klaviyo, Mailchimp, Brevo or any ESP. Set up once, earn on autopilot.</p>
-      <div class="svc-tags"><span class="stag">Klaviyo</span><span class="stag">Mailchimp</span><span class="stag">Brevo</span><span class="stag">Email flows</span><span class="stag">Segmentation</span></div>
-    </div>
-    <div class="svc-card c3 rv an d2">
-      <div class="svc-icon ic3">⚡</div>
-      <h3>Zapier &amp; Workflow Automation</h3>
-      <p>Connect your tools so nothing falls through the cracks. CRM to email, Shopify to fulfilment, Google Calendar sync, multi-step automations — no manual copy-paste, no missed follow-ups.</p>
-      <div class="svc-tags"><span class="stag">Zapier</span><span class="stag">Make.com</span><span class="stag">REST APIs</span><span class="stag">CRM sync</span><span class="stag">Google Suite</span></div>
-    </div>
-    <div class="svc-card c4 rv an">
-      <div class="svc-icon ic4">🌐</div>
-      <h3>Web Design &amp; Shopify Stores</h3>
-      <p>Fast, mobile-first websites and Shopify stores built to convert. WordPress, Elementor, Shopify, Carrd and custom HTML/CSS/React. Designed to load fast and turn visitors into paying customers.</p>
-      <div class="svc-tags"><span class="stag">Shopify</span><span class="stag">WordPress</span><span class="stag">React</span><span class="stag">HTML/CSS</span><span class="stag">Carrd</span></div>
-    </div>
-    <div class="svc-card c5 rv an d1">
-      <div class="svc-icon ic1">📈</div>
-      <h3>SEO &amp; E-Commerce Growth</h3>
-      <p>Get your store ranking on Google and bringing in consistent organic traffic. Product page optimisation, keyword research, technical SEO fixes, schema markup and backlink strategy.</p>
-      <div class="svc-tags"><span class="stag">On-page SEO</span><span class="stag">Shopify SEO</span><span class="stag">WooCommerce</span><span class="stag">Technical SEO</span></div>
-    </div>
-    <div class="svc-card c6 rv an d2">
-      <div class="svc-icon ic3">💻</div>
-      <h3>Custom Software &amp; SaaS</h3>
-      <p>Full-stack web applications built with React, Supabase and modern APIs. From simple landing pages to complete SaaS products — see TaskFlow, my own live project, as proof of what I can build.</p>
-      <div class="svc-tags"><span class="stag">React</span><span class="stag">Supabase</span><span class="stag">JavaScript</span><span class="stag">Vercel</span><span class="stag">APIs</span></div>
-    </div>
+<section class="sbg services-wrap" id="services">
+  <!-- Services background image -->
+  <div class="services-bg">
+    <img src="https://img.sanishtech.com/u/777baeabf6482fd4758c67285a075d2a.webp" alt="" aria-hidden="true" loading="lazy">
   </div>
+  <div class="services-inner">
+    <div class="ey rv an">What I build</div>
+    <h2 class="st rv an d1">Services that <span class="it">actually move the needle</span></h2>
+    <p class="sec-sub rv an d2">Every service is built to solve a real business problem — more leads captured, more revenue recovered, more time saved. Not just deliverables, but results.</p>
+    <div class="svc-grid">
 
-  <!-- FIXED PRICE BOX -->
-  <div class="price-box rv an d3">
-    <div class="price-badge"><span>Fixed price · No surprises · 7-day delivery</span></div>
-    <div class="price-grid">
-      <div class="price-item">
-        <div class="price-amount">$497</div>
-        <div class="price-desc">10DLC compliance + registration</div>
+      <div class="svc-card c1 rv an">
+        <img src="https://img.sanishtech.com/u/4681d81f4552a0f27df436cf56825e36.jpg" alt="Telephony and SMS systems" class="svc-img" loading="lazy">
+        <div class="svc-body">
+          <div class="svc-icon ic1">📞</div>
+          <h3>Telephony &amp; SMS Systems</h3>
+          <p>Twilio Studio voice and SMS flows, Telnyx VoIP multi-number routing, 10DLC compliance registration and fixes, appointment reminders, missed-call text-back and no-show recovery. 13+ production flows live for US clients.</p>
+          <div class="svc-tags"><span class="stag">Twilio Studio</span><span class="stag">Telnyx VoIP</span><span class="stag">10DLC</span><span class="stag">ClickSend</span><span class="stag">SMS flows</span></div>
+        </div>
       </div>
-      <div class="price-item">
-        <div class="price-amount">$799</div>
-        <div class="price-desc">Twilio IVR setup (up to 5 nodes)</div>
+
+      <div class="svc-card c2 rv an d1">
+        <img src="https://img.sanishtech.com/u/d84c730e733fd1e51b7ff1c30f70fe14.jpg" alt="Email marketing automation" class="svc-img" loading="lazy">
+        <div class="svc-body">
+          <div class="svc-icon ic2">📧</div>
+          <h3>Email Marketing Automation</h3>
+          <p>Welcome sequences, abandoned cart recovery, post-purchase flows, lead nurturing and win-back campaigns. Built in Klaviyo, Mailchimp, Brevo or any ESP. Set up once, earn on autopilot.</p>
+          <div class="svc-tags"><span class="stag">Klaviyo</span><span class="stag">Mailchimp</span><span class="stag">Brevo</span><span class="stag">Email flows</span><span class="stag">Segmentation</span></div>
+        </div>
       </div>
-      <div class="price-item">
-        <div class="price-amount">$349</div>
-        <div class="price-desc">SMS auto-responder system</div>
+
+      <div class="svc-card c3 rv an d2">
+        <img src="https://cdn.phototourl.com/free/2026-05-05-dd56634a-48f7-40a8-ba96-1df17ffda716.jpg" alt="Zapier workflow automation" class="svc-img" loading="lazy">
+        <div class="svc-body">
+          <div class="svc-icon ic3">⚡</div>
+          <h3>Zapier &amp; Workflow Automation</h3>
+          <p>Connect your tools so nothing falls through the cracks. CRM to email, Shopify to fulfilment, Google Calendar sync, multi-step automations — no manual copy-paste, no missed follow-ups.</p>
+          <div class="svc-tags"><span class="stag">Zapier</span><span class="stag">Make.com</span><span class="stag">REST APIs</span><span class="stag">CRM sync</span><span class="stag">Google Suite</span></div>
+        </div>
       </div>
+
+      <div class="svc-card c4 rv an">
+        <img src="https://cdn.phototourl.com/free/2026-05-05-e67c1c5a-5baa-406c-8ae7-11e0f91f3207.webp" alt="Web design and Shopify stores" class="svc-img" loading="lazy">
+        <div class="svc-body">
+          <div class="svc-icon ic4">🌐</div>
+          <h3>Web Design &amp; Shopify Stores</h3>
+          <p>Fast, mobile-first websites and Shopify stores built to convert. WordPress, Elementor, Shopify, Carrd and custom HTML/CSS/React. Designed to load fast and turn visitors into paying customers.</p>
+          <div class="svc-tags"><span class="stag">Shopify</span><span class="stag">WordPress</span><span class="stag">React</span><span class="stag">HTML/CSS</span><span class="stag">Carrd</span></div>
+        </div>
+      </div>
+
+      <div class="svc-card c5 rv an d1">
+        <img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="SEO and e-commerce growth" class="svc-img" loading="lazy">
+        <div class="svc-body">
+          <div class="svc-icon ic1">📈</div>
+          <h3>SEO &amp; E-Commerce Growth</h3>
+          <p>Get your store ranking on Google and bringing in consistent organic traffic. Product page optimisation, keyword research, technical SEO fixes, schema markup and backlink strategy.</p>
+          <div class="svc-tags"><span class="stag">On-page SEO</span><span class="stag">Shopify SEO</span><span class="stag">WooCommerce</span><span class="stag">Technical SEO</span></div>
+        </div>
+      </div>
+
+      <div class="svc-card c6 rv an d2">
+        <img src="https://cdn.phototourl.com/free/2026-05-05-0d95a1da-7a93-424b-b0d3-fa9c40cd64e2.jpg" alt="Custom software and SaaS development" class="svc-img" loading="lazy">
+        <div class="svc-body">
+          <div class="svc-icon ic3">💻</div>
+          <h3>Custom Software &amp; SaaS</h3>
+          <p>Full-stack web applications built with React, Supabase and modern APIs. From simple landing pages to complete SaaS products — see TaskFlow, my own live project, as proof of what I can build.</p>
+          <div class="svc-tags"><span class="stag">React</span><span class="stag">Supabase</span><span class="stag">JavaScript</span><span class="stag">Vercel</span><span class="stag">APIs</span></div>
+        </div>
+      </div>
+
     </div>
-    <div class="price-link"><a href="#contact">→ Get a custom quote for your project</a></div>
+
+    <!-- FIXED PRICE BOX -->
+    <div class="price-box rv an d3">
+      <div class="price-badge"><span>Fixed price · No surprises · 7-day delivery</span></div>
+      <div class="price-grid">
+        <div class="price-item">
+          <div class="price-amount">$497</div>
+          <div class="price-desc">10DLC compliance + registration</div>
+        </div>
+        <div class="price-item">
+          <div class="price-amount">$799</div>
+          <div class="price-desc">Twilio IVR setup (up to 5 nodes)</div>
+        </div>
+        <div class="price-item">
+          <div class="price-amount">$349</div>
+          <div class="price-desc">SMS auto-responder system</div>
+        </div>
+      </div>
+      <div class="price-link"><a href="#contact">→ Get a custom quote for your project</a></div>
+    </div>
   </div>
 </section>
 
 <!-- RESULTS -->
-<section id="results">
-  <div class="ey rv an">Proof of work</div>
-  <h2 class="st rv an d1">Real results from <span class="it">real projects</span></h2>
-  <p class="sec-sub rv an d2">Numbers from actual client projects. Not estimates. Not projections.</p>
-  <div class="results-grid">
-    <div class="results-visuals rv an">
-      <div class="rv-card">
-        <div class="rv-head">
-          <div class="rv-title">Abandoned cart email sequence — e-commerce client</div>
-          <div class="rv-period">30 days</div>
-        </div>
-        <div class="kpi-row">
-          <div class="kpi"><div class="kpi-n">68%</div><div class="kpi-l">Open rate</div></div>
-          <div class="kpi"><div class="kpi-n green">28%</div><div class="kpi-l">Cart recovery</div></div>
-          <div class="kpi"><div class="kpi-n">3</div><div class="kpi-l">Emails in sequence</div></div>
-          <div class="kpi"><div class="kpi-n green">$4.2k</div><div class="kpi-l">Revenue recovered</div></div>
-        </div>
-        <div class="funnel">
-          <div class="funnel-row"><div class="funnel-label">Sent</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:100%;background:var(--a1)"><span class="funnel-pct">100%</span></div></div><div class="funnel-val">2,400</div></div>
-          <div class="funnel-row"><div class="funnel-label">Opened</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:68%;background:var(--a1)"><span class="funnel-pct">68%</span></div></div><div class="funnel-val">1,632</div></div>
-          <div class="funnel-row"><div class="funnel-label">Clicked</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:24%;background:var(--a3)"><span class="funnel-pct">24%</span></div></div><div class="funnel-val">576</div></div>
-          <div class="funnel-row"><div class="funnel-label">Bought</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:28%;background:var(--a2)"><span class="funnel-pct">28%</span></div></div><div class="funnel-val">161</div></div>
-        </div>
-      </div>
-      <div class="web-mock">
-        <div class="web-mock-bar">
-          <div class="m-dot" style="background:#FF5F57"></div>
-          <div class="m-dot" style="background:#FEBC2E"></div>
-          <div class="m-dot" style="background:#28C840"></div>
-          <div class="web-mock-url">fashionstore.myshopify.com</div>
-        </div>
-        <div class="web-mock-body">
-          <div class="web-hero-mock">
-            <div class="web-hero-tag">New collection 2024</div>
-            <div class="web-hero-h">Style that speaks before you do.</div>
-            <div class="web-hero-p">Free shipping on orders above $50. New arrivals every week.</div>
-            <div class="web-btn">Shop now →</div>
+<section id="results" class="results-section">
+  <!-- Results background image -->
+  <div class="results-bg">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-06663f44-d1e2-44e6-8323-5ce395dc817c.jpg" alt="" aria-hidden="true" loading="lazy">
+  </div>
+  <div class="results-inner">
+    <div class="ey rv an">Proof of work</div>
+    <h2 class="st rv an d1">Real results from <span class="it">real projects</span></h2>
+    <p class="sec-sub rv an d2">Numbers from actual client projects. Not estimates. Not projections.</p>
+    <div class="results-grid">
+      <div class="results-visuals rv an">
+        <div class="rv-card">
+          <div class="rv-head">
+            <div class="rv-title">Abandoned cart email sequence — e-commerce client</div>
+            <div class="rv-period">30 days</div>
           </div>
-          <div class="web-cards">
-            <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#F3EFE8,#E2DBD0)"></div><div class="web-card-name">Summer Dress</div><div class="web-card-price">$49.00</div></div>
-            <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#EEF3FD,#D8E5FB)"></div><div class="web-card-name">Linen Shirt</div><div class="web-card-price">$38.00</div></div>
-            <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#EAF5EF,#D5EDE0)"></div><div class="web-card-name">Cargo Pants</div><div class="web-card-price">$62.00</div></div>
+          <div class="kpi-row">
+            <div class="kpi"><div class="kpi-n">68%</div><div class="kpi-l">Open rate</div></div>
+            <div class="kpi"><div class="kpi-n green">28%</div><div class="kpi-l">Cart recovery</div></div>
+            <div class="kpi"><div class="kpi-n">3</div><div class="kpi-l">Emails in sequence</div></div>
+            <div class="kpi"><div class="kpi-n green">$4.2k</div><div class="kpi-l">Revenue recovered</div></div>
+          </div>
+          <div class="funnel">
+            <div class="funnel-row"><div class="funnel-label">Sent</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:100%;background:var(--a1)"><span class="funnel-pct">100%</span></div></div><div class="funnel-val">2,400</div></div>
+            <div class="funnel-row"><div class="funnel-label">Opened</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:68%;background:var(--a1)"><span class="funnel-pct">68%</span></div></div><div class="funnel-val">1,632</div></div>
+            <div class="funnel-row"><div class="funnel-label">Clicked</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:24%;background:var(--a3)"><span class="funnel-pct">24%</span></div></div><div class="funnel-val">576</div></div>
+            <div class="funnel-row"><div class="funnel-label">Bought</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:28%;background:var(--a2)"><span class="funnel-pct">28%</span></div></div><div class="funnel-val">161</div></div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="result-items rv an d1">
-      <div class="result-item">
-        <div class="result-num n1">340%</div>
-        <div class="result-text">
-          <h4>Organic traffic increase</h4>
-          <p>Full SEO overhaul for a fashion e-commerce brand — keyword research, product page rewrites, schema markup and site speed optimisation. Achieved in 3 months.</p>
+        <div class="web-mock">
+          <div class="web-mock-bar">
+            <div class="m-dot" style="background:#FF5F57"></div>
+            <div class="m-dot" style="background:#FEBC2E"></div>
+            <div class="m-dot" style="background:#28C840"></div>
+            <div class="web-mock-url">fashionstore.myshopify.com</div>
+          </div>
+          <div class="web-mock-body">
+            <div class="web-hero-mock">
+              <div class="web-hero-tag">New collection 2024</div>
+              <div class="web-hero-h">Style that speaks before you do.</div>
+              <div class="web-hero-p">Free shipping on orders above $50. New arrivals every week.</div>
+              <div class="web-btn">Shop now →</div>
+            </div>
+            <div class="web-cards">
+              <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#F3EFE8,#E2DBD0)"></div><div class="web-card-name">Summer Dress</div><div class="web-card-price">$49.00</div></div>
+              <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#EEF3FD,#D8E5FB)"></div><div class="web-card-name">Linen Shirt</div><div class="web-card-price">$38.00</div></div>
+              <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#EAF5EF,#D5EDE0)"></div><div class="web-card-name">Cargo Pants</div><div class="web-card-price">$62.00</div></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="result-item">
-        <div class="result-num n2">28%</div>
-        <div class="result-text">
-          <h4>Abandoned cart recovery rate</h4>
-          <p>3-email abandoned cart sequence in Klaviyo, integrated with Shopify. Automated segmentation by cart value and browsing behaviour. $4,200 recovered in 30 days.</p>
+      <div class="result-items rv an d1">
+        <div class="result-item">
+          <div class="result-num n1">340%</div>
+          <div class="result-text">
+            <h4>Organic traffic increase</h4>
+            <p>Full SEO overhaul for a fashion e-commerce brand — keyword research, product page rewrites, schema markup and site speed optimisation. Achieved in 3 months.</p>
+          </div>
         </div>
-      </div>
-      <div class="result-item">
-        <div class="result-num n3">13+</div>
-        <div class="result-text">
-          <h4>Twilio flows live in production</h4>
-          <p>Voice and SMS flows for TV Messenger, a US-based caregiving communication platform. Complex subflow architecture, Liquid templating and HTTP integrations — all running live.</p>
+        <div class="result-item">
+          <div class="result-num n2">28%</div>
+          <div class="result-text">
+            <h4>Abandoned cart recovery rate</h4>
+            <p>3-email abandoned cart sequence in Klaviyo, integrated with Shopify. Automated segmentation by cart value and browsing behaviour. $4,200 recovered in 30 days.</p>
+          </div>
         </div>
-      </div>
-      <div class="result-item">
-        <div class="result-num n4">8%</div>
-        <div class="result-text">
-          <h4>Landing page conversion rate</h4>
-          <p>Brand identity plus mobile-first landing page for a business coach. Delivered in 4 days. Client reported immediate increase in enquiries from the first week.</p>
+        <div class="result-item">
+          <div class="result-num n3">13+</div>
+          <div class="result-text">
+            <h4>Twilio flows live in production</h4>
+            <p>Voice and SMS flows for TV Messenger, a US-based caregiving communication platform. Complex subflow architecture, Liquid templating and HTTP integrations — all running live.</p>
+          </div>
+        </div>
+        <div class="result-item">
+          <div class="result-num n4">8%</div>
+          <div class="result-text">
+            <h4>Landing page conversion rate</h4>
+            <p>Brand identity plus mobile-first landing page for a business coach. Delivered in 4 days. Client reported immediate increase in enquiries from the first week.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -592,44 +626,50 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 </section>
 
 <!-- PROCESS -->
-<section class="sbg" id="process">
-  <div class="ey rv an">How I work</div>
-  <h2 class="st rv an d1">Simple. Fast. <span class="it">No surprises.</span></h2>
-  <p class="sec-sub rv an d2">A clear process means no confusion, no delays and no unexpected invoices. Here is exactly what working with me looks like.</p>
-  <div class="proc-list rv an d2">
-    <div class="proc-item">
-      <div class="proc-n">01</div>
-      <div>
-        <h4>Discovery call — free, 30 minutes</h4>
-        <p>We talk about your goals, your current setup and what is blocking your growth. I will tell you honestly whether I can help — and if I can, I will tell you exactly how. No pressure, no commitment required.</p>
+<section class="sbg process-section" id="process">
+  <!-- Process background image -->
+  <div class="process-bg">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-5f044406-aff7-4a9f-be75-a2c1b58ff458.png" alt="" aria-hidden="true" loading="lazy">
+  </div>
+  <div class="process-inner">
+    <div class="ey rv an">How I work</div>
+    <h2 class="st rv an d1">Simple. Fast. <span class="it">No surprises.</span></h2>
+    <p class="sec-sub rv an d2">A clear process means no confusion, no delays and no unexpected invoices. Here is exactly what working with me looks like.</p>
+    <div class="proc-list rv an d2">
+      <div class="proc-item">
+        <div class="proc-n">01</div>
+        <div>
+          <h4>Discovery call — free, 30 minutes</h4>
+          <p>We talk about your goals, your current setup and what is blocking your growth. I will tell you honestly whether I can help — and if I can, I will tell you exactly how. No pressure, no commitment required.</p>
+        </div>
       </div>
-    </div>
-    <div class="proc-item">
-      <div class="proc-n">02</div>
-      <div>
-        <h4>Proposal &amp; clear scope</h4>
-        <p>You receive a written proposal — what we build, what it costs, how long it takes and what you need to provide. No hidden fees. No scope creep. Everything agreed before work starts.</p>
+      <div class="proc-item">
+        <div class="proc-n">02</div>
+        <div>
+          <h4>Proposal &amp; clear scope</h4>
+          <p>You receive a written proposal — what we build, what it costs, how long it takes and what you need to provide. No hidden fees. No scope creep. Everything agreed before work starts.</p>
+        </div>
       </div>
-    </div>
-    <div class="proc-item">
-      <div class="proc-n">03</div>
-      <div>
-        <h4>Build with regular updates</h4>
-        <p>I get to work and send you progress updates every 1–2 days via email or Slack. You see what is happening as it happens — not just at the end when it is too late to adjust anything.</p>
+      <div class="proc-item">
+        <div class="proc-n">03</div>
+        <div>
+          <h4>Build with regular updates</h4>
+          <p>I get to work and send you progress updates every 1–2 days via email or Slack. You see what is happening as it happens — not just at the end when it is too late to adjust anything.</p>
+        </div>
       </div>
-    </div>
-    <div class="proc-item">
-      <div class="proc-n">04</div>
-      <div>
-        <h4>Review &amp; free revisions</h4>
-        <p>I do not consider a project done until you are satisfied. Free revisions are included for reasonable adjustments — I do not charge extra for making things right.</p>
+      <div class="proc-item">
+        <div class="proc-n">04</div>
+        <div>
+          <h4>Review &amp; free revisions</h4>
+          <p>I do not consider a project done until you are satisfied. Free revisions are included for reasonable adjustments — I do not charge extra for making things right.</p>
+        </div>
       </div>
-    </div>
-    <div class="proc-item">
-      <div class="proc-n">05</div>
-      <div>
-        <h4>Handover &amp; 30-day support</h4>
-        <p>Full handover with clear documentation. I stay available for questions for 30 days after delivery at no extra cost. You will not be left figuring things out alone after payment.</p>
+      <div class="proc-item">
+        <div class="proc-n">05</div>
+        <div>
+          <h4>Handover &amp; 30-day support</h4>
+          <p>Full handover with clear documentation. I stay available for questions for 30 days after delivery at no extra cost. You will not be left figuring things out alone after payment.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -641,9 +681,11 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
   <h2 class="st rv an d1">Recent work &amp; <span class="it">case studies</span></h2>
   <p class="sec-sub rv an d2">Real projects. Real clients. Real outcomes. Not just screenshots — results you can measure.</p>
   <div class="port-grid">
+
     <div class="port-card rv an">
-      <div class="port-img" style="background:linear-gradient(135deg,var(--a1l),var(--a1b))">
-        <svg width="80" height="60" viewBox="0 0 80 60" fill="none" aria-hidden="true"><rect x="8" y="8" width="64" height="44" rx="6" fill="white" opacity=".9"/><rect x="16" y="16" width="28" height="4" rx="2" fill="#1B4FD8" opacity=".7"/><rect x="16" y="24" width="48" height="3" rx="1.5" fill="#1B4FD8" opacity=".3"/><rect x="16" y="30" width="38" height="3" rx="1.5" fill="#1B4FD8" opacity=".3"/><rect x="16" y="36" width="20" height="8" rx="4" fill="#1B4FD8"/><text x="18" y="43" font-size="5" fill="white" font-family="sans-serif" font-weight="700">68% open rate</text></svg>
+      <div class="port-img">
+        <img src="https://img.sanishtech.com/u/d84c730e733fd1e51b7ff1c30f70fe14.jpg" alt="Email marketing automation project" loading="lazy">
+        <div class="port-img-overlay"></div>
       </div>
       <div class="port-body">
         <div class="port-type">Email Marketing Automation</div>
@@ -652,9 +694,11 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
         <div class="port-result">68% open rate · $4,200 cart revenue recovered in 30 days</div>
       </div>
     </div>
+
     <div class="port-card rv an d1">
-      <div class="port-img" style="background:linear-gradient(135deg,var(--a3l),var(--a3b))">
-        <svg width="80" height="60" viewBox="0 0 80 60" fill="none" aria-hidden="true"><rect x="8" y="6" width="64" height="48" rx="6" fill="white" opacity=".9"/><rect x="8" y="6" width="64" height="14" rx="6" fill="#1A7A4A" opacity=".9"/><text x="18" y="17" font-size="6" fill="white" font-family="sans-serif" font-weight="700">fashionstore.com</text><rect x="16" y="28" width="48" height="5" rx="2" fill="#1A7A4A" opacity=".2"/><rect x="16" y="36" width="32" height="5" rx="2" fill="#1A7A4A" opacity=".2"/><rect x="16" y="44" width="18" height="6" rx="3" fill="#1A7A4A"/></svg>
+      <div class="port-img">
+        <img src="https://cdn.phototourl.com/free/2026-05-05-e67c1c5a-5baa-406c-8ae7-11e0f91f3207.webp" alt="Shopify redesign and SEO project" loading="lazy">
+        <div class="port-img-overlay"></div>
       </div>
       <div class="port-body">
         <div class="port-type">Web Design &amp; SEO</div>
@@ -663,9 +707,11 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
         <div class="port-result">340% organic traffic increase in 3 months</div>
       </div>
     </div>
+
     <div class="port-card rv an d2">
-      <div class="port-img" style="background:linear-gradient(135deg,var(--a2l),var(--a2b))">
-        <svg width="80" height="60" viewBox="0 0 80 60" fill="none" aria-hidden="true"><rect x="8" y="8" width="64" height="44" rx="6" fill="white" opacity=".9"/><rect x="16" y="14" width="12" height="12" rx="2" fill="#C84B2F" opacity=".2"/><rect x="16" y="14" width="12" height="12" rx="2" stroke="#C84B2F" stroke-width="1"/><text x="20" y="23" font-size="7" fill="#C84B2F" font-weight="700">▶</text><rect x="32" y="16" width="24" height="3" rx="1.5" fill="#18170F" opacity=".6"/><rect x="32" y="22" width="16" height="2" rx="1" fill="#88867C" opacity=".6"/><rect x="16" y="32" width="48" height="2" rx="1" fill="#E0DDD6"/><rect x="16" y="38" width="48" height="2" rx="1" fill="#E0DDD6"/><rect x="16" y="44" width="30" height="2" rx="1" fill="#E0DDD6"/><rect x="48" y="40" width="14" height="8" rx="3" fill="#C84B2F"/><text x="50" y="46" font-size="4.5" fill="white" font-weight="700">13 flows</text></svg>
+      <div class="port-img">
+        <img src="https://img.sanishtech.com/u/4681d81f4552a0f27df436cf56825e36.jpg" alt="Twilio Studio SMS flows project" loading="lazy">
+        <div class="port-img-overlay"></div>
       </div>
       <div class="port-body">
         <div class="port-type">Telephony Automation · US Client</div>
@@ -674,6 +720,7 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
         <div class="port-result">13 production flows running live for US client</div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -718,41 +765,47 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="ey rv an">Social proof</div>
-  <h2 class="st rv an d1">What clients <span class="it">say</span></h2>
-  <p class="sec-sub rv an d2">Feedback from real clients on real projects. Verifiable on request.</p>
-  <div class="testi-grid">
-    <div class="testi rv an">
-      <div class="testi-q">"</div>
-      <p>"Michael redesigned our Shopify store and handled the full SEO setup. Within 6 weeks we were getting double the organic traffic. Fast, communicates extremely well, and genuinely cares about results."</p>
-      <div class="testi-au">
-        <div class="testi-av">AJ</div>
-        <div>
-          <div class="testi-name">Amara Johnson</div>
-          <div class="testi-role">Founder, <a href="#work">StyleHaus</a> · case study available</div>
+<section id="testimonials" class="testi-section">
+  <!-- Testimonials background image -->
+  <div class="testi-bg">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-06663f44-d1e2-44e6-8323-5ce395dc817c.jpg" alt="" aria-hidden="true" loading="lazy">
+  </div>
+  <div class="testi-inner">
+    <div class="ey rv an">Social proof</div>
+    <h2 class="st rv an d1">What clients <span class="it">say</span></h2>
+    <p class="sec-sub rv an d2">Feedback from real clients on real projects. Verifiable on request.</p>
+    <div class="testi-grid">
+      <div class="testi rv an">
+        <div class="testi-q">"</div>
+        <p>"Michael redesigned our Shopify store and handled the full SEO setup. Within 6 weeks we were getting double the organic traffic. Fast, communicates extremely well, and genuinely cares about results."</p>
+        <div class="testi-au">
+          <div class="testi-av">AJ</div>
+          <div>
+            <div class="testi-name">Amara Johnson</div>
+            <div class="testi-role">Founder, <a href="#work">StyleHaus</a> · case study available</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="testi rv an d1">
-      <div class="testi-q">"</div>
-      <p>"I hired Michael to build our Twilio SMS flows and handle 10DLC compliance. He delivered faster than expected and the system has been running without a single issue for months. Highly recommend."</p>
-      <div class="testi-au">
-        <div class="testi-av">DK</div>
-        <div>
-          <div class="testi-name">David Kim</div>
-          <div class="testi-role">Operations Director, <a href="#work">TV Messenger</a> · verified project</div>
+      <div class="testi rv an d1">
+        <div class="testi-q">"</div>
+        <p>"I hired Michael to build our Twilio SMS flows and handle 10DLC compliance. He delivered faster than expected and the system has been running without a single issue for months. Highly recommend."</p>
+        <div class="testi-au">
+          <div class="testi-av">DK</div>
+          <div>
+            <div class="testi-name">David Kim</div>
+            <div class="testi-role">Operations Director, <a href="#work">TV Messenger</a> · verified project</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="testi rv an d2">
-      <div class="testi-q">"</div>
-      <p>"I asked for a landing page. I got a full brand identity, a mobile-perfect design and a page converting at 8%. Michael delivered more than I asked for and charged less than I expected. Brilliant."</p>
-      <div class="testi-au">
-        <div class="testi-av">FO</div>
-        <div>
-          <div class="testi-name">Fatima Okafor</div>
-          <div class="testi-role">CEO, GrowthPath Consulting</div>
+      <div class="testi rv an d2">
+        <div class="testi-q">"</div>
+        <p>"I asked for a landing page. I got a full brand identity, a mobile-perfect design and a page converting at 8%. Michael delivered more than I asked for and charged less than I expected. Brilliant."</p>
+        <div class="testi-au">
+          <div class="testi-av">FO</div>
+          <div>
+            <div class="testi-name">Fatima Okafor</div>
+            <div class="testi-role">CEO, GrowthPath Consulting</div>
+          </div>
         </div>
       </div>
     </div>
@@ -760,60 +813,66 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 </section>
 
 <!-- CONTACT -->
-<section class="sbg" id="contact">
-  <div class="ey rv an">Get in touch</div>
-  <h2 class="st rv an d1">Ready to <span class="it">grow your business?</span></h2>
-  <p class="sec-sub rv an d2">Tell me what you are building or what problem you need solved. Free 30-minute discovery call — no commitment, no pressure.</p>
-  <div class="contact-grid">
-    <div class="contact-info rv an">
-      <h3>Let's talk about your project</h3>
-      <p>Whether you need a Twilio system built from scratch, a leaking email funnel fixed, a Zapier workflow that saves your team 10 hours a week, or a website that actually converts — I can help. Reply within 24 hours, always.</p>
-      <div class="contact-links">
-        <a href="mailto:miketechstudio535@gmail.com" class="contact-link">
-          <div class="contact-link-icon" style="background:var(--a2l)">📧</div>
-          <div>
-            <div style="font-weight:600;font-size:.82rem">Send an email</div>
-            <div style="font-size:.72rem;color:var(--muted)">miketechstudio535@gmail.com</div>
-          </div>
-        </a>
-        <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener" class="contact-link">
-          <div class="contact-link-icon" style="background:var(--a3l)">📅</div>
-          <div>
-            <div style="font-weight:600;font-size:.82rem">Book a free discovery call</div>
-            <div style="font-size:.72rem;color:var(--muted)">30 minutes · Zoom · No commitment</div>
-          </div>
-        </a>
-        <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="contact-link">
-          <div class="contact-link-icon" style="background:var(--a1l)">💼</div>
-          <div>
-            <div style="font-weight:600;font-size:.82rem">Hire me on Upwork</div>
-            <div style="font-size:.72rem;color:var(--muted)">View full profile and reviews</div>
-          </div>
-        </a>
-        <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener" class="contact-link">
-          <div class="contact-link-icon" style="background:var(--bg3);font-weight:700;font-size:.8rem;color:var(--text2)">in</div>
-          <div>
-            <div style="font-weight:600;font-size:.82rem">Connect on LinkedIn</div>
-            <div style="font-size:.72rem;color:var(--muted)">Michael Fabiyi · MikeTechStudio</div>
-          </div>
-        </a>
+<section class="sbg contact-section" id="contact">
+  <!-- Contact background image -->
+  <div class="contact-bg">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="" aria-hidden="true" loading="lazy">
+  </div>
+  <div class="contact-inner">
+    <div class="ey rv an">Get in touch</div>
+    <h2 class="st rv an d1">Ready to <span class="it">grow your business?</span></h2>
+    <p class="sec-sub rv an d2">Tell me what you are building or what problem you need solved. Free 30-minute discovery call — no commitment, no pressure.</p>
+    <div class="contact-grid">
+      <div class="contact-info rv an">
+        <h3>Let's talk about your project</h3>
+        <p>Whether you need a Twilio system built from scratch, a leaking email funnel fixed, a Zapier workflow that saves your team 10 hours a week, or a website that actually converts — I can help. Reply within 24 hours, always.</p>
+        <div class="contact-links">
+          <a href="mailto:miketechstudio535@gmail.com" class="contact-link">
+            <div class="contact-link-icon" style="background:var(--a2l)">📧</div>
+            <div>
+              <div style="font-weight:600;font-size:.82rem">Send an email</div>
+              <div style="font-size:.72rem;color:var(--muted)">miketechstudio535@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon" style="background:var(--a3l)">📅</div>
+            <div>
+              <div style="font-weight:600;font-size:.82rem">Book a free discovery call</div>
+              <div style="font-size:.72rem;color:var(--muted)">30 minutes · Zoom · No commitment</div>
+            </div>
+          </a>
+          <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon" style="background:var(--a1l)">💼</div>
+            <div>
+              <div style="font-weight:600;font-size:.82rem">Hire me on Upwork</div>
+              <div style="font-size:.72rem;color:var(--muted)">View full profile and reviews</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon" style="background:var(--bg3);font-weight:700;font-size:.8rem;color:var(--text2)">in</div>
+            <div>
+              <div style="font-weight:600;font-size:.82rem">Connect on LinkedIn</div>
+              <div style="font-size:.72rem;color:var(--muted)">Michael Fabiyi · MikeTechStudio</div>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="contact-form rv an d1">
-      <h3>Send your project brief</h3>
-      <p>Fill this in and I will reply within 24 hours to schedule a free Zoom call.</p>
-      <div class="google-form-wrapper">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSffQqxcqM-wU1k6gwo2JOqvQuofLHeMTFNSgRrPdL2e3x9d6w/viewform?embedded=true"
-          width="100%"
-          height="988"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          loading="lazy"
-          title="Project brief form">Loading…</iframe>
+      <div class="contact-form rv an d1">
+        <h3>Send your project brief</h3>
+        <p>Fill this in and I will reply within 24 hours to schedule a free Zoom call.</p>
+        <div class="google-form-wrapper">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSffQqxcqM-wU1k6gwo2JOqvQuofLHeMTFNSgRrPdL2e3x9d6w/viewform?embedded=true"
+            width="100%"
+            height="988"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            loading="lazy"
+            title="Project brief form">Loading…</iframe>
+        </div>
+        <div class="form-note">✓ No phone number needed. I will email you back. Or <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener">book a call directly →</a></div>
       </div>
-      <div class="form-note">✓ No phone number needed. I will email you back. Or <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener">book a call directly →</a></div>
     </div>
   </div>
 </section>
@@ -864,18 +923,14 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 </footer>
 
 <script>
-// Mobile menu toggle
 const hbg = document.getElementById('hbg');
 const mm = document.getElementById('mm');
-
 hbg.addEventListener('click', () => {
   const isOpen = mm.classList.toggle('o');
   hbg.classList.toggle('o');
   document.body.style.overflow = isOpen ? 'hidden' : '';
   hbg.setAttribute('aria-expanded', isOpen);
 });
-
-// Close mobile menu on link click
 document.querySelectorAll('.mml').forEach(link => {
   link.addEventListener('click', () => {
     hbg.classList.remove('o');
@@ -884,8 +939,6 @@ document.querySelectorAll('.mml').forEach(link => {
     hbg.setAttribute('aria-expanded', 'false');
   });
 });
-
-// Close mobile menu on outside click
 document.addEventListener('click', (e) => {
   if (mm.classList.contains('o') && !mm.contains(e.target) && !hbg.contains(e.target)) {
     hbg.classList.remove('o');
@@ -893,8 +946,6 @@ document.addEventListener('click', (e) => {
     document.body.style.overflow = '';
   }
 });
-
-// Scroll reveal animation
 const revealEls = document.querySelectorAll('.rv');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -904,13 +955,9 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
-
 revealEls.forEach(el => observer.observe(el));
-
-// Active nav link on scroll
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
-
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -922,7 +969,6 @@ const navObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.3, rootMargin: '-64px 0px 0px 0px' });
-
 sections.forEach(s => navObserver.observe(s));
 </script>
 </body>
