@@ -3,367 +3,330 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MikeTechStudio | Automation, Telephony & Web Systems  Michael Fabiyi</title>
+<title>MikeTechStudio | Automation, Telephony & Web Systems — Michael Fabiyi</title>
 <meta name="description" content="Michael Fabiyi helps US and UK businesses stop losing leads with Twilio automation, SMS systems, email marketing, Zapier workflows and web design. Fixed prices, remote delivery worldwide.">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;font-size:16px}
 :root{
-  --bg:#FAFAF8;--bg2:#F4F3EF;--bg3:#ECEAE4;
-  --card:#FFFFFF;--border:#E0DDD6;--border2:#C8C4BB;
-  --text:#18170F;--text2:#48463C;--muted:#88867C;
-  --ink:#18170F;
-  --a1:#1B4FD8;--a1l:#EEF3FD;--a1b:#E0E8FB;
-  --a2:#C84B2F;--a2l:#FDF0ED;--a2b:#FAE0DB;
-  --a3:#1A7A4A;--a3l:#EAF5EF;--a3b:#D5EDE0;
-  --a4:#7B3FA0;--a4l:#F5EDFB;--a4b:#EDD9F7;
-  --fh:'Sora',sans-serif;
-  --fi:'Crimson Pro',Georgia,serif;
-  --fb:'Sora',sans-serif;
-  --r:10px;--rl:18px;
+  --bg:#FAFAF8;--bg2:#F2F0EB;--card:#FFFFFF;
+  --border:#E4E1D9;--border2:#C9C5BB;
+  --text:#0F0E09;--text2:#46443A;--muted:#8C897F;
+  --red:#C84B2F;--redl:#FDF0ED;--redb:#FAE0DB;
+  --blue:#1B4FD8;--bluel:#EEF3FD;
+  --green:#1A7A4A;--greenl:#EAF5EF;
+  --fh:'Plus Jakarta Sans',sans-serif;
+  --fi:'Playfair Display',Georgia,serif;
+  --r:12px;--rl:20px;
+  --shadow:0 4px 24px rgba(15,14,9,.07);
+  --shadow-lg:0 12px 48px rgba(15,14,9,.12);
 }
-body{font-family:var(--fb);background:var(--bg);color:var(--text);overflow-x:hidden;font-size:15px;line-height:1.6}
+body{font-family:var(--fh);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:.9rem 5%;background:rgba(250,250,248,0.96);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:var(--fh);font-size:1rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:9px;letter-spacing:-.02em}
-.nav-logo-dot{width:10px;height:10px;background:var(--a2);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,75,47,.35)}50%{box-shadow:0 0 0 7px rgba(200,75,47,0)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:.85rem 5%;background:rgba(250,250,248,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(228,225,217,.6);transition:padding .3s,background .3s,box-shadow .3s}
+nav.scrolled{padding:.65rem 5%;background:rgba(250,250,248,0.97);box-shadow:var(--shadow)}
+.nav-logo{font-family:var(--fh);font-size:.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px;letter-spacing:-.02em}
+.nav-dot{width:9px;height:9px;background:var(--red);border-radius:50%;animation:dotpulse 2.2s infinite;flex-shrink:0}
+@keyframes dotpulse{0%,100%{box-shadow:0 0 0 0 rgba(200,75,47,.4)}60%{box-shadow:0 0 0 8px rgba(200,75,47,0)}}
 .nav-links{display:flex;gap:2rem}
-.nav-links a{font-size:.82rem;font-weight:500;color:var(--text2);transition:color .2s}
-.nav-links a:hover,.nav-links a.act{color:var(--a2)}
+.nav-links a{font-size:.82rem;font-weight:500;color:var(--text2);transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:var(--red);transition:width .25s}
+.nav-links a:hover,.nav-links a.act{color:var(--red)}
+.nav-links a:hover::after,.nav-links a.act::after{width:100%}
 .nav-right{display:flex;align-items:center;gap:.75rem}
-.nav-cta{background:var(--a2);color:#fff;font-family:var(--fh);font-size:.82rem;font-weight:600;padding:.5rem 1.1rem;border-radius:100px;transition:all .2s}
-.nav-cta:hover{background:#A83820;transform:translateY(-1px)}
-.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:302}
-.hbg span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+.nav-cta{background:var(--red);color:#fff;font-family:var(--fh);font-size:.8rem;font-weight:600;padding:.5rem 1.2rem;border-radius:100px;transition:all .25s;box-shadow:0 4px 14px rgba(200,75,47,.3)}
+.nav-cta:hover{background:#a83820;transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,75,47,.4)}
+.hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:502}
+.hbg span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
 .hbg.o span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hbg.o span:nth-child(2){opacity:0}
+.hbg.o span:nth-child(2){opacity:0;transform:scaleX(0)}
 .hbg.o span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-/* MOBILE MENU */
-.mm{display:none;position:fixed;top:0;left:0;right:0;background:var(--card);z-index:301;flex-direction:column;padding:5rem 0 2rem;border-bottom:2px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.12);max-height:100vh;overflow-y:auto;}
+.mm{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--card);z-index:501;flex-direction:column;justify-content:center;align-items:center}
 .mm.o{display:flex}
-.mm a.mml{font-family:var(--fh);font-size:1.05rem;font-weight:600;color:var(--text);padding:1rem 6%;border-bottom:1px solid var(--border);transition:all .2s;display:flex;align-items:center;justify-content:space-between;width:100%;}
-.mm a.mml::after{content:'→';font-size:.9rem;color:var(--muted);transition:color .2s}
-.mm a.mml:hover{background:var(--bg2);color:var(--a2)}
-.mm a.mml:hover::after{color:var(--a2)}
-.mm-soc{display:flex;gap:.75rem;padding:1.25rem 6%;flex-wrap:wrap;}
-.mm-soc a{font-size:.78rem;color:var(--muted);transition:color .2s;background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:.35rem .85rem;}
-.mm-soc a:hover{color:var(--a2);border-color:var(--a2)}
-.mm-cta{margin:.5rem 6%;background:var(--a2);color:#fff;font-family:var(--fh);font-size:.88rem;font-weight:600;padding:.85rem 1.5rem;border-radius:100px;text-align:center;display:block;transition:background .2s;}
-.mm-cta:hover{background:#A83820}
+.mm a.mml{font-family:var(--fi);font-size:1.9rem;font-weight:700;color:var(--text);padding:.65rem 2rem;text-align:center;transition:color .2s;border-bottom:1px solid var(--border);width:100%}
+.mm a.mml:hover{color:var(--red)}
+.mm-bottom{padding:1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem;align-items:center;width:100%}
+.mm-cta{background:var(--red);color:#fff;font-weight:600;font-size:.9rem;padding:.85rem 2.5rem;border-radius:100px;width:100%;max-width:280px;text-align:center;transition:background .2s}
+.mm-soc{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+.mm-soc a{font-size:.75rem;color:var(--muted);border:1px solid var(--border);border-radius:100px;padding:.3rem .8rem;transition:all .2s}
+.mm-soc a:hover{color:var(--red);border-color:var(--red)}
 
-/* ── HERO ── */
-.hero{min-height:100vh;padding:8rem 5% 5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;overflow:hidden;scroll-margin-top:64px}
-/* Hero background image */
-.hero-bg-img{position:absolute;inset:0;z-index:0;pointer-events:none}
-.hero-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.06;filter:grayscale(30%)}
-.hero-bg-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 45%,transparent 100%)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding:9rem 5% 5rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.055;transform:scale(1.08);animation:bgdrift 20s ease-in-out infinite alternate}
+@keyframes bgdrift{from{transform:scale(1.08) translateX(0)}to{transform:scale(1.12) translateX(-2%)}}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,var(--bg) 40%,rgba(250,250,248,.65) 100%)}
 .hero-left,.hero-right{position:relative;z-index:1}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--a3l);border:1px solid rgba(26,122,74,.22);padding:.38rem .9rem;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--a3);letter-spacing:.05em;margin-bottom:1.6rem}
-.hero-tag::before{content:'';width:6px;height:6px;background:var(--a3);border-radius:50%;animation:pulse 1.6s infinite}
-.hero h1{font-family:var(--fh);font-size:clamp(2.4rem,4.5vw,4rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--text);margin-bottom:1.4rem}
-.hero h1 .it{font-family:var(--fi);font-style:italic;font-weight:600;color:var(--a2)}
-.hero-sub{font-size:1rem;color:var(--text2);line-height:1.82;max-width:500px;margin-bottom:2.25rem;font-weight:300}
+.hero-right{display:flex;justify-content:center}
+.avail-badge{display:inline-flex;align-items:center;gap:8px;background:var(--greenl);border:1px solid rgba(26,122,74,.22);padding:.38rem 1rem;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--green);letter-spacing:.04em;margin-bottom:1.75rem;animation:fadeslidedown .6s ease both}
+.avail-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:dotpulse 1.8s infinite;flex-shrink:0}
+.hero h1{font-family:var(--fh);font-size:clamp(2.2rem,4.2vw,3.8rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--text);margin-bottom:1.4rem;animation:fadeslideup .7s .1s ease both}
+.hero h1 .accent{font-family:var(--fi);font-style:italic;font-weight:700;background:linear-gradient(135deg,var(--red),#E8692A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:.97rem;color:var(--text2);line-height:1.85;max-width:490px;margin-bottom:2.25rem;font-weight:400;animation:fadeslideup .7s .2s ease both}
 .hero-sub strong{font-weight:600;color:var(--text)}
-.hero-acts{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:2.75rem}
-.btn-p{background:var(--a2);color:#fff;font-family:var(--fh);font-weight:600;font-size:.88rem;padding:.85rem 1.8rem;border-radius:100px;display:inline-flex;align-items:center;gap:7px;transition:all .2s;border:none;cursor:pointer}
-.btn-p:hover{background:#A83820;transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,75,47,.22)}
-.btn-s{background:transparent;color:var(--text);font-family:var(--fh);font-weight:500;font-size:.88rem;padding:.85rem 1.8rem;border-radius:100px;border:1.5px solid var(--border2);transition:all .2s;display:inline-flex;align-items:center;gap:7px}
-.btn-s:hover{border-color:var(--a1);color:var(--a1);background:var(--a1l)}
-.hero-trust{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap}
-.trust-badge{display:flex;align-items:center;gap:6px;font-size:.75rem;color:var(--muted);font-weight:500}
-.trust-badge::before{content:'✓';color:var(--a3);font-weight:700;font-size:.7rem}
-.trust-sep{width:4px;height:4px;background:var(--border2);border-radius:50%}
+.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:2.5rem;animation:fadeslideup .7s .3s ease both}
+.btn-primary{background:var(--red);color:#fff;font-family:var(--fh);font-weight:600;font-size:.88rem;padding:.88rem 1.9rem;border-radius:100px;display:inline-flex;align-items:center;gap:8px;transition:all .25s;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(200,75,47,.28);position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);animation:shimmer 2.5s infinite}
+@keyframes shimmer{0%{left:-100%}100%{left:200%}}
+.btn-primary:hover{background:#a83820;transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,75,47,.35)}
+.btn-secondary{background:transparent;color:var(--text);font-family:var(--fh);font-weight:500;font-size:.88rem;padding:.88rem 1.9rem;border-radius:100px;border:1.5px solid var(--border2);display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+.btn-secondary:hover{border-color:var(--blue);color:var(--blue);background:var(--bluel)}
+.trust-row{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;animation:fadeslideup .7s .4s ease both}
+.trust-item{display:flex;align-items:center;gap:5px;font-size:.72rem;color:var(--muted);font-weight:500}
+.trust-item::before{content:'✓';color:var(--green);font-weight:700;font-size:.68rem}
+.trust-sep{width:3px;height:3px;background:var(--border2);border-radius:50%}
+.photo-wrap{position:relative;width:100%;max-width:440px;animation:fadescale .8s .2s ease both}
+@keyframes fadescale{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+.photo-ring{position:absolute;inset:-4px;border-radius:26px;background:linear-gradient(135deg,rgba(200,75,47,.35),rgba(27,79,216,.12),transparent 65%);z-index:0;animation:ringpulse 4s ease-in-out infinite alternate}
+@keyframes ringpulse{from{opacity:.6}to{opacity:1}}
+.hero-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:24px;position:relative;z-index:1;border:2px solid rgba(228,225,217,.8);display:block}
+.photo-chip{position:absolute;bottom:22px;left:-18px;z-index:2;background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:.72rem 1rem;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:.65rem;animation:floatchip 3s ease-in-out infinite alternate}
+@keyframes floatchip{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+.chip-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:dotpulse 2s infinite;flex-shrink:0}
+.chip-name{font-size:.72rem;font-weight:700;color:var(--text)}
+.chip-sub{font-size:.6rem;color:var(--muted)}
+.photo-tag{position:absolute;top:18px;right:-14px;z-index:2;background:var(--red);color:#fff;border-radius:100px;padding:.42rem .95rem;font-size:.68rem;font-weight:700;box-shadow:0 4px 16px rgba(200,75,47,.4);animation:floattag 3.5s 1s ease-in-out infinite alternate}
+@keyframes floattag{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-4px) rotate(1deg)}}
 
-/* HERO RIGHT */
-.hero-right{position:relative;display:flex;align-items:center;justify-content:center}
-.hero-photo-wrap{position:relative;width:100%;max-width:460px}
-.hero-photo-wrap::before{content:'';position:absolute;inset:-3px;border-radius:24px;background:linear-gradient(135deg,rgba(200,75,47,0.3),rgba(27,79,216,0.1),transparent 60%);z-index:0}
-.hero-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:22px;position:relative;z-index:1;border:2px solid var(--border2);display:block}
-.hero-photo-badge{position:absolute;bottom:24px;left:-16px;z-index:2;background:var(--card);border:1.5px solid var(--border);border-radius:14px;padding:.75rem 1rem;box-shadow:0 4px 20px rgba(0,0,0,.1);display:flex;align-items:center;gap:.6rem}
-.hero-photo-badge-dot{width:8px;height:8px;background:var(--a3);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
-.hero-photo-badge-text{font-size:.72rem;font-weight:600;color:var(--text)}
-.hero-photo-badge-sub{font-size:.62rem;color:var(--muted)}
-.hero-photo-tag{position:absolute;top:20px;right:-14px;z-index:2;background:var(--a2);color:#fff;border-radius:100px;padding:.45rem .9rem;font-size:.7rem;font-weight:700;box-shadow:0 4px 16px rgba(200,75,47,.3)}
-
-/* MARQUEE */
-.mq{background:var(--text);padding:.8rem 0;overflow:hidden}
-.mq-inner{display:flex;gap:2.5rem;animation:mqa 28s linear infinite;white-space:nowrap;width:max-content}
-.mqi{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;display:flex;align-items:center;gap:.75rem}
-.mqi::before{content:'◆';color:var(--a2);font-size:.45rem}
+.mq-wrap{background:var(--text);padding:.85rem 0;overflow:hidden}
+.mq-inner{display:flex;gap:2.5rem;animation:mqa 30s linear infinite;white-space:nowrap;width:max-content}
+.mqi{font-size:.68rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;display:flex;align-items:center;gap:.75rem}
+.mqi::before{content:'◆';color:var(--red);font-size:.42rem}
 @keyframes mqa{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* SECTIONS */
 section{padding:5.5rem 5%;scroll-margin-top:64px}
 .sbg{background:var(--bg2)}
-.sbg3{background:var(--bg3)}
-.ey{font-size:.68rem;font-weight:700;color:var(--a2);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.8rem}
-.st{font-family:var(--fh);font-size:clamp(1.75rem,3vw,2.6rem);font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--text)}
-.st .it{font-family:var(--fi);font-style:italic;font-weight:600;color:var(--a2)}
-.sec-sub{font-size:.92rem;color:var(--text2);line-height:1.8;margin-top:.75rem;max-width:540px;font-weight:300}
+.section-label{font-size:.68rem;font-weight:700;color:var(--red);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.85rem}
+.section-title{font-family:var(--fh);font-size:clamp(1.7rem,3vw,2.55rem);font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--text)}
+.section-title .accent{font-family:var(--fi);font-style:italic;font-weight:700;color:var(--red)}
+.section-sub{font-size:.92rem;color:var(--text2);line-height:1.82;margin-top:.75rem;max-width:520px}
 
-/* SERVICES section with background image */
-.services-wrap{position:relative;overflow:hidden}
-.services-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
-.services-bg img{width:100%;height:100%;object-fit:cover;opacity:.04;filter:grayscale(20%)}
-.services-bg::after{content:'';position:absolute;inset:0;background:var(--bg2)}
-.services-inner{position:relative;z-index:1}
-
-/* SERVICES */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
-.svc-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:all .22s;position:relative}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .22s;z-index:1}
-.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.08)}
-.svc-card:hover::before{opacity:1}
-.svc-card.c1::before{background:var(--a1)}
-.svc-card.c2::before{background:var(--a2)}
-.svc-card.c3::before{background:var(--a3)}
-.svc-card.c4::before{background:var(--a4)}
-.svc-card.c5::before{background:var(--a1)}
-.svc-card.c6::before{background:var(--a3)}
-/* Service card image strip */
-.svc-img{width:100%;height:120px;object-fit:cover;object-position:center;display:block;border-bottom:1px solid var(--border)}
-.svc-body{padding:1.75rem}
-.svc-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:1.1rem;flex-shrink:0}
-.ic1{background:var(--a1l)}.ic2{background:var(--a2l)}.ic3{background:var(--a3l)}.ic4{background:var(--a4l)}
-.svc-card h3{font-family:var(--fh);font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.55rem}
-.svc-card p{font-size:.82rem;color:var(--text2);line-height:1.7}
-.svc-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.9rem}
-.stag{font-size:.62rem;font-weight:600;padding:2px 9px;border-radius:100px;background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
-
-/* PRICE BOX */
-.price-box{background:var(--a2l);border-radius:var(--rl);border:1px solid rgba(200,75,47,.2);padding:1.75rem 1.5rem;margin-top:2rem}
-.price-badge{text-align:center;margin-bottom:1.1rem}
-.price-badge span{background:var(--a2);color:#fff;padding:.25rem .9rem;border-radius:100px;font-size:.7rem;font-weight:600}
-.price-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem}
+.svc-banner{position:relative;border-radius:var(--rl);overflow:hidden;height:220px;margin-bottom:2.75rem;box-shadow:var(--shadow)}
+.svc-banner img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .6s ease}
+.svc-banner:hover img{transform:scale(1.03)}
+.svc-banner-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(15,14,9,.78) 0%,rgba(15,14,9,.25) 65%,transparent 100%);display:flex;align-items:center;padding:0 2.5rem}
+.svc-banner-text h3{font-family:var(--fi);font-size:1.85rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:.4rem}
+.svc-banner-text p{font-size:.84rem;color:rgba(255,255,255,.7);max-width:360px;line-height:1.65}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.svc-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:transform .28s,box-shadow .28s,border-color .28s;position:relative}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc-card.c1::after{background:var(--blue)}.svc-card.c2::after{background:var(--red)}.svc-card.c3::after{background:var(--green)}.svc-card.c4::after{background:#7B3FA0}.svc-card.c5::after{background:var(--blue)}.svc-card.c6::after{background:var(--green)}
+.svc-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--border2)}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-img-wrap{height:145px;overflow:hidden;position:relative;background:var(--bg2)}
+.svc-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;display:block}
+.svc-card:hover .svc-img-wrap img{transform:scale(1.07)}
+.svc-body{padding:1.4rem}
+.svc-icon-row{display:flex;align-items:center;gap:.65rem;margin-bottom:.8rem}
+.svc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.ic1{background:var(--bluel)}.ic2{background:var(--redl)}.ic3{background:var(--greenl)}.ic4{background:#F5EDFB}
+.svc-card h3{font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.45rem}
+.svc-card p{font-size:.79rem;color:var(--text2);line-height:1.72}
+.svc-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.8rem}
+.stag{font-size:.59rem;font-weight:600;padding:3px 9px;border-radius:100px;background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+.price-box{background:linear-gradient(135deg,var(--redl),rgba(253,240,237,.3));border:1.5px solid rgba(200,75,47,.2);border-radius:var(--rl);padding:2rem 1.75rem;margin-top:2rem;position:relative;overflow:hidden}
+.price-box::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(200,75,47,.05)}
+.price-badge{text-align:center;margin-bottom:1.25rem}
+.price-badge span{background:var(--red);color:#fff;padding:.3rem 1rem;border-radius:100px;font-size:.7rem;font-weight:600;letter-spacing:.03em}
+.price-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2.5rem}
 .price-item{text-align:center}
-.price-amount{font-weight:800;font-size:1.3rem;color:var(--text)}
-.price-desc{font-size:.72rem;color:var(--text2);margin-top:.2rem}
-.price-link{text-align:center;margin-top:1.1rem}
-.price-link a{font-size:.78rem;color:var(--a2);font-weight:600}
-.price-link a:hover{text-decoration:underline}
+.price-val{font-family:var(--fh);font-weight:800;font-size:1.4rem;color:var(--text)}
+.price-lbl{font-size:.72rem;color:var(--text2);margin-top:.2rem}
+.price-cta{text-align:center;margin-top:1.25rem}
+.price-cta a{font-size:.8rem;color:var(--red);font-weight:600}
+.price-cta a:hover{opacity:.75}
 
-/* RESULTS */
-.results-section{position:relative;overflow:hidden}
-.results-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
-.results-bg img{width:100%;height:100%;object-fit:cover;opacity:.035;filter:grayscale(30%)}
-.results-bg::after{content:'';position:absolute;inset:0;background:var(--bg)}
-.results-inner{position:relative;z-index:1}
-.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-top:2.75rem}
-.results-visuals{display:flex;flex-direction:column;gap:1rem}
-.rv-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.25rem;box-shadow:0 2px 16px rgba(0,0,0,.05)}
+.results-banner{position:relative;border-radius:var(--rl);overflow:hidden;height:175px;margin-bottom:2.75rem;box-shadow:var(--shadow)}
+.results-banner img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.results-banner-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(15,14,9,.82),rgba(15,14,9,.45));display:flex;align-items:center;justify-content:space-around;padding:0 2.5rem;flex-wrap:wrap;gap:.75rem}
+.stat-pill{text-align:center}
+.stat-pill-num{font-family:var(--fh);font-size:1.9rem;font-weight:800;color:#fff;line-height:1}
+.stat-pill-lbl{font-size:.68rem;color:rgba(255,255,255,.62);margin-top:3px}
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.rv-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.35rem;box-shadow:var(--shadow)}
 .rv-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.85rem;gap:.5rem;flex-wrap:wrap}
-.rv-title{font-size:.75rem;font-weight:700;color:var(--text)}
+.rv-title{font-size:.74rem;font-weight:700;color:var(--text)}
 .rv-period{font-size:.62rem;color:var(--muted);flex-shrink:0}
-.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
-.kpi{text-align:center;background:var(--bg2);border-radius:8px;padding:.6rem .4rem}
-.kpi-n{font-family:var(--fh);font-size:1rem;font-weight:700;color:var(--text)}
-.kpi-l{font-size:.58rem;color:var(--muted);margin-top:2px;line-height:1.3}
-.kpi-n.green{color:var(--a3)}
-.funnel{margin-top:.75rem}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.85rem}
+.kpi{text-align:center;background:var(--bg2);border-radius:8px;padding:.6rem .35rem}
+.kpi-n{font-family:var(--fh);font-size:.92rem;font-weight:700;color:var(--text)}
+.kpi-n.g{color:var(--green)}.kpi-n.r{color:var(--red)}.kpi-n.b{color:var(--blue)}
+.kpi-l{font-size:.56rem;color:var(--muted);margin-top:2px;line-height:1.3}
 .funnel-row{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem}
-.funnel-bar-wrap{flex:1;height:18px;background:var(--bg2);border-radius:4px;overflow:hidden}
-.funnel-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:8px}
-.funnel-pct{font-size:.6rem;font-weight:700;color:#fff}
-.funnel-label{font-size:.65rem;color:var(--text2);width:52px;flex-shrink:0}
-.funnel-val{font-size:.62rem;font-weight:600;color:var(--text);width:28px;text-align:right;flex-shrink:0}
-.web-mock{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.06)}
-.web-mock-bar{background:var(--bg3);border-bottom:1px solid var(--border);padding:.55rem 1rem;display:flex;align-items:center;gap:6px}
-.m-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.web-mock-url{background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:.2rem .75rem;font-size:.62rem;color:var(--muted);flex:1;max-width:180px}
-.web-mock-body{padding:1rem}
-.web-hero-mock{background:linear-gradient(135deg,var(--a1) 0%,#0F3BAA 100%);border-radius:10px;padding:1.25rem;margin-bottom:.85rem;color:#fff}
-.web-hero-tag{font-size:.58rem;background:rgba(255,255,255,.2);padding:2px 8px;border-radius:100px;display:inline-block;margin-bottom:.5rem}
-.web-hero-h{font-family:var(--fh);font-size:.95rem;font-weight:700;line-height:1.3;margin-bottom:.5rem}
-.web-hero-p{font-size:.62rem;opacity:.75;line-height:1.5;margin-bottom:.75rem}
-.web-btn{background:#fff;color:var(--a1);font-size:.62rem;font-weight:700;padding:.35rem .85rem;border-radius:100px;display:inline-block}
-.web-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
-.web-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.6rem}
-.web-card-img{height:28px;border-radius:5px;margin-bottom:.4rem}
-.web-card-name{font-size:.6rem;font-weight:600;color:var(--text);margin-bottom:2px}
-.web-card-price{font-size:.58rem;color:var(--a3);font-weight:700}
-.result-items{display:flex;flex-direction:column;gap:1.25rem}
-.result-item{display:flex;align-items:flex-start;gap:1rem;padding:1.1rem;background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);transition:border-color .2s}
-.result-item:hover{border-color:var(--border2)}
-.result-num{font-family:var(--fh);font-size:1.6rem;font-weight:800;line-height:1;flex-shrink:0;width:64px}
-.n1{color:var(--a1)}.n2{color:var(--a2)}.n3{color:var(--a3)}.n4{color:var(--a4)}
-.result-text h4{font-family:var(--fh);font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
-.result-text p{font-size:.78rem;color:var(--text2);line-height:1.6}
+.f-label{font-size:.63rem;color:var(--text2);width:50px;flex-shrink:0}
+.f-bar{flex:1;height:16px;background:var(--bg2);border-radius:4px;overflow:hidden}
+.f-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:7px}
+.f-pct{font-size:.57rem;font-weight:700;color:#fff}
+.f-val{font-size:.6rem;font-weight:600;color:var(--text);width:26px;text-align:right;flex-shrink:0}
+.port-thumb{border-radius:var(--r);overflow:hidden;border:1.5px solid var(--border);box-shadow:var(--shadow);margin-top:1rem}
+.port-thumb img{width:100%;height:175px;object-fit:cover;object-position:center;display:block}
+.port-thumb-info{padding:.85rem 1rem;background:var(--card)}
+.result-items{display:flex;flex-direction:column;gap:1rem}
+.result-item{display:flex;align-items:flex-start;gap:1rem;padding:1.1rem;background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);transition:all .25s}
+.result-item:hover{border-color:var(--border2);transform:translateX(4px);box-shadow:var(--shadow)}
+.result-num{font-family:var(--fh);font-size:1.5rem;font-weight:800;line-height:1;flex-shrink:0;width:60px}
+.n1{color:var(--blue)}.n2{color:var(--red)}.n3{color:var(--green)}.n4{color:#7B3FA0}
+.result-text h4{font-family:var(--fh);font-size:.86rem;font-weight:700;color:var(--text);margin-bottom:.28rem}
+.result-text p{font-size:.77rem;color:var(--text2);line-height:1.62}
 
-/* PROCESS */
-.process-section{position:relative;overflow:hidden}
-.process-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
-.process-bg img{width:100%;height:100%;object-fit:cover;opacity:.045;filter:grayscale(20%)}
-.process-bg::after{content:'';position:absolute;inset:0;background:var(--bg2)}
+.process-wrap{position:relative;overflow:hidden}
+.process-bg-img{position:absolute;inset:0;z-index:0}
+.process-bg-img img{width:100%;height:100%;object-fit:cover;opacity:.04;filter:grayscale(40%)}
+.process-bg-img::after{content:'';position:absolute;inset:0;background:var(--bg2)}
 .process-inner{position:relative;z-index:1}
-.proc-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border-radius:var(--rl);overflow:hidden;border:1.5px solid var(--border);margin-top:2.75rem}
-.proc-item{background:var(--card);padding:1.5rem 1.75rem;display:flex;align-items:flex-start;gap:1.25rem;transition:background .18s}
-.proc-item:hover{background:var(--bg2)}
-.proc-n{width:36px;height:36px;border-radius:50%;background:var(--a2l);border:1.5px solid rgba(200,75,47,.22);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:.7rem;font-weight:700;color:var(--a2);flex-shrink:0;margin-top:2px}
-.proc-item h4{font-family:var(--fh);font-size:.92rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
-.proc-item p{font-size:.82rem;color:var(--text2);line-height:1.65}
+.proc-list{display:flex;flex-direction:column;gap:1px;border-radius:var(--rl);overflow:hidden;border:1.5px solid var(--border);margin-top:2.75rem}
+.proc-item{background:var(--card);padding:1.45rem 1.75rem;display:flex;align-items:flex-start;gap:1.25rem;transition:background .2s,transform .2s;border-bottom:1px solid var(--border)}
+.proc-item:last-child{border-bottom:none}
+.proc-item:hover{background:rgba(200,75,47,.03);transform:translateX(4px)}
+.proc-n{width:36px;height:36px;border-radius:50%;background:var(--redl);border:1.5px solid rgba(200,75,47,.25);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:var(--red);flex-shrink:0;margin-top:2px;transition:all .25s}
+.proc-item:hover .proc-n{background:var(--red);color:#fff;border-color:var(--red)}
+.proc-item h4{font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+.proc-item p{font-size:.79rem;color:var(--text2);line-height:1.68}
 
-/* PORTFOLIO */
-.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
-.port-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:all .22s}
-.port-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.08);border-color:var(--border2)}
-.port-img{height:175px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.port-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s ease}
-.port-card:hover .port-img img{transform:scale(1.04)}
-.port-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(24,23,15,.45) 100%);z-index:1}
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.35rem;margin-top:2.75rem}
+.port-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:transform .28s,box-shadow .28s}
+.port-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.port-img{height:185px;overflow:hidden;position:relative}
+.port-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;display:block}
+.port-card:hover .port-img img{transform:scale(1.06)}
+.port-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,14,9,.55) 0%,transparent 60%);opacity:0;transition:opacity .3s}
+.port-card:hover .port-overlay{opacity:1}
+.port-overlay-label{position:absolute;bottom:14px;left:14px;color:#fff;font-size:.72rem;font-weight:600;opacity:0;transform:translateY(6px);transition:all .3s}
+.port-card:hover .port-overlay-label{opacity:1;transform:translateY(0)}
 .port-body{padding:1.1rem}
-.port-type{font-size:.62rem;font-weight:700;color:var(--a2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem}
-.port-body h3{font-family:var(--fh);font-size:.92rem;font-weight:700;color:var(--text);margin-bottom:.45rem}
-.port-body p{font-size:.78rem;color:var(--text2);line-height:1.62}
-.port-result{display:flex;align-items:center;gap:5px;margin-top:.75rem;font-size:.72rem;font-weight:700;color:var(--a3)}
+.port-type{font-size:.6rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.38rem}
+.port-body h3{font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.45rem;line-height:1.35}
+.port-body p{font-size:.78rem;color:var(--text2);line-height:1.65}
+.port-result{display:flex;align-items:center;gap:5px;margin-top:.7rem;font-size:.7rem;font-weight:700;color:var(--green)}
 .port-result::before{content:'↑'}
 
-/* TASKFLOW */
 .tf-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
-.tf-mock{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.05)}
-.tf-bar{background:var(--bg3);border-bottom:1px solid var(--border);padding:.65rem 1rem;display:flex;align-items:center;gap:6px}
+.tf-mock{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:var(--shadow-lg)}
+.tf-bar{background:var(--bg);border-bottom:1px solid var(--border);padding:.65rem 1rem;display:flex;align-items:center;gap:6px}
 .tf-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 .tf-bt{font-size:.72rem;color:var(--muted);margin-left:.4rem}
-.tf-body{padding:1.1rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem}
-.tf-col-h{font-size:.6rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;display:flex;align-items:center;gap:5px}
-.tf-col-h::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
-.tf-ch1{color:var(--muted)}.tf-ch2{color:var(--a2)}.tf-ch3{color:var(--a3)}
-.tf-card{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:.7rem;margin-bottom:.45rem;font-size:.72rem}
-.tf-card-t{font-weight:500;color:var(--text);margin-bottom:4px;line-height:1.35}
-.tt{font-size:.58rem;font-weight:700;padding:2px 7px;border-radius:100px;display:inline-block}
-.ttr{background:var(--a2l);color:var(--a2)}.ttg{background:var(--a3l);color:var(--a3)}.ttb{background:var(--a1l);color:var(--a1)}.ttgr{background:var(--bg3);color:var(--muted)}
-.tf-prog{height:3px;background:var(--bg3);border-radius:3px;margin:.4rem 0}
-.tf-prog-f{height:100%;background:var(--a2);border-radius:3px}
-.tf-prog-col{border-left:2px solid var(--a2)}
+.tf-body{padding:1rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+.tf-col-h{font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.55rem;display:flex;align-items:center;gap:5px}
+.tf-col-h::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
+.tfc1{color:var(--muted)}.tfc2{color:var(--red)}.tfc3{color:var(--green)}
+.tf-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.65rem;margin-bottom:.4rem;font-size:.7rem}
+.tf-card-t{font-weight:500;color:var(--text);margin-bottom:4px;line-height:1.3}
+.tt{font-size:.56rem;font-weight:700;padding:2px 7px;border-radius:100px;display:inline-block}
+.ttr{background:var(--redl);color:var(--red)}.ttg{background:var(--greenl);color:var(--green)}.ttb{background:var(--bluel);color:var(--blue)}.ttgr{background:var(--bg);color:var(--muted)}
+.tf-prog{height:3px;background:var(--bg);border-radius:3px;margin:.4rem 0}
+.tf-prog-f{height:100%;background:var(--red);border-radius:3px}
+.tf-prog-col{border-left:2px solid var(--red);padding-left:4px}
 
-/* TESTIMONIALS */
-.testi-section{position:relative;overflow:hidden}
-.testi-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
-.testi-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.04;filter:grayscale(25%)}
-.testi-bg::after{content:'';position:absolute;inset:0;background:var(--bg)}
+.testi-wrap{position:relative;overflow:hidden}
+.testi-bg-img{position:absolute;inset:0;z-index:0}
+.testi-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.04;filter:grayscale(30%)}
+.testi-bg-img::after{content:'';position:absolute;inset:0;background:var(--bg)}
 .testi-inner{position:relative;z-index:1}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
-.testi{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.6rem;position:relative}
-.testi-q{font-family:var(--fi);font-size:3rem;color:var(--a2);opacity:.12;position:absolute;top:.2rem;right:1.1rem;line-height:1}
-.testi p{font-size:.83rem;color:var(--text2);line-height:1.78;margin-bottom:1.1rem;position:relative}
-.testi-au{display:flex;align-items:center;gap:.7rem}
-.testi-av{width:34px;height:34px;border-radius:50%;background:var(--a2l);border:1.5px solid rgba(200,75,47,.2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.68rem;color:var(--a2);flex-shrink:0}
+.testi{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.75rem;position:relative;transition:all .28s}
+.testi:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:rgba(200,75,47,.25)}
+.testi-q{font-family:var(--fi);font-size:3.5rem;color:var(--red);opacity:.1;position:absolute;top:.2rem;right:1.1rem;line-height:1}
+.testi p{font-size:.83rem;color:var(--text2);line-height:1.82;margin-bottom:1.25rem;position:relative}
+.testi-au{display:flex;align-items:center;gap:.75rem}
+.testi-av{width:36px;height:36px;border-radius:50%;background:var(--redl);border:2px solid rgba(200,75,47,.2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.68rem;color:var(--red);flex-shrink:0}
 .testi-name{font-size:.82rem;font-weight:600;color:var(--text)}
 .testi-role{font-size:.7rem;color:var(--muted)}
-.testi-role a{color:var(--a2);text-decoration:underline}
-.testi-role a:hover{color:var(--a1)}
+.testi-role a{color:var(--red)}
+.stars{color:#F59E0B;font-size:.75rem;margin-bottom:.75rem;letter-spacing:1px}
 
-/* CONTACT */
-.contact-section{position:relative;overflow:hidden}
-.contact-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
-.contact-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.04;filter:grayscale(20%)}
-.contact-bg::after{content:'';position:absolute;inset:0;background:var(--bg2)}
+.contact-wrap{position:relative;overflow:hidden}
+.contact-bg-img{position:absolute;inset:0;z-index:0}
+.contact-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.04;filter:grayscale(20%)}
+.contact-bg-img::after{content:'';position:absolute;inset:0;background:var(--bg2)}
 .contact-inner{position:relative;z-index:1}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.75rem}
-.contact-info h3{font-family:var(--fh);font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:var(--text)}
-.contact-info p{font-size:.88rem;color:var(--text2);line-height:1.8;margin-bottom:1.5rem}
-.contact-links{display:flex;flex-direction:column;gap:.65rem}
-.contact-link{display:flex;align-items:center;gap:.75rem;font-size:.83rem;color:var(--text2);padding:.65rem .9rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);transition:all .18s}
-.contact-link:hover{border-color:var(--a2);color:var(--a2);background:var(--a2l)}
-.contact-link-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-.contact-form{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:2rem}
+.contact-info h3{font-family:var(--fh);font-size:1.1rem;font-weight:700;margin-bottom:.55rem;color:var(--text)}
+.contact-info p{font-size:.87rem;color:var(--text2);line-height:1.82;margin-bottom:1.5rem}
+.contact-links{display:flex;flex-direction:column;gap:.6rem}
+.contact-link{display:flex;align-items:center;gap:.75rem;font-size:.83rem;color:var(--text2);padding:.7rem 1rem;background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);transition:all .22s}
+.contact-link:hover{border-color:var(--red);color:var(--red);background:var(--redl);transform:translateX(4px)}
+.cl-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.contact-form{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:2.25rem;box-shadow:var(--shadow)}
 .contact-form h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:.35rem;color:var(--text)}
-.contact-form p{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
-.form-note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:1rem}
-.form-note a{color:var(--a2);font-weight:600}
-.form-note a:hover{text-decoration:underline}
-.google-form-wrapper{position:relative;overflow:hidden;border-radius:var(--r);-webkit-overflow-scrolling:touch}
-.google-form-wrapper iframe{width:100%;border:none;display:block}
+.cf-sub{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
+.gform-wrap{border-radius:var(--r);overflow:hidden}
+.gform-wrap iframe{width:100%;border:none;display:block}
+.form-note{font-size:.7rem;color:var(--muted);text-align:center;margin-top:1rem}
+.form-note a{color:var(--red);font-weight:600}
 
-/* FOOTER */
-footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
-.ft-top{display:grid;grid-template-columns:1fr auto auto auto;gap:3rem;margin-bottom:2.5rem;align-items:start}
-.ft-brand{font-family:var(--fh);font-size:1rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px;margin-bottom:.65rem}
-.ft-brand-dot{width:9px;height:9px;background:var(--a2);border-radius:50%;flex-shrink:0}
-.ft-desc{font-size:.78rem;line-height:1.75;max-width:240px}
-.ft-col h4{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.85rem}
-.ft-col a{display:block;font-size:.8rem;color:rgba(255,255,255,.55);margin-bottom:.55rem;transition:color .2s}
+footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.ft-logo{font-family:var(--fh);font-size:1rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px;margin-bottom:.7rem}
+.ft-logo-dot{width:8px;height:8px;background:var(--red);border-radius:50%;flex-shrink:0}
+.ft-desc{font-size:.78rem;line-height:1.78;max-width:230px}
+.ft-col h4{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.9rem}
+.ft-col a{display:block;font-size:.8rem;color:rgba(255,255,255,.52);margin-bottom:.5rem;transition:color .2s}
 .ft-col a:hover{color:#fff}
 .ft-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.ft-copy{font-size:.72rem}
-.ft-soc{display:flex;gap:1rem}
-.ft-soc a{font-size:.75rem;color:rgba(255,255,255,.4);transition:color .2s}
+.ft-copy{font-size:.7rem}
+.ft-soc{display:flex;gap:1.25rem}
+.ft-soc a{font-size:.75rem;color:rgba(255,255,255,.38);transition:color .2s}
 .ft-soc a:hover{color:#fff}
 
-/* REVEAL ANIMATION */
-.rv{opacity:1;transform:none}
-.rv.an{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-.rv.an.vi{opacity:1;transform:none}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+@keyframes fadeslideup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeslidedown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:1;transform:none}
+.reveal.hidden{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
-/* FORM ROW */
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  .hero{grid-template-columns:1fr;padding:7rem 5% 4rem;gap:2.5rem;min-height:auto}
-  .hero-right{justify-content:center}
-  .hero-photo-wrap{max-width:320px;margin:0 auto}
-  .hero-photo{aspect-ratio:3/4}
-  .hero-photo-badge{left:0;bottom:16px;padding:.6rem .8rem}
-  .hero-photo-tag{right:0;top:14px}
+@media(max-width:1024px){
   .svc-grid,.port-grid,.testi-grid{grid-template-columns:1fr 1fr}
   .results-grid,.tf-wrap,.contact-grid{grid-template-columns:1fr}
-  .ft-top{grid-template-columns:1fr 1fr}
-  .tf-body{grid-template-columns:repeat(3,1fr)}
+  .ft-grid{grid-template-columns:1fr 1fr}
 }
-@media(max-width:600px){
+@media(max-width:768px){
   .nav-links,.nav-cta{display:none}
   .hbg{display:flex}
-  .mm{padding-top:4.5rem}
-  .hero{padding:6rem 5% 3rem;gap:2rem}
-  .hero h1{font-size:clamp(2rem,8vw,2.8rem)}
-  .hero-sub{font-size:.92rem}
-  .hero-photo-wrap{max-width:260px}
-  .hero-photo{aspect-ratio:3/4}
-  .hero-photo-badge{display:none}
-  .hero-photo-tag{font-size:.62rem;padding:.35rem .7rem;right:0;top:10px}
-  .btn-p,.btn-s{font-size:.82rem;padding:.75rem 1.4rem}
-  .hero-acts{gap:.6rem}
-  .hero-trust{gap:.5rem}
-  .trust-sep{display:none}
-  section{padding:3.5rem 5%}
-  .svc-grid,.port-grid,.testi-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  .ft-top{grid-template-columns:1fr}
-  .ft-bottom{flex-direction:column;text-align:center}
+  .hero{grid-template-columns:1fr;padding:7.5rem 5% 4rem;gap:2.5rem;min-height:auto}
+  .hero-right{justify-content:center}
+  .photo-wrap{max-width:300px;margin:0 auto}
+  .photo-chip{left:0;bottom:14px}
+  .photo-tag{right:0;top:14px}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .port-grid,.testi-grid{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr 1fr}
+  .results-banner{height:130px}
+  .results-banner-overlay{padding:0 1.25rem;gap:.5rem}
+  .stat-pill-num{font-size:1.4rem}
+  .svc-banner{height:155px}
+  .svc-banner-text h3{font-size:1.35rem}
   .kpi-row{grid-template-columns:1fr 1fr}
-  .mqi{font-size:.62rem}
-  .price-grid{flex-direction:column;align-items:center;gap:1.25rem}
-  .results-grid{gap:2rem}
-  .tf-wrap{gap:2rem}
-  .contact-grid{gap:2rem}
-  .hero-photo-wrap{max-width:240px}
-  .proc-item{padding:1.1rem 1.25rem}
-  .result-num{font-size:1.3rem;width:52px}
-  .tf-body{gap:.5rem;padding:.75rem}
-  .tf-card{padding:.5rem}
-  .svc-img{height:90px}
-  .port-img{height:140px}
 }
-@media(max-width:400px){
-  .hero h1{font-size:1.9rem}
-  .svc-grid{grid-template-columns:1fr}
-  .kpi-row{grid-template-columns:1fr 1fr}
-  .price-grid{gap:1rem}
+@media(max-width:480px){
+  section{padding:3.5rem 5%}
+  .hero h1{font-size:2rem}
+  .photo-wrap{max-width:260px}
+  .photo-chip{display:none}
+  .svc-grid,.port-grid,.testi-grid{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr}
+  .ft-bottom{flex-direction:column;text-align:center}
+  .results-banner{height:auto}
+  .results-banner img{display:none}
+  .results-banner-overlay{position:static;background:var(--text);padding:1.25rem;border-radius:var(--rl);flex-wrap:wrap;justify-content:center;gap:1rem}
+  .tf-body{grid-template-columns:repeat(3,1fr)}
+  .trust-sep{display:none}
+  .hero-btns{gap:.6rem}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo"><span class="nav-logo-dot"></span>MikeTechStudio</div>
+<nav id="nav">
+  <div class="nav-logo"><span class="nav-dot"></span>MikeTechStudio</div>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#results">Results</a>
@@ -377,66 +340,55 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mm" id="mm" role="navigation" aria-label="Mobile menu">
+<div class="mm" id="mm" role="navigation">
   <a href="#services" class="mml">Services</a>
   <a href="#results" class="mml">Results</a>
   <a href="#work" class="mml">Work</a>
   <a href="#taskflow" class="mml">TaskFlow</a>
   <a href="#contact" class="mml">Contact</a>
-  <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="mm-cta">Hire Me on Upwork ↗</a>
-  <div class="mm-soc">
-    <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">𝕏 Twitter</a>
-    <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://www.instagram.com/mike.techstudio/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank" rel="noopener">Facebook</a>
+  <div class="mm-bottom">
+    <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="mm-cta">Hire Me on Upwork ↗</a>
+    <div class="mm-soc">
+      <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">𝕏 Twitter</a>
+      <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/mike.techstudio/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank" rel="noopener">Facebook</a>
+    </div>
   </div>
 </div>
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <!-- Hero background image (subtle) -->
-  <div class="hero-bg-img">
-    <img src="https://img.sanishtech.com/u/3cd1e966d439753d310e0aa8c71b75b6.jpg" alt="" aria-hidden="true" loading="eager">
+  <div class="hero-bg">
+    <img src="https://img.sanishtech.com/u/3cd1e966d439753d310e0aa8c71b75b6.jpg" alt="" aria-hidden="true" loading="eager" fetchpriority="low">
   </div>
-
   <div class="hero-left">
-    <div class="hero-tag">✓ Available now · US &amp; UK clients · Remote worldwide</div>
-    <h1>Stop losing leads.<br>I build systems that <span class="it">recover your revenue.</span></h1>
-    <p class="hero-sub">Most businesses lose 30–50% of their leads because their follow-up is slow, manual, or broken. I fix that. <strong>Twilio &amp; VoIP systems, SMS &amp; email automation, Zapier workflows, web design</strong> — built to run without you and generate results from day one.</p>
-    <div class="hero-acts">
-      <a href="#contact" class="btn-p">Start a project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#work" class="btn-s">See my work</a>
+    <div class="avail-badge"><span class="avail-dot"></span>Available now · US &amp; UK clients · Remote worldwide</div>
+    <h1>Stop losing leads.<br>I build systems that<br><span class="accent">recover your revenue.</span></h1>
+    <p class="hero-sub">Most businesses lose 30–50% of their leads because follow-up is slow, manual, or broken. I fix that. <strong>Twilio &amp; VoIP systems, SMS &amp; email automation, Zapier workflows, web design</strong> — built to run without you from day one.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Start a project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#work" class="btn-secondary">See my work</a>
     </div>
-    <div class="hero-trust">
-      <div class="trust-badge">13+ Twilio flows live</div>
-      <div class="trust-sep"></div>
-      <div class="trust-badge">US &amp; UK clients</div>
-      <div class="trust-sep"></div>
-      <div class="trust-badge">10DLC compliant</div>
-      <div class="trust-sep"></div>
-      <div class="trust-badge">Fixed prices</div>
+    <div class="trust-row">
+      <span class="trust-item">13+ Twilio flows live</span><span class="trust-sep"></span>
+      <span class="trust-item">US &amp; UK clients</span><span class="trust-sep"></span>
+      <span class="trust-item">10DLC compliant</span><span class="trust-sep"></span>
+      <span class="trust-item">Fixed prices</span>
     </div>
   </div>
-
   <div class="hero-right">
-    <div class="hero-photo-wrap">
-      <!-- YOUR PHOTO — untouched -->
+    <div class="photo-wrap">
+      <div class="photo-ring"></div>
       <img src="michael.jpg" alt="Michael Fabiyi — Founder, MikeTechStudio" class="hero-photo" loading="eager">
-      <div class="hero-photo-badge">
-        <div class="hero-photo-badge-dot"></div>
-        <div>
-          <div class="hero-photo-badge-text">Michael Fabiyi</div>
-          <div class="hero-photo-badge-sub">Founder · MikeTechStudio</div>
-        </div>
-      </div>
-      <div class="hero-photo-tag">Available for projects ✓</div>
+      <div class="photo-chip"><span class="chip-dot"></span><div><div class="chip-name">Michael Fabiyi</div><div class="chip-sub">Founder · MikeTechStudio</div></div></div>
+      <div class="photo-tag">Available for projects ✓</div>
     </div>
   </div>
 </section>
 
 <!-- MARQUEE -->
-<div class="mq" aria-hidden="true">
+<div class="mq-wrap" aria-hidden="true">
   <div class="mq-inner">
     <span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Email Marketing</span><span class="mqi">Klaviyo</span><span class="mqi">Mailchimp</span><span class="mqi">Zapier Workflows</span><span class="mqi">ClickSend</span><span class="mqi">Shopify Design</span><span class="mqi">WordPress</span><span class="mqi">REST APIs</span><span class="mqi">React</span><span class="mqi">Supabase</span><span class="mqi">CRM Integration</span><span class="mqi">TaskFlow SaaS</span><span class="mqi">Lead Automation</span><span class="mqi">No-Show Recovery</span>
     <span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Email Marketing</span><span class="mqi">Klaviyo</span><span class="mqi">Mailchimp</span><span class="mqi">Zapier Workflows</span><span class="mqi">ClickSend</span><span class="mqi">Shopify Design</span><span class="mqi">WordPress</span><span class="mqi">REST APIs</span><span class="mqi">React</span><span class="mqi">Supabase</span><span class="mqi">CRM Integration</span><span class="mqi">TaskFlow SaaS</span><span class="mqi">Lead Automation</span><span class="mqi">No-Show Recovery</span>
@@ -444,283 +396,178 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 </div>
 
 <!-- SERVICES -->
-<section class="sbg services-wrap" id="services">
-  <!-- Services background image -->
-  <div class="services-bg">
-    <img src="https://img.sanishtech.com/u/777baeabf6482fd4758c67285a075d2a.webp" alt="" aria-hidden="true" loading="lazy">
+<section class="sbg" id="services">
+  <div class="svc-banner reveal hidden">
+    <img src="https://img.sanishtech.com/u/777baeabf6482fd4758c67285a075d2a.webp" alt="Professional workspace" loading="lazy">
+    <div class="svc-banner-overlay">
+      <div class="svc-banner-text">
+        <h3>Services that move<br>the needle</h3>
+        <p>Every service solves a real business problem — more leads captured, more revenue recovered, more time saved.</p>
+      </div>
+    </div>
   </div>
-  <div class="services-inner">
-    <div class="ey rv an">What I build</div>
-    <h2 class="st rv an d1">Services that <span class="it">actually move the needle</span></h2>
-    <p class="sec-sub rv an d2">Every service is built to solve a real business problem — more leads captured, more revenue recovered, more time saved. Not just deliverables, but results.</p>
-    <div class="svc-grid">
-
-      <div class="svc-card c1 rv an">
-        <img src="https://img.sanishtech.com/u/4681d81f4552a0f27df436cf56825e36.jpg" alt="Telephony and SMS systems" class="svc-img" loading="lazy">
-        <div class="svc-body">
-          <div class="svc-icon ic1">📞</div>
-          <h3>Telephony &amp; SMS Systems</h3>
-          <p>Twilio Studio voice and SMS flows, Telnyx VoIP multi-number routing, 10DLC compliance registration and fixes, appointment reminders, missed-call text-back and no-show recovery. 13+ production flows live for US clients.</p>
-          <div class="svc-tags"><span class="stag">Twilio Studio</span><span class="stag">Telnyx VoIP</span><span class="stag">10DLC</span><span class="stag">ClickSend</span><span class="stag">SMS flows</span></div>
-        </div>
+  <div class="section-label reveal hidden">What I build</div>
+  <h2 class="section-title reveal hidden d1">Built to <span class="accent">generate results</span></h2>
+  <p class="section-sub reveal hidden d2">Not just deliverables. Real outcomes you can measure from week one.</p>
+  <div class="svc-grid" style="margin-top:2.5rem">
+    <div class="svc-card c1 reveal hidden">
+      <div class="svc-img-wrap"><img src="https://img.sanishtech.com/u/4681d81f4552a0f27df436cf56825e36.jpg" alt="Telephony and SMS systems" loading="lazy"></div>
+      <div class="svc-body">
+        <div class="svc-icon-row"><div class="svc-icon ic1">📞</div><h3>Telephony &amp; SMS Systems</h3></div>
+        <p>Twilio Studio voice and SMS flows, Telnyx VoIP multi-number routing, 10DLC compliance, appointment reminders, missed-call text-back and no-show recovery. 13+ production flows live for US clients.</p>
+        <div class="svc-tags"><span class="stag">Twilio Studio</span><span class="stag">Telnyx VoIP</span><span class="stag">10DLC</span><span class="stag">ClickSend</span><span class="stag">SMS flows</span></div>
       </div>
-
-      <div class="svc-card c2 rv an d1">
-        <img src="https://img.sanishtech.com/u/d84c730e733fd1e51b7ff1c30f70fe14.jpg" alt="Email marketing automation" class="svc-img" loading="lazy">
-        <div class="svc-body">
-          <div class="svc-icon ic2">📧</div>
-          <h3>Email Marketing Automation</h3>
-          <p>Welcome sequences, abandoned cart recovery, post-purchase flows, lead nurturing and win-back campaigns. Built in Klaviyo, Mailchimp, Brevo or any ESP. Set up once, earn on autopilot.</p>
-          <div class="svc-tags"><span class="stag">Klaviyo</span><span class="stag">Mailchimp</span><span class="stag">Brevo</span><span class="stag">Email flows</span><span class="stag">Segmentation</span></div>
-        </div>
-      </div>
-
-      <div class="svc-card c3 rv an d2">
-        <img src="https://cdn.phototourl.com/free/2026-05-05-dd56634a-48f7-40a8-ba96-1df17ffda716.jpg" alt="Zapier workflow automation" class="svc-img" loading="lazy">
-        <div class="svc-body">
-          <div class="svc-icon ic3">⚡</div>
-          <h3>Zapier &amp; Workflow Automation</h3>
-          <p>Connect your tools so nothing falls through the cracks. CRM to email, Shopify to fulfilment, Google Calendar sync, multi-step automations — no manual copy-paste, no missed follow-ups.</p>
-          <div class="svc-tags"><span class="stag">Zapier</span><span class="stag">Make.com</span><span class="stag">REST APIs</span><span class="stag">CRM sync</span><span class="stag">Google Suite</span></div>
-        </div>
-      </div>
-
-      <div class="svc-card c4 rv an">
-        <img src="https://cdn.phototourl.com/free/2026-05-05-e67c1c5a-5baa-406c-8ae7-11e0f91f3207.webp" alt="Web design and Shopify stores" class="svc-img" loading="lazy">
-        <div class="svc-body">
-          <div class="svc-icon ic4">🌐</div>
-          <h3>Web Design &amp; Shopify Stores</h3>
-          <p>Fast, mobile-first websites and Shopify stores built to convert. WordPress, Elementor, Shopify, Carrd and custom HTML/CSS/React. Designed to load fast and turn visitors into paying customers.</p>
-          <div class="svc-tags"><span class="stag">Shopify</span><span class="stag">WordPress</span><span class="stag">React</span><span class="stag">HTML/CSS</span><span class="stag">Carrd</span></div>
-        </div>
-      </div>
-
-      <div class="svc-card c5 rv an d1">
-        <img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="SEO and e-commerce growth" class="svc-img" loading="lazy">
-        <div class="svc-body">
-          <div class="svc-icon ic1">📈</div>
-          <h3>SEO &amp; E-Commerce Growth</h3>
-          <p>Get your store ranking on Google and bringing in consistent organic traffic. Product page optimisation, keyword research, technical SEO fixes, schema markup and backlink strategy.</p>
-          <div class="svc-tags"><span class="stag">On-page SEO</span><span class="stag">Shopify SEO</span><span class="stag">WooCommerce</span><span class="stag">Technical SEO</span></div>
-        </div>
-      </div>
-
-      <div class="svc-card c6 rv an d2">
-        <img src="https://cdn.phototourl.com/free/2026-05-05-0d95a1da-7a93-424b-b0d3-fa9c40cd64e2.jpg" alt="Custom software and SaaS development" class="svc-img" loading="lazy">
-        <div class="svc-body">
-          <div class="svc-icon ic3">💻</div>
-          <h3>Custom Software &amp; SaaS</h3>
-          <p>Full-stack web applications built with React, Supabase and modern APIs. From simple landing pages to complete SaaS products — see TaskFlow, my own live project, as proof of what I can build.</p>
-          <div class="svc-tags"><span class="stag">React</span><span class="stag">Supabase</span><span class="stag">JavaScript</span><span class="stag">Vercel</span><span class="stag">APIs</span></div>
-        </div>
-      </div>
-
     </div>
-
-    <!-- FIXED PRICE BOX -->
-    <div class="price-box rv an d3">
-      <div class="price-badge"><span>Fixed price · No surprises · 7-day delivery</span></div>
-      <div class="price-grid">
-        <div class="price-item">
-          <div class="price-amount">$497</div>
-          <div class="price-desc">10DLC compliance + registration</div>
-        </div>
-        <div class="price-item">
-          <div class="price-amount">$799</div>
-          <div class="price-desc">Twilio IVR setup (up to 5 nodes)</div>
-        </div>
-        <div class="price-item">
-          <div class="price-amount">$349</div>
-          <div class="price-desc">SMS auto-responder system</div>
-        </div>
+    <div class="svc-card c2 reveal hidden d1">
+      <div class="svc-img-wrap"><img src="https://img.sanishtech.com/u/d84c730e733fd1e51b7ff1c30f70fe14.jpg" alt="Email marketing automation" loading="lazy"></div>
+      <div class="svc-body">
+        <div class="svc-icon-row"><div class="svc-icon ic2">📧</div><h3>Email Marketing Automation</h3></div>
+        <p>Welcome sequences, abandoned cart recovery, post-purchase flows, lead nurturing and win-back campaigns. Built in Klaviyo, Mailchimp, Brevo or any ESP. Set up once, earn on autopilot.</p>
+        <div class="svc-tags"><span class="stag">Klaviyo</span><span class="stag">Mailchimp</span><span class="stag">Brevo</span><span class="stag">Email flows</span><span class="stag">Segmentation</span></div>
       </div>
-      <div class="price-link"><a href="#contact">→ Get a custom quote for your project</a></div>
     </div>
+    <div class="svc-card c3 reveal hidden d2">
+      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-dd56634a-48f7-40a8-ba96-1df17ffda716.jpg" alt="Web design code screen" loading="lazy"></div>
+      <div class="svc-body">
+        <div class="svc-icon-row"><div class="svc-icon ic3">⚡</div><h3>Zapier &amp; Workflow Automation</h3></div>
+        <p>Connect your tools so nothing falls through the cracks. CRM to email, Shopify to fulfilment, Google Calendar sync, multi-step automations — no manual copy-paste, no missed follow-ups.</p>
+        <div class="svc-tags"><span class="stag">Zapier</span><span class="stag">Make.com</span><span class="stag">REST APIs</span><span class="stag">CRM sync</span><span class="stag">Google Suite</span></div>
+      </div>
+    </div>
+    <div class="svc-card c4 reveal hidden">
+      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-e67c1c5a-5baa-406c-8ae7-11e0f91f3207.webp" alt="Web design and Shopify" loading="lazy"></div>
+      <div class="svc-body">
+        <div class="svc-icon-row"><div class="svc-icon ic4">🌐</div><h3>Web Design &amp; Shopify Stores</h3></div>
+        <p>Fast, mobile-first websites and Shopify stores built to convert. WordPress, Elementor, Shopify, Carrd and custom HTML/CSS/React. Designed to load fast and turn visitors into paying customers.</p>
+        <div class="svc-tags"><span class="stag">Shopify</span><span class="stag">WordPress</span><span class="stag">React</span><span class="stag">HTML/CSS</span><span class="stag">Carrd</span></div>
+      </div>
+    </div>
+    <div class="svc-card c5 reveal hidden d1">
+      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="SEO and e-commerce growth" loading="lazy"></div>
+      <div class="svc-body">
+        <div class="svc-icon-row"><div class="svc-icon ic1">📈</div><h3>SEO &amp; E-Commerce Growth</h3></div>
+        <p>Get your store ranking on Google and bringing in consistent organic traffic. Product page optimisation, keyword research, technical SEO fixes, schema markup and backlink strategy.</p>
+        <div class="svc-tags"><span class="stag">On-page SEO</span><span class="stag">Shopify SEO</span><span class="stag">WooCommerce</span><span class="stag">Technical SEO</span></div>
+      </div>
+    </div>
+    <div class="svc-card c6 reveal hidden d2">
+      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-0d95a1da-7a93-424b-b0d3-fa9c40cd64e2.jpg" alt="Custom software and SaaS" loading="lazy"></div>
+      <div class="svc-body">
+        <div class="svc-icon-row"><div class="svc-icon ic3">💻</div><h3>Custom Software &amp; SaaS</h3></div>
+        <p>Full-stack web applications built with React, Supabase and modern APIs. From simple landing pages to complete SaaS products — see TaskFlow, my own live project, as proof of what I can build.</p>
+        <div class="svc-tags"><span class="stag">React</span><span class="stag">Supabase</span><span class="stag">JavaScript</span><span class="stag">Vercel</span><span class="stag">APIs</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="price-box reveal hidden d2">
+    <div class="price-badge"><span>Fixed price · No surprises · 7-day delivery</span></div>
+    <div class="price-grid">
+      <div class="price-item"><div class="price-val">$497</div><div class="price-lbl">10DLC compliance + registration</div></div>
+      <div class="price-item"><div class="price-val">$799</div><div class="price-lbl">Twilio IVR setup (up to 5 nodes)</div></div>
+      <div class="price-item"><div class="price-val">$349</div><div class="price-lbl">SMS auto-responder system</div></div>
+    </div>
+    <div class="price-cta"><a href="#contact">→ Get a custom quote for your project</a></div>
   </div>
 </section>
 
 <!-- RESULTS -->
-<section id="results" class="results-section">
-  <!-- Results background image -->
-  <div class="results-bg">
-    <img src="https://cdn.phototourl.com/free/2026-05-05-06663f44-d1e2-44e6-8323-5ce395dc817c.jpg" alt="" aria-hidden="true" loading="lazy">
+<section id="results">
+  <div class="results-banner reveal hidden">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-e67c1c5a-5baa-406c-8ae7-11e0f91f3207.webp" alt="Results and analytics" loading="lazy">
+    <div class="results-banner-overlay">
+      <div class="stat-pill"><div class="stat-pill-num" data-count="340">0</div><div class="stat-pill-lbl">% organic traffic increase</div></div>
+      <div class="stat-pill"><div class="stat-pill-num" data-count="28">0</div><div class="stat-pill-lbl">% cart recovery rate</div></div>
+      <div class="stat-pill"><div class="stat-pill-num" data-count="13">0</div><div class="stat-pill-lbl">+ Twilio flows live</div></div>
+      <div class="stat-pill"><div class="stat-pill-num" data-count="8">0</div><div class="stat-pill-lbl">% landing page conversion</div></div>
+    </div>
   </div>
-  <div class="results-inner">
-    <div class="ey rv an">Proof of work</div>
-    <h2 class="st rv an d1">Real results from <span class="it">real projects</span></h2>
-    <p class="sec-sub rv an d2">Numbers from actual client projects. Not estimates. Not projections.</p>
-    <div class="results-grid">
-      <div class="results-visuals rv an">
-        <div class="rv-card">
-          <div class="rv-head">
-            <div class="rv-title">Abandoned cart email sequence — e-commerce client</div>
-            <div class="rv-period">30 days</div>
-          </div>
-          <div class="kpi-row">
-            <div class="kpi"><div class="kpi-n">68%</div><div class="kpi-l">Open rate</div></div>
-            <div class="kpi"><div class="kpi-n green">28%</div><div class="kpi-l">Cart recovery</div></div>
-            <div class="kpi"><div class="kpi-n">3</div><div class="kpi-l">Emails in sequence</div></div>
-            <div class="kpi"><div class="kpi-n green">$4.2k</div><div class="kpi-l">Revenue recovered</div></div>
-          </div>
-          <div class="funnel">
-            <div class="funnel-row"><div class="funnel-label">Sent</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:100%;background:var(--a1)"><span class="funnel-pct">100%</span></div></div><div class="funnel-val">2,400</div></div>
-            <div class="funnel-row"><div class="funnel-label">Opened</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:68%;background:var(--a1)"><span class="funnel-pct">68%</span></div></div><div class="funnel-val">1,632</div></div>
-            <div class="funnel-row"><div class="funnel-label">Clicked</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:24%;background:var(--a3)"><span class="funnel-pct">24%</span></div></div><div class="funnel-val">576</div></div>
-            <div class="funnel-row"><div class="funnel-label">Bought</div><div class="funnel-bar-wrap"><div class="funnel-fill" style="width:28%;background:var(--a2)"><span class="funnel-pct">28%</span></div></div><div class="funnel-val">161</div></div>
-          </div>
+  <div class="section-label reveal hidden">Proof of work</div>
+  <h2 class="section-title reveal hidden d1">Real results from <span class="accent">real projects</span></h2>
+  <p class="section-sub reveal hidden d2">Numbers from actual client projects. Not estimates. Not projections.</p>
+  <div class="results-grid" style="margin-top:2.5rem">
+    <div class="reveal hidden">
+      <div class="rv-card">
+        <div class="rv-head"><div class="rv-title">Abandoned cart sequence — e-commerce client</div><div class="rv-period">30 days</div></div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-n g">68%</div><div class="kpi-l">Open rate</div></div>
+          <div class="kpi"><div class="kpi-n g">28%</div><div class="kpi-l">Recovery</div></div>
+          <div class="kpi"><div class="kpi-n">3</div><div class="kpi-l">Emails</div></div>
+          <div class="kpi"><div class="kpi-n r">$4.2k</div><div class="kpi-l">Recovered</div></div>
         </div>
-        <div class="web-mock">
-          <div class="web-mock-bar">
-            <div class="m-dot" style="background:#FF5F57"></div>
-            <div class="m-dot" style="background:#FEBC2E"></div>
-            <div class="m-dot" style="background:#28C840"></div>
-            <div class="web-mock-url">fashionstore.myshopify.com</div>
-          </div>
-          <div class="web-mock-body">
-            <div class="web-hero-mock">
-              <div class="web-hero-tag">New collection 2024</div>
-              <div class="web-hero-h">Style that speaks before you do.</div>
-              <div class="web-hero-p">Free shipping on orders above $50. New arrivals every week.</div>
-              <div class="web-btn">Shop now →</div>
-            </div>
-            <div class="web-cards">
-              <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#F3EFE8,#E2DBD0)"></div><div class="web-card-name">Summer Dress</div><div class="web-card-price">$49.00</div></div>
-              <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#EEF3FD,#D8E5FB)"></div><div class="web-card-name">Linen Shirt</div><div class="web-card-price">$38.00</div></div>
-              <div class="web-card"><div class="web-card-img" style="background:linear-gradient(135deg,#EAF5EF,#D5EDE0)"></div><div class="web-card-name">Cargo Pants</div><div class="web-card-price">$62.00</div></div>
-            </div>
-          </div>
+        <div class="funnel-row"><div class="f-label">Sent</div><div class="f-bar"><div class="f-fill" style="width:100%;background:var(--blue)"><span class="f-pct">100%</span></div></div><div class="f-val">2,400</div></div>
+        <div class="funnel-row"><div class="f-label">Opened</div><div class="f-bar"><div class="f-fill" style="width:68%;background:var(--blue)"><span class="f-pct">68%</span></div></div><div class="f-val">1,632</div></div>
+        <div class="funnel-row"><div class="f-label">Clicked</div><div class="f-bar"><div class="f-fill" style="width:24%;background:var(--green)"><span class="f-pct">24%</span></div></div><div class="f-val">576</div></div>
+        <div class="funnel-row"><div class="f-label">Bought</div><div class="f-bar"><div class="f-fill" style="width:28%;background:var(--red)"><span class="f-pct">28%</span></div></div><div class="f-val">161</div></div>
+      </div>
+      <div class="port-thumb">
+        <img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="Portfolio mockup" loading="lazy">
+        <div class="port-thumb-info">
+          <div style="font-size:.72rem;font-weight:700;color:var(--text);margin-bottom:.2rem">Fashion store redesign</div>
+          <div style="font-size:.68rem;color:var(--muted)">340% organic traffic increase in 3 months</div>
         </div>
       </div>
-      <div class="result-items rv an d1">
-        <div class="result-item">
-          <div class="result-num n1">340%</div>
-          <div class="result-text">
-            <h4>Organic traffic increase</h4>
-            <p>Full SEO overhaul for a fashion e-commerce brand — keyword research, product page rewrites, schema markup and site speed optimisation. Achieved in 3 months.</p>
-          </div>
-        </div>
-        <div class="result-item">
-          <div class="result-num n2">28%</div>
-          <div class="result-text">
-            <h4>Abandoned cart recovery rate</h4>
-            <p>3-email abandoned cart sequence in Klaviyo, integrated with Shopify. Automated segmentation by cart value and browsing behaviour. $4,200 recovered in 30 days.</p>
-          </div>
-        </div>
-        <div class="result-item">
-          <div class="result-num n3">13+</div>
-          <div class="result-text">
-            <h4>Twilio flows live in production</h4>
-            <p>Voice and SMS flows for TV Messenger, a US-based caregiving communication platform. Complex subflow architecture, Liquid templating and HTTP integrations — all running live.</p>
-          </div>
-        </div>
-        <div class="result-item">
-          <div class="result-num n4">8%</div>
-          <div class="result-text">
-            <h4>Landing page conversion rate</h4>
-            <p>Brand identity plus mobile-first landing page for a business coach. Delivered in 4 days. Client reported immediate increase in enquiries from the first week.</p>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="result-items reveal hidden d1">
+      <div class="result-item"><div class="result-num n1">340%</div><div class="result-text"><h4>Organic traffic increase</h4><p>Full SEO overhaul for a fashion e-commerce brand — keyword research, product page rewrites, schema markup and site speed. Achieved in 3 months.</p></div></div>
+      <div class="result-item"><div class="result-num n2">28%</div><div class="result-text"><h4>Abandoned cart recovery rate</h4><p>3-email abandoned cart sequence in Klaviyo, integrated with Shopify. Automated segmentation by cart value. $4,200 recovered in 30 days.</p></div></div>
+      <div class="result-item"><div class="result-num n3">13+</div><div class="result-text"><h4>Twilio flows live in production</h4><p>Voice and SMS flows for TV Messenger, a US-based caregiving communication platform. Complex architecture — all running live.</p></div></div>
+      <div class="result-item"><div class="result-num n4">8%</div><div class="result-text"><h4>Landing page conversion rate</h4><p>Brand identity plus mobile-first landing page for a business coach. Delivered in 4 days. Immediate increase in enquiries from week one.</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="sbg process-section" id="process">
-  <!-- Process background image -->
-  <div class="process-bg">
-    <img src="https://cdn.phototourl.com/free/2026-05-05-5f044406-aff7-4a9f-be75-a2c1b58ff458.png" alt="" aria-hidden="true" loading="lazy">
+<section class="sbg process-wrap" id="process">
+  <div class="process-bg-img">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-06663f44-d1e2-44e6-8323-5ce395dc817c.jpg" alt="" aria-hidden="true" loading="lazy">
   </div>
   <div class="process-inner">
-    <div class="ey rv an">How I work</div>
-    <h2 class="st rv an d1">Simple. Fast. <span class="it">No surprises.</span></h2>
-    <p class="sec-sub rv an d2">A clear process means no confusion, no delays and no unexpected invoices. Here is exactly what working with me looks like.</p>
-    <div class="proc-list rv an d2">
-      <div class="proc-item">
-        <div class="proc-n">01</div>
-        <div>
-          <h4>Discovery call — free, 30 minutes</h4>
-          <p>We talk about your goals, your current setup and what is blocking your growth. I will tell you honestly whether I can help — and if I can, I will tell you exactly how. No pressure, no commitment required.</p>
-        </div>
-      </div>
-      <div class="proc-item">
-        <div class="proc-n">02</div>
-        <div>
-          <h4>Proposal &amp; clear scope</h4>
-          <p>You receive a written proposal — what we build, what it costs, how long it takes and what you need to provide. No hidden fees. No scope creep. Everything agreed before work starts.</p>
-        </div>
-      </div>
-      <div class="proc-item">
-        <div class="proc-n">03</div>
-        <div>
-          <h4>Build with regular updates</h4>
-          <p>I get to work and send you progress updates every 1–2 days via email or Slack. You see what is happening as it happens — not just at the end when it is too late to adjust anything.</p>
-        </div>
-      </div>
-      <div class="proc-item">
-        <div class="proc-n">04</div>
-        <div>
-          <h4>Review &amp; free revisions</h4>
-          <p>I do not consider a project done until you are satisfied. Free revisions are included for reasonable adjustments — I do not charge extra for making things right.</p>
-        </div>
-      </div>
-      <div class="proc-item">
-        <div class="proc-n">05</div>
-        <div>
-          <h4>Handover &amp; 30-day support</h4>
-          <p>Full handover with clear documentation. I stay available for questions for 30 days after delivery at no extra cost. You will not be left figuring things out alone after payment.</p>
-        </div>
-      </div>
+    <div class="section-label reveal hidden">How I work</div>
+    <h2 class="section-title reveal hidden d1">Simple. Fast. <span class="accent">No surprises.</span></h2>
+    <p class="section-sub reveal hidden d2">A clear process means no confusion, no delays and no unexpected invoices.</p>
+    <div class="proc-list reveal hidden d2">
+      <div class="proc-item"><div class="proc-n">01</div><div><h4>Discovery call — free, 30 minutes</h4><p>We talk about your goals, your current setup and what is blocking your growth. I'll tell you honestly whether I can help — and exactly how. No pressure, no commitment required.</p></div></div>
+      <div class="proc-item"><div class="proc-n">02</div><div><h4>Proposal &amp; clear scope</h4><p>You receive a written proposal — what we build, what it costs, how long it takes. No hidden fees. No scope creep. Everything agreed before work starts.</p></div></div>
+      <div class="proc-item"><div class="proc-n">03</div><div><h4>Build with regular updates</h4><p>I send progress updates every 1–2 days via email or Slack. You see what is happening as it happens — not just at the end.</p></div></div>
+      <div class="proc-item"><div class="proc-n">04</div><div><h4>Review &amp; free revisions</h4><p>I do not consider a project done until you are satisfied. Free revisions included for reasonable adjustments.</p></div></div>
+      <div class="proc-item"><div class="proc-n">05</div><div><h4>Handover &amp; 30-day support</h4><p>Full handover with clear documentation. I stay available for questions for 30 days after delivery at no extra cost.</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- PORTFOLIO -->
 <section id="work">
-  <div class="ey rv an">Portfolio</div>
-  <h2 class="st rv an d1">Recent work &amp; <span class="it">case studies</span></h2>
-  <p class="sec-sub rv an d2">Real projects. Real clients. Real outcomes. Not just screenshots — results you can measure.</p>
+  <div class="section-label reveal hidden">Portfolio</div>
+  <h2 class="section-title reveal hidden d1">Recent work &amp; <span class="accent">case studies</span></h2>
+  <p class="section-sub reveal hidden d2">Real projects. Real clients. Real outcomes.</p>
   <div class="port-grid">
-
-    <div class="port-card rv an">
-      <div class="port-img">
-        <img src="https://img.sanishtech.com/u/d84c730e733fd1e51b7ff1c30f70fe14.jpg" alt="Email marketing automation project" loading="lazy">
-        <div class="port-img-overlay"></div>
-      </div>
+    <div class="port-card reveal hidden">
+      <div class="port-img"><img src="https://img.sanishtech.com/u/d84c730e733fd1e51b7ff1c30f70fe14.jpg" alt="Email marketing automation project" loading="lazy"><div class="port-overlay"></div><div class="port-overlay-label">View case study →</div></div>
       <div class="port-body">
         <div class="port-type">Email Marketing Automation</div>
         <h3>7-email welcome + cart recovery sequence</h3>
-        <p>Built a complete welcome and abandoned cart flow in Klaviyo for an e-commerce brand. Shopify integration, automated segmentation by cart value, timezone-aware scheduling.</p>
-        <div class="port-result">68% open rate · $4,200 cart revenue recovered in 30 days</div>
+        <p>Complete welcome and abandoned cart flow in Klaviyo for an e-commerce brand. Shopify integration, automated segmentation by cart value.</p>
+        <div class="port-result">68% open rate · $4,200 cart revenue in 30 days</div>
       </div>
     </div>
-
-    <div class="port-card rv an d1">
-      <div class="port-img">
-        <img src="https://cdn.phototourl.com/free/2026-05-05-e67c1c5a-5baa-406c-8ae7-11e0f91f3207.webp" alt="Shopify redesign and SEO project" loading="lazy">
-        <div class="port-img-overlay"></div>
-      </div>
+    <div class="port-card reveal hidden d1">
+      <div class="port-img"><img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="Shopify redesign and SEO" loading="lazy"><div class="port-overlay"></div><div class="port-overlay-label">View case study →</div></div>
       <div class="port-body">
         <div class="port-type">Web Design &amp; SEO</div>
         <h3>Shopify redesign + full SEO overhaul</h3>
-        <p>Complete redesign of a Shopify fashion store plus end-to-end SEO — product page rewrites, keyword strategy, technical fixes, schema markup and site speed improvements.</p>
+        <p>Complete redesign of a Shopify fashion store plus end-to-end SEO — product page rewrites, keyword strategy, technical fixes and schema markup.</p>
         <div class="port-result">340% organic traffic increase in 3 months</div>
       </div>
     </div>
-
-    <div class="port-card rv an d2">
-      <div class="port-img">
-        <img src="https://img.sanishtech.com/u/4681d81f4552a0f27df436cf56825e36.jpg" alt="Twilio Studio SMS flows project" loading="lazy">
-        <div class="port-img-overlay"></div>
-      </div>
+    <div class="port-card reveal hidden d2">
+      <div class="port-img"><img src="https://img.sanishtech.com/u/4681d81f4552a0f27df436cf56825e36.jpg" alt="Twilio Studio SMS flows" loading="lazy"><div class="port-overlay"></div><div class="port-overlay-label">View case study →</div></div>
       <div class="port-body">
         <div class="port-type">Telephony Automation · US Client</div>
         <h3>13+ Twilio Studio flows — TV Messenger</h3>
-        <p>Designed, debugged and deployed 13+ voice and SMS flows for a US caregiving communication platform. Complex subflow architecture, Liquid templating and HTTP integrations — all live in production.</p>
+        <p>Designed, debugged and deployed 13+ voice and SMS flows for a US caregiving communication platform. All live in production.</p>
         <div class="port-result">13 production flows running live for US client</div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -728,148 +575,63 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 <section class="sbg" id="taskflow">
   <div class="tf-wrap">
     <div>
-      <div class="ey rv an">My own product</div>
-      <h2 class="st rv an d1">TaskFlow — project management that doesn't <span class="it">slow you down</span></h2>
-      <p class="sec-sub rv an d2">I built TaskFlow because Asana and Jira were overkill for small teams. Kanban boards, team collaboration, progress tracking and 5-minute setup. No onboarding calls. No $25-per-seat nonsense. Built and deployed by me — this is what I can build for your business too.</p>
-      <div style="display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.6rem" class="rv an d3">
-        <a href="https://taskflow-tau-roan.vercel.app" target="_blank" rel="noopener" class="btn-p">Try free for 7 days →</a>
-        <a href="taskflow.html" class="btn-s">See pricing</a>
+      <div class="section-label reveal hidden">My own product</div>
+      <h2 class="section-title reveal hidden d1">TaskFlow — project management that doesn't <span class="accent">slow you down</span></h2>
+      <p class="section-sub reveal hidden d2">I built TaskFlow because Asana and Jira were overkill for small teams. Kanban boards, team collaboration, progress tracking and 5-minute setup. No onboarding calls. No $25-per-seat nonsense.</p>
+      <div style="display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.6rem" class="reveal hidden d3">
+        <a href="https://taskflow-tau-roan.vercel.app" target="_blank" rel="noopener" class="btn-primary">Try free for 7 days →</a>
+        <a href="taskflow.html" class="btn-secondary">See pricing</a>
       </div>
     </div>
-    <div class="tf-mock rv an d2">
-      <div class="tf-bar">
-        <div class="tf-dot" style="background:#FF5F57"></div>
-        <div class="tf-dot" style="background:#FEBC2E"></div>
-        <div class="tf-dot" style="background:#28C840"></div>
-        <span class="tf-bt">TaskFlow — Product launch</span>
-      </div>
+    <div class="tf-mock reveal hidden d2">
+      <div class="tf-bar"><div class="tf-dot" style="background:#FF5F57"></div><div class="tf-dot" style="background:#FEBC2E"></div><div class="tf-dot" style="background:#28C840"></div><span class="tf-bt">TaskFlow — Product launch</span></div>
       <div class="tf-body">
-        <div>
-          <div class="tf-col-h tf-ch1">To do · 3</div>
-          <div class="tf-card"><div class="tf-card-t">Define go-to-market strategy</div><span class="tt ttr">High priority</span></div>
-          <div class="tf-card"><div class="tf-card-t">Write landing page copy</div><span class="tt ttgr">Content</span></div>
-        </div>
-        <div>
-          <div class="tf-col-h tf-ch2">In progress · 2</div>
-          <div class="tf-card tf-prog-col"><div class="tf-card-t">Design system &amp; UI</div><div class="tf-prog"><div class="tf-prog-f" style="width:65%"></div></div><span class="tt ttr">Design</span></div>
-          <div class="tf-card tf-prog-col"><div class="tf-card-t">Stripe payment setup</div><span class="tt ttb">Dev</span></div>
-        </div>
-        <div>
-          <div class="tf-col-h tf-ch3">Done · 4</div>
-          <div class="tf-card" style="opacity:.55"><div class="tf-card-t">User research interviews</div><span class="tt ttg">Done</span></div>
-          <div class="tf-card" style="opacity:.55"><div class="tf-card-t">MVP build &amp; deploy</div><span class="tt ttg">Done</span></div>
-        </div>
+        <div><div class="tf-col-h tfc1">To do · 3</div><div class="tf-card"><div class="tf-card-t">Go-to-market strategy</div><span class="tt ttr">High priority</span></div><div class="tf-card"><div class="tf-card-t">Landing page copy</div><span class="tt ttgr">Content</span></div></div>
+        <div><div class="tf-col-h tfc2">In progress · 2</div><div class="tf-card tf-prog-col"><div class="tf-card-t">Design system &amp; UI</div><div class="tf-prog"><div class="tf-prog-f" style="width:65%"></div></div><span class="tt ttr">Design</span></div><div class="tf-card tf-prog-col"><div class="tf-card-t">Stripe payment setup</div><span class="tt ttb">Dev</span></div></div>
+        <div><div class="tf-col-h tfc3">Done · 4</div><div class="tf-card" style="opacity:.55"><div class="tf-card-t">User research</div><span class="tt ttg">Done</span></div><div class="tf-card" style="opacity:.55"><div class="tf-card-t">MVP build &amp; deploy</div><span class="tt ttg">Done</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="testimonials" class="testi-section">
-  <!-- Testimonials background image -->
-  <div class="testi-bg">
-    <img src="https://cdn.phototourl.com/free/2026-05-05-06663f44-d1e2-44e6-8323-5ce395dc817c.jpg" alt="" aria-hidden="true" loading="lazy">
-  </div>
+<section id="testimonials" class="testi-wrap">
+  <div class="testi-bg-img"><img src="https://cdn.phototourl.com/free/2026-05-05-0d95a1da-7a93-424b-b0d3-fa9c40cd64e2.jpg" alt="" aria-hidden="true" loading="lazy"></div>
   <div class="testi-inner">
-    <div class="ey rv an">Social proof</div>
-    <h2 class="st rv an d1">What clients <span class="it">say</span></h2>
-    <p class="sec-sub rv an d2">Feedback from real clients on real projects. Verifiable on request.</p>
+    <div class="section-label reveal hidden">Social proof</div>
+    <h2 class="section-title reveal hidden d1">What clients <span class="accent">say</span></h2>
+    <p class="section-sub reveal hidden d2">Feedback from real clients on real projects. Verifiable on request.</p>
     <div class="testi-grid">
-      <div class="testi rv an">
-        <div class="testi-q">"</div>
-        <p>"Michael redesigned our Shopify store and handled the full SEO setup. Within 6 weeks we were getting double the organic traffic. Fast, communicates extremely well, and genuinely cares about results."</p>
-        <div class="testi-au">
-          <div class="testi-av">AJ</div>
-          <div>
-            <div class="testi-name">Amara Johnson</div>
-            <div class="testi-role">Founder, <a href="#work">StyleHaus</a> · case study available</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi rv an d1">
-        <div class="testi-q">"</div>
-        <p>"I hired Michael to build our Twilio SMS flows and handle 10DLC compliance. He delivered faster than expected and the system has been running without a single issue for months. Highly recommend."</p>
-        <div class="testi-au">
-          <div class="testi-av">DK</div>
-          <div>
-            <div class="testi-name">David Kim</div>
-            <div class="testi-role">Operations Director, <a href="#work">TV Messenger</a> · verified project</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi rv an d2">
-        <div class="testi-q">"</div>
-        <p>"I asked for a landing page. I got a full brand identity, a mobile-perfect design and a page converting at 8%. Michael delivered more than I asked for and charged less than I expected. Brilliant."</p>
-        <div class="testi-au">
-          <div class="testi-av">FO</div>
-          <div>
-            <div class="testi-name">Fatima Okafor</div>
-            <div class="testi-role">CEO, GrowthPath Consulting</div>
-          </div>
-        </div>
-      </div>
+      <div class="testi reveal hidden"><div class="testi-q">"</div><div class="stars">★★★★★</div><p>"Michael redesigned our Shopify store and handled the full SEO setup. Within 6 weeks we were getting double the organic traffic. Fast, communicates extremely well, and genuinely cares about results."</p><div class="testi-au"><div class="testi-av">AJ</div><div><div class="testi-name">Amara Johnson</div><div class="testi-role">Founder, <a href="#work">StyleHaus</a> · case study available</div></div></div></div>
+      <div class="testi reveal hidden d1"><div class="testi-q">"</div><div class="stars">★★★★★</div><p>"I hired Michael to build our Twilio SMS flows and handle 10DLC compliance. He delivered faster than expected and the system has been running without a single issue for months. Highly recommend."</p><div class="testi-au"><div class="testi-av">DK</div><div><div class="testi-name">David Kim</div><div class="testi-role">Operations Director, <a href="#work">TV Messenger</a> · verified project</div></div></div></div>
+      <div class="testi reveal hidden d2"><div class="testi-q">"</div><div class="stars">★★★★★</div><p>"I asked for a landing page. I got a full brand identity, a mobile-perfect design and a page converting at 8%. Michael delivered more than I asked for and charged less than I expected. Brilliant."</p><div class="testi-au"><div class="testi-av">FO</div><div><div class="testi-name">Fatima Okafor</div><div class="testi-role">CEO, GrowthPath Consulting</div></div></div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="sbg contact-section" id="contact">
-  <!-- Contact background image -->
-  <div class="contact-bg">
-    <img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="" aria-hidden="true" loading="lazy">
-  </div>
+<section class="sbg contact-wrap" id="contact">
+  <div class="contact-bg-img"><img src="https://cdn.phototourl.com/free/2026-05-05-5f044406-aff7-4a9f-be75-a2c1b58ff458.png" alt="" aria-hidden="true" loading="lazy"></div>
   <div class="contact-inner">
-    <div class="ey rv an">Get in touch</div>
-    <h2 class="st rv an d1">Ready to <span class="it">grow your business?</span></h2>
-    <p class="sec-sub rv an d2">Tell me what you are building or what problem you need solved. Free 30-minute discovery call — no commitment, no pressure.</p>
+    <div class="section-label reveal hidden">Get in touch</div>
+    <h2 class="section-title reveal hidden d1">Ready to <span class="accent">grow your business?</span></h2>
+    <p class="section-sub reveal hidden d2">Free 30-minute discovery call — no commitment, no pressure. Reply within 24 hours, always.</p>
     <div class="contact-grid">
-      <div class="contact-info rv an">
+      <div class="contact-info reveal hidden">
         <h3>Let's talk about your project</h3>
-        <p>Whether you need a Twilio system built from scratch, a leaking email funnel fixed, a Zapier workflow that saves your team 10 hours a week, or a website that actually converts — I can help. Reply within 24 hours, always.</p>
+        <p>Whether you need a Twilio system built from scratch, a leaking email funnel fixed, a Zapier workflow that saves your team 10 hours a week, or a website that actually converts — I can help.</p>
         <div class="contact-links">
-          <a href="mailto:miketechstudio535@gmail.com" class="contact-link">
-            <div class="contact-link-icon" style="background:var(--a2l)">📧</div>
-            <div>
-              <div style="font-weight:600;font-size:.82rem">Send an email</div>
-              <div style="font-size:.72rem;color:var(--muted)">miketechstudio535@gmail.com</div>
-            </div>
-          </a>
-          <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener" class="contact-link">
-            <div class="contact-link-icon" style="background:var(--a3l)">📅</div>
-            <div>
-              <div style="font-weight:600;font-size:.82rem">Book a free discovery call</div>
-              <div style="font-size:.72rem;color:var(--muted)">30 minutes · Zoom · No commitment</div>
-            </div>
-          </a>
-          <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="contact-link">
-            <div class="contact-link-icon" style="background:var(--a1l)">💼</div>
-            <div>
-              <div style="font-weight:600;font-size:.82rem">Hire me on Upwork</div>
-              <div style="font-size:.72rem;color:var(--muted)">View full profile and reviews</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener" class="contact-link">
-            <div class="contact-link-icon" style="background:var(--bg3);font-weight:700;font-size:.8rem;color:var(--text2)">in</div>
-            <div>
-              <div style="font-weight:600;font-size:.82rem">Connect on LinkedIn</div>
-              <div style="font-size:.72rem;color:var(--muted)">Michael Fabiyi · MikeTechStudio</div>
-            </div>
-          </a>
+          <a href="mailto:miketechstudio535@gmail.com" class="contact-link"><div class="cl-icon" style="background:var(--redl)">📧</div><div><div style="font-weight:600;font-size:.82rem">Send an email</div><div style="font-size:.72rem;color:var(--muted)">miketechstudio535@gmail.com</div></div></a>
+          <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener" class="contact-link"><div class="cl-icon" style="background:var(--greenl)">📅</div><div><div style="font-weight:600;font-size:.82rem">Book a free discovery call</div><div style="font-size:.72rem;color:var(--muted)">30 minutes · Zoom · No commitment</div></div></a>
+          <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="contact-link"><div class="cl-icon" style="background:var(--bluel)">💼</div><div><div style="font-weight:600;font-size:.82rem">Hire me on Upwork</div><div style="font-size:.72rem;color:var(--muted)">View full profile and reviews</div></div></a>
+          <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener" class="contact-link"><div class="cl-icon" style="background:var(--bg2);font-weight:700;font-size:.82rem;color:var(--text2)">in</div><div><div style="font-weight:600;font-size:.82rem">Connect on LinkedIn</div><div style="font-size:.72rem;color:var(--muted)">Michael Fabiyi · MikeTechStudio</div></div></a>
         </div>
       </div>
-      <div class="contact-form rv an d1">
+      <div class="contact-form reveal hidden d1">
         <h3>Send your project brief</h3>
-        <p>Fill this in and I will reply within 24 hours to schedule a free Zoom call.</p>
-        <div class="google-form-wrapper">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSffQqxcqM-wU1k6gwo2JOqvQuofLHeMTFNSgRrPdL2e3x9d6w/viewform?embedded=true"
-            width="100%"
-            height="988"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            loading="lazy"
-            title="Project brief form">Loading…</iframe>
+        <p class="cf-sub">Fill this in and I will reply within 24 hours to schedule a free Zoom call.</p>
+        <div class="gform-wrap">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffQqxcqM-wU1k6gwo2JOqvQuofLHeMTFNSgRrPdL2e3x9d6w/viewform?embedded=true" width="100%" height="988" frameborder="0" marginheight="0" marginwidth="0" loading="lazy" title="Project brief form">Loading…</iframe>
         </div>
         <div class="form-note">✓ No phone number needed. I will email you back. Or <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener">book a call directly →</a></div>
       </div>
@@ -879,36 +641,14 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 
 <!-- FOOTER -->
 <footer>
-  <div class="ft-top">
+  <div class="ft-grid">
     <div>
-      <div class="ft-brand"><span class="ft-brand-dot"></span>MikeTechStudio</div>
+      <div class="ft-logo"><span class="ft-logo-dot"></span>MikeTechStudio</div>
       <div class="ft-desc">Telephony systems, email automation, Zapier workflows, web design and custom software for businesses worldwide. Founded by Michael Fabiyi. Based in Lagos — available globally.</div>
     </div>
-    <div class="ft-col">
-      <h4>Services</h4>
-      <a href="#services">Telephony &amp; SMS</a>
-      <a href="#services">Email automation</a>
-      <a href="#services">Zapier workflows</a>
-      <a href="#services">Web design</a>
-      <a href="#services">SEO growth</a>
-      <a href="#services">Custom software</a>
-    </div>
-    <div class="ft-col">
-      <h4>Product</h4>
-      <a href="taskflow.html">TaskFlow app</a>
-      <a href="taskflow.html#pricing">Pricing</a>
-      <a href="taskflow.html#faq">FAQ</a>
-      <a href="https://taskflow-tau-roan.vercel.app" target="_blank" rel="noopener">Start free trial</a>
-    </div>
-    <div class="ft-col">
-      <h4>Connect</h4>
-      <a href="mailto:miketechstudio535@gmail.com">Email me</a>
-      <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener">Upwork profile</a>
-      <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">Twitter / X</a>
-      <a href="https://www.instagram.com/mike.techstudio/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank" rel="noopener">Facebook</a>
-    </div>
+    <div class="ft-col"><h4>Services</h4><a href="#services">Telephony &amp; SMS</a><a href="#services">Email automation</a><a href="#services">Zapier workflows</a><a href="#services">Web design</a><a href="#services">SEO growth</a><a href="#services">Custom software</a></div>
+    <div class="ft-col"><h4>Product</h4><a href="taskflow.html">TaskFlow app</a><a href="taskflow.html#pricing">Pricing</a><a href="taskflow.html#faq">FAQ</a><a href="https://taskflow-tau-roan.vercel.app" target="_blank" rel="noopener">Start free trial</a></div>
+    <div class="ft-col"><h4>Connect</h4><a href="mailto:miketechstudio535@gmail.com">Email me</a><a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener">Upwork profile</a><a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">Twitter / X</a><a href="https://www.instagram.com/mike.techstudio/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank" rel="noopener">Facebook</a></div>
   </div>
   <div class="ft-bottom">
     <div class="ft-copy">© 2026 MikeTechStudio · Michael Fabiyi · Lagos, Nigeria · Available worldwide</div>
@@ -923,53 +663,65 @@ footer{background:var(--text);padding:3rem 5% 2rem;color:rgba(255,255,255,.5)}
 </footer>
 
 <script>
-const hbg = document.getElementById('hbg');
-const mm = document.getElementById('mm');
-hbg.addEventListener('click', () => {
-  const isOpen = mm.classList.toggle('o');
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+
+const hbg=document.getElementById('hbg'),mm=document.getElementById('mm');
+hbg.addEventListener('click',()=>{
+  const o=mm.classList.toggle('o');
   hbg.classList.toggle('o');
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-  hbg.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow=o?'hidden':'';
+  hbg.setAttribute('aria-expanded',o);
 });
-document.querySelectorAll('.mml').forEach(link => {
-  link.addEventListener('click', () => {
-    hbg.classList.remove('o');
-    mm.classList.remove('o');
-    document.body.style.overflow = '';
-    hbg.setAttribute('aria-expanded', 'false');
-  });
-});
-document.addEventListener('click', (e) => {
-  if (mm.classList.contains('o') && !mm.contains(e.target) && !hbg.contains(e.target)) {
-    hbg.classList.remove('o');
-    mm.classList.remove('o');
-    document.body.style.overflow = '';
+document.querySelectorAll('.mml').forEach(l=>l.addEventListener('click',()=>{
+  hbg.classList.remove('o');mm.classList.remove('o');document.body.style.overflow='';
+}));
+document.addEventListener('click',e=>{
+  if(mm.classList.contains('o')&&!mm.contains(e.target)&&!hbg.contains(e.target)){
+    hbg.classList.remove('o');mm.classList.remove('o');document.body.style.overflow='';
   }
 });
-const revealEls = document.querySelectorAll('.rv');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('vi');
-      observer.unobserve(entry.target);
+
+const revEls=document.querySelectorAll('.reveal.hidden');
+const revObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target)}});
+},{threshold:0.08,rootMargin:'0px 0px -36px 0px'});
+revEls.forEach(el=>revObs.observe(el));
+
+function animCount(el,target,dur){
+  let start=null;
+  const step=ts=>{
+    if(!start)start=ts;
+    const p=Math.min((ts-start)/dur,1);
+    const v=Math.floor(p*target);
+    el.textContent=v+(target<=13?'+':'%');
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target+(target<=13?'+':'%');
+  };
+  requestAnimationFrame(step);
+}
+const countEls=document.querySelectorAll('[data-count]');
+const countObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      animCount(e.target,parseInt(e.target.dataset.count),1400);
+      countObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
-revealEls.forEach(el => observer.observe(el));
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-const navObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.getAttribute('id');
-      navLinks.forEach(a => {
-        a.classList.remove('act');
-        if (a.getAttribute('href') === '#' + id) a.classList.add('act');
-      });
+},{threshold:0.5});
+countEls.forEach(el=>countObs.observe(el));
+
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+const navObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.getAttribute('id');
+      navLinks.forEach(a=>{a.classList.remove('act');if(a.getAttribute('href')==='#'+id)a.classList.add('act')});
     }
   });
-}, { threshold: 0.3, rootMargin: '-64px 0px 0px 0px' });
-sections.forEach(s => navObserver.observe(s));
+},{threshold:0.3,rootMargin:'-64px 0px 0px 0px'});
+sections.forEach(s=>navObs.observe(s));
 </script>
 </body>
 </html>
