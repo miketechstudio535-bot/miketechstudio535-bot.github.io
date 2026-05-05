@@ -10,154 +10,162 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
+html{scroll-behavior:smooth}
 :root{
   --bg:#FAFAF8;--bg2:#F2F0EB;--card:#FFFFFF;
   --border:#E4E1D9;--border2:#C9C5BB;
   --text:#0F0E09;--text2:#46443A;--muted:#8C897F;
-  --red:#C84B2F;--redl:#FDF0ED;--redb:#FAE0DB;
+  --red:#C84B2F;--redl:#FDF0ED;
   --blue:#1B4FD8;--bluel:#EEF3FD;
   --green:#1A7A4A;--greenl:#EAF5EF;
   --fh:'Plus Jakarta Sans',sans-serif;
   --fi:'Playfair Display',Georgia,serif;
   --r:12px;--rl:20px;
   --shadow:0 4px 24px rgba(15,14,9,.07);
-  --shadow-lg:0 12px 48px rgba(15,14,9,.12);
+  --shadow-lg:0 12px 48px rgba(15,14,9,.13);
 }
 body{font-family:var(--fh);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 ::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:.85rem 5%;background:rgba(250,250,248,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(228,225,217,.6);transition:padding .3s,background .3s,box-shadow .3s}
-nav.scrolled{padding:.65rem 5%;background:rgba(250,250,248,0.97);box-shadow:var(--shadow)}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:.85rem 5%;background:rgba(250,250,248,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(228,225,217,.6);transition:padding .3s,background .3s,box-shadow .3s}
+nav.scrolled{padding:.65rem 5%;background:rgba(250,250,248,.97);box-shadow:var(--shadow)}
 .nav-logo{font-family:var(--fh);font-size:.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px;letter-spacing:-.02em}
 .nav-dot{width:9px;height:9px;background:var(--red);border-radius:50%;animation:dotpulse 2.2s infinite;flex-shrink:0}
-@keyframes dotpulse{0%,100%{box-shadow:0 0 0 0 rgba(200,75,47,.4)}60%{box-shadow:0 0 0 8px rgba(200,75,47,0)}}
+@keyframes dotpulse{0%,100%{box-shadow:0 0 0 0 rgba(200,75,47,.45)}60%{box-shadow:0 0 0 8px rgba(200,75,47,0)}}
 .nav-links{display:flex;gap:2rem}
 .nav-links a{font-size:.82rem;font-weight:500;color:var(--text2);transition:color .2s;position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1.5px;background:var(--red);transition:width .25s}
 .nav-links a:hover,.nav-links a.act{color:var(--red)}
 .nav-links a:hover::after,.nav-links a.act::after{width:100%}
 .nav-right{display:flex;align-items:center;gap:.75rem}
-.nav-cta{background:var(--red);color:#fff;font-family:var(--fh);font-size:.8rem;font-weight:600;padding:.5rem 1.2rem;border-radius:100px;transition:all .25s;box-shadow:0 4px 14px rgba(200,75,47,.3)}
+.nav-cta{background:var(--red);color:#fff;font-size:.8rem;font-weight:600;padding:.5rem 1.2rem;border-radius:100px;transition:all .25s;box-shadow:0 4px 14px rgba(200,75,47,.3)}
 .nav-cta:hover{background:#a83820;transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,75,47,.4)}
 .hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:502}
 .hbg span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
 .hbg.o span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hbg.o span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbg.o span:nth-child(2){opacity:0}
 .hbg.o span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mm{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--card);z-index:501;flex-direction:column;justify-content:center;align-items:center}
+.mm{display:none;position:fixed;inset:0;background:var(--card);z-index:501;flex-direction:column;justify-content:center;align-items:center}
 .mm.o{display:flex}
 .mm a.mml{font-family:var(--fi);font-size:1.9rem;font-weight:700;color:var(--text);padding:.65rem 2rem;text-align:center;transition:color .2s;border-bottom:1px solid var(--border);width:100%}
 .mm a.mml:hover{color:var(--red)}
 .mm-bottom{padding:1.5rem 2rem;display:flex;flex-direction:column;gap:.75rem;align-items:center;width:100%}
-.mm-cta{background:var(--red);color:#fff;font-weight:600;font-size:.9rem;padding:.85rem 2.5rem;border-radius:100px;width:100%;max-width:280px;text-align:center;transition:background .2s}
+.mm-cta{background:var(--red);color:#fff;font-weight:600;font-size:.9rem;padding:.85rem 2.5rem;border-radius:100px;width:100%;max-width:280px;text-align:center}
 .mm-soc{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
 .mm-soc a{font-size:.75rem;color:var(--muted);border:1px solid var(--border);border-radius:100px;padding:.3rem .8rem;transition:all .2s}
 .mm-soc a:hover{color:var(--red);border-color:var(--red)}
 
+/* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding:9rem 5% 5rem;position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.055;transform:scale(1.08);animation:bgdrift 20s ease-in-out infinite alternate}
-@keyframes bgdrift{from{transform:scale(1.08) translateX(0)}to{transform:scale(1.12) translateX(-2%)}}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,var(--bg) 40%,rgba(250,250,248,.65) 100%)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.055;transform:scale(1.08);animation:bgdrift 22s ease-in-out infinite alternate}
+@keyframes bgdrift{from{transform:scale(1.08)}to{transform:scale(1.13) translateX(-2%)}}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,var(--bg) 40%,rgba(250,250,248,.6) 100%)}
 .hero-left,.hero-right{position:relative;z-index:1}
 .hero-right{display:flex;justify-content:center}
-.avail-badge{display:inline-flex;align-items:center;gap:8px;background:var(--greenl);border:1px solid rgba(26,122,74,.22);padding:.38rem 1rem;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--green);letter-spacing:.04em;margin-bottom:1.75rem;animation:fadeslidedown .6s ease both}
+.avail-badge{display:inline-flex;align-items:center;gap:8px;background:var(--greenl);border:1px solid rgba(26,122,74,.22);padding:.38rem 1rem;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--green);letter-spacing:.04em;margin-bottom:1.75rem;animation:fsd .6s ease both}
 .avail-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:dotpulse 1.8s infinite;flex-shrink:0}
-.hero h1{font-family:var(--fh);font-size:clamp(2.2rem,4.2vw,3.8rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--text);margin-bottom:1.4rem;animation:fadeslideup .7s .1s ease both}
-.hero h1 .accent{font-family:var(--fi);font-style:italic;font-weight:700;background:linear-gradient(135deg,var(--red),#E8692A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:.97rem;color:var(--text2);line-height:1.85;max-width:490px;margin-bottom:2.25rem;font-weight:400;animation:fadeslideup .7s .2s ease both}
+.hero h1{font-family:var(--fh);font-size:clamp(2.1rem,4.2vw,3.8rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:1.4rem;animation:fsu .7s .1s ease both}
+.hero h1 .ac{font-family:var(--fi);font-style:italic;font-weight:700;background:linear-gradient(135deg,var(--red),#E8692A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:.97rem;color:var(--text2);line-height:1.85;max-width:490px;margin-bottom:2.25rem;animation:fsu .7s .2s ease both}
 .hero-sub strong{font-weight:600;color:var(--text)}
-.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:2.5rem;animation:fadeslideup .7s .3s ease both}
-.btn-primary{background:var(--red);color:#fff;font-family:var(--fh);font-weight:600;font-size:.88rem;padding:.88rem 1.9rem;border-radius:100px;display:inline-flex;align-items:center;gap:8px;transition:all .25s;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(200,75,47,.28);position:relative;overflow:hidden}
-.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);animation:shimmer 2.5s infinite}
-@keyframes shimmer{0%{left:-100%}100%{left:200%}}
-.btn-primary:hover{background:#a83820;transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,75,47,.35)}
-.btn-secondary{background:transparent;color:var(--text);font-family:var(--fh);font-weight:500;font-size:.88rem;padding:.88rem 1.9rem;border-radius:100px;border:1.5px solid var(--border2);display:inline-flex;align-items:center;gap:8px;transition:all .25s}
-.btn-secondary:hover{border-color:var(--blue);color:var(--blue);background:var(--bluel)}
-.trust-row{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;animation:fadeslideup .7s .4s ease both}
+.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:2.5rem;animation:fsu .7s .3s ease both}
+.btn-p{background:var(--red);color:#fff;font-weight:600;font-size:.88rem;padding:.88rem 1.9rem;border-radius:100px;display:inline-flex;align-items:center;gap:8px;transition:all .25s;box-shadow:0 4px 16px rgba(200,75,47,.28);position:relative;overflow:hidden}
+.btn-p::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);animation:shimmer 2.8s infinite}
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
+.btn-p:hover{background:#a83820;transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,75,47,.38)}
+.btn-s{background:transparent;color:var(--text);font-weight:500;font-size:.88rem;padding:.88rem 1.9rem;border-radius:100px;border:1.5px solid var(--border2);display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+.btn-s:hover{border-color:var(--blue);color:var(--blue);background:var(--bluel)}
+.trust-row{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;animation:fsu .7s .4s ease both}
 .trust-item{display:flex;align-items:center;gap:5px;font-size:.72rem;color:var(--muted);font-weight:500}
 .trust-item::before{content:'✓';color:var(--green);font-weight:700;font-size:.68rem}
 .trust-sep{width:3px;height:3px;background:var(--border2);border-radius:50%}
 .photo-wrap{position:relative;width:100%;max-width:440px;animation:fadescale .8s .2s ease both}
 @keyframes fadescale{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
-.photo-ring{position:absolute;inset:-4px;border-radius:26px;background:linear-gradient(135deg,rgba(200,75,47,.35),rgba(27,79,216,.12),transparent 65%);z-index:0;animation:ringpulse 4s ease-in-out infinite alternate}
-@keyframes ringpulse{from{opacity:.6}to{opacity:1}}
-.hero-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:24px;position:relative;z-index:1;border:2px solid rgba(228,225,217,.8);display:block}
+.photo-ring{position:absolute;inset:-4px;border-radius:26px;background:linear-gradient(135deg,rgba(200,75,47,.35),rgba(27,79,216,.12),transparent 65%);z-index:0}
+.hero-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:24px;position:relative;z-index:1;border:2px solid rgba(228,225,217,.8)}
 .photo-chip{position:absolute;bottom:22px;left:-18px;z-index:2;background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:.72rem 1rem;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:.65rem;animation:floatchip 3s ease-in-out infinite alternate}
-@keyframes floatchip{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+@keyframes floatchip{from{transform:translateY(0)}to{transform:translateY(-6px)}}
 .chip-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:dotpulse 2s infinite;flex-shrink:0}
 .chip-name{font-size:.72rem;font-weight:700;color:var(--text)}
 .chip-sub{font-size:.6rem;color:var(--muted)}
 .photo-tag{position:absolute;top:18px;right:-14px;z-index:2;background:var(--red);color:#fff;border-radius:100px;padding:.42rem .95rem;font-size:.68rem;font-weight:700;box-shadow:0 4px 16px rgba(200,75,47,.4);animation:floattag 3.5s 1s ease-in-out infinite alternate}
-@keyframes floattag{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-4px) rotate(1deg)}}
+@keyframes floattag{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-5px) rotate(1deg)}}
+@keyframes fsu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fsd{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
 
-.mq-wrap{background:var(--text);padding:.85rem 0;overflow:hidden}
+/* MARQUEE */
+.mq{background:var(--text);padding:.85rem 0;overflow:hidden}
 .mq-inner{display:flex;gap:2.5rem;animation:mqa 30s linear infinite;white-space:nowrap;width:max-content}
-.mqi{font-size:.68rem;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;display:flex;align-items:center;gap:.75rem}
+.mqi{font-size:.68rem;font-weight:600;color:rgba(255,255,255,.32);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;display:flex;align-items:center;gap:.75rem}
 .mqi::before{content:'◆';color:var(--red);font-size:.42rem}
 @keyframes mqa{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
+/* SECTIONS */
 section{padding:5.5rem 5%;scroll-margin-top:64px}
 .sbg{background:var(--bg2)}
-.section-label{font-size:.68rem;font-weight:700;color:var(--red);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.85rem}
-.section-title{font-family:var(--fh);font-size:clamp(1.7rem,3vw,2.55rem);font-weight:800;line-height:1.1;letter-spacing:-.025em;color:var(--text)}
-.section-title .accent{font-family:var(--fi);font-style:italic;font-weight:700;color:var(--red)}
-.section-sub{font-size:.92rem;color:var(--text2);line-height:1.82;margin-top:.75rem;max-width:520px}
+.ey{font-size:.68rem;font-weight:700;color:var(--red);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.85rem}
+.st{font-family:var(--fh);font-size:clamp(1.7rem,3vw,2.55rem);font-weight:800;line-height:1.1;letter-spacing:-.025em}
+.st .ac{font-family:var(--fi);font-style:italic;font-weight:700;color:var(--red)}
+.ssub{font-size:.92rem;color:var(--text2);line-height:1.82;margin-top:.75rem;max-width:520px}
 
-.svc-banner{position:relative;border-radius:var(--rl);overflow:hidden;height:220px;margin-bottom:2.75rem;box-shadow:var(--shadow)}
-.svc-banner img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform .6s ease}
-.svc-banner:hover img{transform:scale(1.03)}
-.svc-banner-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(15,14,9,.78) 0%,rgba(15,14,9,.25) 65%,transparent 100%);display:flex;align-items:center;padding:0 2.5rem}
-.svc-banner-text h3{font-family:var(--fi);font-size:1.85rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:.4rem}
-.svc-banner-text p{font-size:.84rem;color:rgba(255,255,255,.7);max-width:360px;line-height:1.65}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+/* SERVICES */
+.svc-banner{position:relative;border-radius:var(--rl);overflow:hidden;height:230px;margin-bottom:2.75rem;box-shadow:var(--shadow-lg)}
+.svc-banner img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transition:transform .7s ease;display:block}
+.svc-banner:hover img{transform:scale(1.04)}
+.svc-banner-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,8,4,.82) 0%,rgba(10,8,4,.3) 60%,transparent 100%);display:flex;align-items:center;padding:0 2.5rem}
+.svc-banner-text h3{font-family:var(--fi);font-size:2rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:.45rem}
+.svc-banner-text p{font-size:.85rem;color:rgba(255,255,255,.72);max-width:360px;line-height:1.65}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
 .svc-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:transform .28s,box-shadow .28s,border-color .28s;position:relative}
-.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .3s;z-index:1}
 .svc-card.c1::after{background:var(--blue)}.svc-card.c2::after{background:var(--red)}.svc-card.c3::after{background:var(--green)}.svc-card.c4::after{background:#7B3FA0}.svc-card.c5::after{background:var(--blue)}.svc-card.c6::after{background:var(--green)}
-.svc-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--border2)}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--border2)}
 .svc-card:hover::after{transform:scaleX(1)}
-.svc-img-wrap{height:145px;overflow:hidden;position:relative;background:var(--bg2)}
-.svc-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;display:block}
-.svc-card:hover .svc-img-wrap img{transform:scale(1.07)}
+.svc-img{width:100%;height:150px;object-fit:cover;object-position:center;display:block;transition:transform .5s ease}
+.svc-card:hover .svc-img{transform:scale(1.07)}
 .svc-body{padding:1.4rem}
 .svc-icon-row{display:flex;align-items:center;gap:.65rem;margin-bottom:.8rem}
 .svc-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
 .ic1{background:var(--bluel)}.ic2{background:var(--redl)}.ic3{background:var(--greenl)}.ic4{background:#F5EDFB}
-.svc-card h3{font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.45rem}
+.svc-card h3{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.45rem}
 .svc-card p{font-size:.79rem;color:var(--text2);line-height:1.72}
 .svc-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.8rem}
 .stag{font-size:.59rem;font-weight:600;padding:3px 9px;border-radius:100px;background:var(--bg2);color:var(--text2);border:1px solid var(--border)}
+/* overflow guard on service image */
+.svc-img-wrap{height:150px;overflow:hidden;position:relative}
+
+/* PRICE BOX */
 .price-box{background:linear-gradient(135deg,var(--redl),rgba(253,240,237,.3));border:1.5px solid rgba(200,75,47,.2);border-radius:var(--rl);padding:2rem 1.75rem;margin-top:2rem;position:relative;overflow:hidden}
 .price-box::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(200,75,47,.05)}
 .price-badge{text-align:center;margin-bottom:1.25rem}
-.price-badge span{background:var(--red);color:#fff;padding:.3rem 1rem;border-radius:100px;font-size:.7rem;font-weight:600;letter-spacing:.03em}
+.price-badge span{background:var(--red);color:#fff;padding:.3rem 1rem;border-radius:100px;font-size:.7rem;font-weight:600}
 .price-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2.5rem}
 .price-item{text-align:center}
-.price-val{font-family:var(--fh);font-weight:800;font-size:1.4rem;color:var(--text)}
+.price-val{font-weight:800;font-size:1.4rem;color:var(--text)}
 .price-lbl{font-size:.72rem;color:var(--text2);margin-top:.2rem}
 .price-cta{text-align:center;margin-top:1.25rem}
 .price-cta a{font-size:.8rem;color:var(--red);font-weight:600}
-.price-cta a:hover{opacity:.75}
 
-.results-banner{position:relative;border-radius:var(--rl);overflow:hidden;height:175px;margin-bottom:2.75rem;box-shadow:var(--shadow)}
-.results-banner img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
-.results-banner-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(15,14,9,.82),rgba(15,14,9,.45));display:flex;align-items:center;justify-content:space-around;padding:0 2.5rem;flex-wrap:wrap;gap:.75rem}
+/* RESULTS */
+.results-banner{position:relative;border-radius:var(--rl);overflow:hidden;height:180px;margin-bottom:2.75rem;box-shadow:var(--shadow-lg)}
+.results-banner img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+.results-banner-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,8,4,.85),rgba(10,8,4,.45));display:flex;align-items:center;justify-content:space-around;padding:0 2.5rem;flex-wrap:wrap;gap:.75rem}
 .stat-pill{text-align:center}
-.stat-pill-num{font-family:var(--fh);font-size:1.9rem;font-weight:800;color:#fff;line-height:1}
+.stat-pill-num{font-family:var(--fh);font-size:2rem;font-weight:800;color:#fff;line-height:1}
 .stat-pill-lbl{font-size:.68rem;color:rgba(255,255,255,.62);margin-top:3px}
-.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:2.5rem}
 .rv-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.35rem;box-shadow:var(--shadow)}
 .rv-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.85rem;gap:.5rem;flex-wrap:wrap}
 .rv-title{font-size:.74rem;font-weight:700;color:var(--text)}
 .rv-period{font-size:.62rem;color:var(--muted);flex-shrink:0}
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.85rem}
 .kpi{text-align:center;background:var(--bg2);border-radius:8px;padding:.6rem .35rem}
-.kpi-n{font-family:var(--fh);font-size:.92rem;font-weight:700;color:var(--text)}
+.kpi-n{font-size:.92rem;font-weight:700;color:var(--text)}
 .kpi-n.g{color:var(--green)}.kpi-n.r{color:var(--red)}.kpi-n.b{color:var(--blue)}
 .kpi-l{font-size:.56rem;color:var(--muted);margin-top:2px;line-height:1.3}
 .funnel-row{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem}
@@ -167,47 +175,50 @@ section{padding:5.5rem 5%;scroll-margin-top:64px}
 .f-pct{font-size:.57rem;font-weight:700;color:#fff}
 .f-val{font-size:.6rem;font-weight:600;color:var(--text);width:26px;text-align:right;flex-shrink:0}
 .port-thumb{border-radius:var(--r);overflow:hidden;border:1.5px solid var(--border);box-shadow:var(--shadow);margin-top:1rem}
-.port-thumb img{width:100%;height:175px;object-fit:cover;object-position:center;display:block}
+.port-thumb img{width:100%;height:175px;object-fit:cover;display:block}
 .port-thumb-info{padding:.85rem 1rem;background:var(--card)}
 .result-items{display:flex;flex-direction:column;gap:1rem}
 .result-item{display:flex;align-items:flex-start;gap:1rem;padding:1.1rem;background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);transition:all .25s}
 .result-item:hover{border-color:var(--border2);transform:translateX(4px);box-shadow:var(--shadow)}
-.result-num{font-family:var(--fh);font-size:1.5rem;font-weight:800;line-height:1;flex-shrink:0;width:60px}
+.result-num{font-size:1.5rem;font-weight:800;line-height:1;flex-shrink:0;width:60px}
 .n1{color:var(--blue)}.n2{color:var(--red)}.n3{color:var(--green)}.n4{color:#7B3FA0}
-.result-text h4{font-family:var(--fh);font-size:.86rem;font-weight:700;color:var(--text);margin-bottom:.28rem}
+.result-text h4{font-size:.86rem;font-weight:700;color:var(--text);margin-bottom:.28rem}
 .result-text p{font-size:.77rem;color:var(--text2);line-height:1.62}
 
-.process-wrap{position:relative;overflow:hidden}
-.process-bg-img{position:absolute;inset:0;z-index:0}
-.process-bg-img img{width:100%;height:100%;object-fit:cover;opacity:.04;filter:grayscale(40%)}
-.process-bg-img::after{content:'';position:absolute;inset:0;background:var(--bg2)}
-.process-inner{position:relative;z-index:1}
+/* PROCESS */
+.proc-wrap{position:relative;overflow:hidden}
+.proc-bg{position:absolute;inset:0;z-index:0}
+.proc-bg img{width:100%;height:100%;object-fit:cover;opacity:.04;filter:grayscale(40%)}
+.proc-bg::after{content:'';position:absolute;inset:0;background:var(--bg2)}
+.proc-inner{position:relative;z-index:1}
 .proc-list{display:flex;flex-direction:column;gap:1px;border-radius:var(--rl);overflow:hidden;border:1.5px solid var(--border);margin-top:2.75rem}
 .proc-item{background:var(--card);padding:1.45rem 1.75rem;display:flex;align-items:flex-start;gap:1.25rem;transition:background .2s,transform .2s;border-bottom:1px solid var(--border)}
 .proc-item:last-child{border-bottom:none}
 .proc-item:hover{background:rgba(200,75,47,.03);transform:translateX(4px)}
 .proc-n{width:36px;height:36px;border-radius:50%;background:var(--redl);border:1.5px solid rgba(200,75,47,.25);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:var(--red);flex-shrink:0;margin-top:2px;transition:all .25s}
 .proc-item:hover .proc-n{background:var(--red);color:#fff;border-color:var(--red)}
-.proc-item h4{font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+.proc-item h4{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
 .proc-item p{font-size:.79rem;color:var(--text2);line-height:1.68}
 
+/* PORTFOLIO */
 .port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.35rem;margin-top:2.75rem}
 .port-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;transition:transform .28s,box-shadow .28s}
 .port-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.port-img{height:185px;overflow:hidden;position:relative}
+.port-img{height:200px;overflow:hidden;position:relative}
 .port-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;display:block}
-.port-card:hover .port-img img{transform:scale(1.06)}
-.port-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,14,9,.55) 0%,transparent 60%);opacity:0;transition:opacity .3s}
+.port-card:hover .port-img img{transform:scale(1.07)}
+.port-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,4,.6) 0%,transparent 55%);opacity:0;transition:opacity .3s}
 .port-card:hover .port-overlay{opacity:1}
-.port-overlay-label{position:absolute;bottom:14px;left:14px;color:#fff;font-size:.72rem;font-weight:600;opacity:0;transform:translateY(6px);transition:all .3s}
-.port-card:hover .port-overlay-label{opacity:1;transform:translateY(0)}
+.port-cta-lbl{position:absolute;bottom:14px;left:14px;color:#fff;font-size:.72rem;font-weight:600;opacity:0;transform:translateY(6px);transition:all .3s}
+.port-card:hover .port-cta-lbl{opacity:1;transform:translateY(0)}
 .port-body{padding:1.1rem}
 .port-type{font-size:.6rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.38rem}
-.port-body h3{font-family:var(--fh);font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.45rem;line-height:1.35}
+.port-body h3{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:.45rem;line-height:1.35}
 .port-body p{font-size:.78rem;color:var(--text2);line-height:1.65}
 .port-result{display:flex;align-items:center;gap:5px;margin-top:.7rem;font-size:.7rem;font-weight:700;color:var(--green)}
 .port-result::before{content:'↑'}
 
+/* TASKFLOW */
 .tf-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
 .tf-mock{background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:var(--shadow-lg)}
 .tf-bar{background:var(--bg);border-bottom:1px solid var(--border);padding:.65rem 1rem;display:flex;align-items:center;gap:6px}
@@ -225,10 +236,11 @@ section{padding:5.5rem 5%;scroll-margin-top:64px}
 .tf-prog-f{height:100%;background:var(--red);border-radius:3px}
 .tf-prog-col{border-left:2px solid var(--red);padding-left:4px}
 
+/* TESTIMONIALS */
 .testi-wrap{position:relative;overflow:hidden}
-.testi-bg-img{position:absolute;inset:0;z-index:0}
-.testi-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.04;filter:grayscale(30%)}
-.testi-bg-img::after{content:'';position:absolute;inset:0;background:var(--bg)}
+.testi-bg{position:absolute;inset:0;z-index:0}
+.testi-bg img{width:100%;height:100%;object-fit:cover;opacity:.04;filter:grayscale(30%)}
+.testi-bg::after{content:'';position:absolute;inset:0;background:var(--bg)}
 .testi-inner{position:relative;z-index:1}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.75rem}
 .testi{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:1.75rem;position:relative;transition:all .28s}
@@ -242,32 +254,34 @@ section{padding:5.5rem 5%;scroll-margin-top:64px}
 .testi-role a{color:var(--red)}
 .stars{color:#F59E0B;font-size:.75rem;margin-bottom:.75rem;letter-spacing:1px}
 
+/* CONTACT */
 .contact-wrap{position:relative;overflow:hidden}
-.contact-bg-img{position:absolute;inset:0;z-index:0}
-.contact-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.04;filter:grayscale(20%)}
-.contact-bg-img::after{content:'';position:absolute;inset:0;background:var(--bg2)}
+.contact-bg{position:absolute;inset:0;z-index:0}
+.contact-bg img{width:100%;height:100%;object-fit:cover;opacity:.04;filter:grayscale(20%)}
+.contact-bg::after{content:'';position:absolute;inset:0;background:var(--bg2)}
 .contact-inner{position:relative;z-index:1}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:2.75rem}
-.contact-info h3{font-family:var(--fh);font-size:1.1rem;font-weight:700;margin-bottom:.55rem;color:var(--text)}
+.contact-info h3{font-size:1.1rem;font-weight:700;margin-bottom:.55rem}
 .contact-info p{font-size:.87rem;color:var(--text2);line-height:1.82;margin-bottom:1.5rem}
-.contact-links{display:flex;flex-direction:column;gap:.6rem}
-.contact-link{display:flex;align-items:center;gap:.75rem;font-size:.83rem;color:var(--text2);padding:.7rem 1rem;background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);transition:all .22s}
-.contact-link:hover{border-color:var(--red);color:var(--red);background:var(--redl);transform:translateX(4px)}
+.clinks{display:flex;flex-direction:column;gap:.6rem}
+.clink{display:flex;align-items:center;gap:.75rem;font-size:.83rem;color:var(--text2);padding:.7rem 1rem;background:var(--card);border:1.5px solid var(--border);border-radius:var(--r);transition:all .22s}
+.clink:hover{border-color:var(--red);color:var(--red);background:var(--redl);transform:translateX(4px)}
 .cl-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
 .contact-form{background:var(--card);border:1.5px solid var(--border);border-radius:var(--rl);padding:2.25rem;box-shadow:var(--shadow)}
-.contact-form h3{font-family:var(--fh);font-size:1rem;font-weight:700;margin-bottom:.35rem;color:var(--text)}
+.contact-form h3{font-size:1rem;font-weight:700;margin-bottom:.35rem}
 .cf-sub{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem}
-.gform-wrap{border-radius:var(--r);overflow:hidden}
-.gform-wrap iframe{width:100%;border:none;display:block}
+.gform{border-radius:var(--r);overflow:hidden}
+.gform iframe{width:100%;border:none;display:block}
 .form-note{font-size:.7rem;color:var(--muted);text-align:center;margin-top:1rem}
 .form-note a{color:var(--red);font-weight:600}
 
+/* FOOTER */
 footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
 .ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.ft-logo{font-family:var(--fh);font-size:1rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px;margin-bottom:.7rem}
+.ft-logo{font-size:1rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px;margin-bottom:.7rem}
 .ft-logo-dot{width:8px;height:8px;background:var(--red);border-radius:50%;flex-shrink:0}
 .ft-desc{font-size:.78rem;line-height:1.78;max-width:230px}
-.ft-col h4{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.9rem}
+.ft-col h4{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.32);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.9rem}
 .ft-col a{display:block;font-size:.8rem;color:rgba(255,255,255,.52);margin-bottom:.5rem;transition:color .2s}
 .ft-col a:hover{color:#fff}
 .ft-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
@@ -276,13 +290,13 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
 .ft-soc a{font-size:.75rem;color:rgba(255,255,255,.38);transition:color .2s}
 .ft-soc a:hover{color:#fff}
 
-@keyframes fadeslideup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeslidedown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:1;transform:none}
-.reveal.hidden{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+/* REVEAL */
+.rv{opacity:1}
+.rv.h{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.h.v{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
+/* RESPONSIVE */
 @media(max-width:1024px){
   .svc-grid,.port-grid,.testi-grid{grid-template-columns:1fr 1fr}
   .results-grid,.tf-wrap,.contact-grid{grid-template-columns:1fr}
@@ -298,13 +312,13 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
   .photo-tag{right:0;top:14px}
   .svc-grid{grid-template-columns:1fr 1fr}
   .port-grid,.testi-grid{grid-template-columns:1fr}
-  .ft-grid{grid-template-columns:1fr 1fr}
+  .svc-banner{height:160px}
+  .svc-banner-text h3{font-size:1.4rem}
   .results-banner{height:130px}
-  .results-banner-overlay{padding:0 1.25rem;gap:.5rem}
+  .results-banner-overlay{padding:0 1.25rem}
   .stat-pill-num{font-size:1.4rem}
-  .svc-banner{height:155px}
-  .svc-banner-text h3{font-size:1.35rem}
   .kpi-row{grid-template-columns:1fr 1fr}
+  .ft-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:480px){
   section{padding:3.5rem 5%}
@@ -314,17 +328,19 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
   .svc-grid,.port-grid,.testi-grid{grid-template-columns:1fr}
   .ft-grid{grid-template-columns:1fr}
   .ft-bottom{flex-direction:column;text-align:center}
-  .results-banner{height:auto}
   .results-banner img{display:none}
   .results-banner-overlay{position:static;background:var(--text);padding:1.25rem;border-radius:var(--rl);flex-wrap:wrap;justify-content:center;gap:1rem}
-  .tf-body{grid-template-columns:repeat(3,1fr)}
+  .results-banner{height:auto}
   .trust-sep{display:none}
   .hero-btns{gap:.6rem}
+  .svc-banner{height:140px}
+  .tf-body{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="nav">
   <div class="nav-logo"><span class="nav-dot"></span>MikeTechStudio</div>
   <div class="nav-links">
@@ -340,7 +356,8 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
   </div>
 </nav>
 
-<div class="mm" id="mm" role="navigation">
+<!-- MOBILE MENU -->
+<div class="mm" id="mm">
   <a href="#services" class="mml">Services</a>
   <a href="#results" class="mml">Results</a>
   <a href="#work" class="mml">Work</a>
@@ -349,10 +366,10 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
   <div class="mm-bottom">
     <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="mm-cta">Hire Me on Upwork ↗</a>
     <div class="mm-soc">
-      <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener">𝕏 Twitter</a>
-      <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.instagram.com/mike.techstudio/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://x.com/MiketechSt29929" target="_blank">𝕏 Twitter</a>
+      <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/mike.techstudio/" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank">Facebook</a>
     </div>
   </div>
 </div>
@@ -364,11 +381,11 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
   </div>
   <div class="hero-left">
     <div class="avail-badge"><span class="avail-dot"></span>Available now · US &amp; UK clients · Remote worldwide</div>
-    <h1>Stop losing leads.<br>I build systems that<br><span class="accent">recover your revenue.</span></h1>
+    <h1>Stop losing leads.<br>I build systems that<br><span class="ac">recover your revenue.</span></h1>
     <p class="hero-sub">Most businesses lose 30–50% of their leads because follow-up is slow, manual, or broken. I fix that. <strong>Twilio &amp; VoIP systems, SMS &amp; email automation, Zapier workflows, web design</strong> — built to run without you from day one.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Start a project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#work" class="btn-secondary">See my work</a>
+      <a href="#contact" class="btn-p">Start a project <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#work" class="btn-s">See my work</a>
     </div>
     <div class="trust-row">
       <span class="trust-item">13+ Twilio flows live</span><span class="trust-sep"></span>
@@ -388,7 +405,7 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
 </section>
 
 <!-- MARQUEE -->
-<div class="mq-wrap" aria-hidden="true">
+<div class="mq" aria-hidden="true">
   <div class="mq-inner">
     <span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Email Marketing</span><span class="mqi">Klaviyo</span><span class="mqi">Mailchimp</span><span class="mqi">Zapier Workflows</span><span class="mqi">ClickSend</span><span class="mqi">Shopify Design</span><span class="mqi">WordPress</span><span class="mqi">REST APIs</span><span class="mqi">React</span><span class="mqi">Supabase</span><span class="mqi">CRM Integration</span><span class="mqi">TaskFlow SaaS</span><span class="mqi">Lead Automation</span><span class="mqi">No-Show Recovery</span>
     <span class="mqi">Twilio Studio</span><span class="mqi">VoIP Systems</span><span class="mqi">10DLC Compliance</span><span class="mqi">SMS Automation</span><span class="mqi">Email Marketing</span><span class="mqi">Klaviyo</span><span class="mqi">Mailchimp</span><span class="mqi">Zapier Workflows</span><span class="mqi">ClickSend</span><span class="mqi">Shopify Design</span><span class="mqi">WordPress</span><span class="mqi">REST APIs</span><span class="mqi">React</span><span class="mqi">Supabase</span><span class="mqi">CRM Integration</span><span class="mqi">TaskFlow SaaS</span><span class="mqi">Lead Automation</span><span class="mqi">No-Show Recovery</span>
@@ -397,8 +414,9 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
 
 <!-- SERVICES -->
 <section class="sbg" id="services">
-  <div class="svc-banner reveal hidden">
-    <img src="https://img.sanishtech.com/u/777baeabf6482fd4758c67285a075d2a.webp" alt="Professional workspace" loading="lazy">
+  <!-- Services banner — premium workspace photo -->
+  <div class="svc-banner rv h">
+    <img src="https://cdn.phototourl.com/member/2026-05-05-af7af8ae-0a9a-45cf-81a5-35c5ed090a91.png" alt="Premium professional workspace" loading="lazy">
     <div class="svc-banner-overlay">
       <div class="svc-banner-text">
         <h3>Services that move<br>the needle</h3>
@@ -406,52 +424,60 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
       </div>
     </div>
   </div>
-  <div class="section-label reveal hidden">What I build</div>
-  <h2 class="section-title reveal hidden d1">Built to <span class="accent">generate results</span></h2>
-  <p class="section-sub reveal hidden d2">Not just deliverables. Real outcomes you can measure from week one.</p>
-  <div class="svc-grid" style="margin-top:2.5rem">
-    <div class="svc-card c1 reveal hidden">
-      <div class="svc-img-wrap"><img src="https://img.sanishtech.com/u/4681d81f4552a0f27df436cf56825e36.jpg" alt="Telephony and SMS systems" loading="lazy"></div>
+
+  <div class="ey rv h">What I build</div>
+  <h2 class="st rv h d1">Built to <span class="ac">generate results</span></h2>
+  <p class="ssub rv h d2">Not just deliverables. Real outcomes you can measure from week one.</p>
+
+  <div class="svc-grid">
+    <!-- Card 1: Telephony — person on phone -->
+    <div class="svc-card c1 rv h">
+      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-fb2809bc-0de0-4393-b2b6-81ec99a41ae9.png" alt="Business person on smartphone — Telephony and SMS" class="svc-img" loading="lazy"></div>
       <div class="svc-body">
         <div class="svc-icon-row"><div class="svc-icon ic1">📞</div><h3>Telephony &amp; SMS Systems</h3></div>
         <p>Twilio Studio voice and SMS flows, Telnyx VoIP multi-number routing, 10DLC compliance, appointment reminders, missed-call text-back and no-show recovery. 13+ production flows live for US clients.</p>
         <div class="svc-tags"><span class="stag">Twilio Studio</span><span class="stag">Telnyx VoIP</span><span class="stag">10DLC</span><span class="stag">ClickSend</span><span class="stag">SMS flows</span></div>
       </div>
     </div>
-    <div class="svc-card c2 reveal hidden d1">
-      <div class="svc-img-wrap"><img src="https://img.sanishtech.com/u/d84c730e733fd1e51b7ff1c30f70fe14.jpg" alt="Email marketing automation" loading="lazy"></div>
+    <!-- Card 2: Email — laptop with email inbox -->
+    <div class="svc-card c2 rv h d1">
+      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-bc98ca3b-db1e-4561-8f0b-30d8e1a38f48.png" alt="Laptop showing email inbox — Email Marketing" class="svc-img" loading="lazy"></div>
       <div class="svc-body">
         <div class="svc-icon-row"><div class="svc-icon ic2">📧</div><h3>Email Marketing Automation</h3></div>
         <p>Welcome sequences, abandoned cart recovery, post-purchase flows, lead nurturing and win-back campaigns. Built in Klaviyo, Mailchimp, Brevo or any ESP. Set up once, earn on autopilot.</p>
         <div class="svc-tags"><span class="stag">Klaviyo</span><span class="stag">Mailchimp</span><span class="stag">Brevo</span><span class="stag">Email flows</span><span class="stag">Segmentation</span></div>
       </div>
     </div>
-    <div class="svc-card c3 reveal hidden d2">
-      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-dd56634a-48f7-40a8-ba96-1df17ffda716.jpg" alt="Web design code screen" loading="lazy"></div>
+    <!-- Card 3: Zapier — connected workflow illustration -->
+    <div class="svc-card c3 rv h d2">
+      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-a0555ec8-9a05-4f7b-8574-7fcb3027367d.png" alt="Connected app workflow — Zapier Automation" class="svc-img" loading="lazy"></div>
       <div class="svc-body">
         <div class="svc-icon-row"><div class="svc-icon ic3">⚡</div><h3>Zapier &amp; Workflow Automation</h3></div>
         <p>Connect your tools so nothing falls through the cracks. CRM to email, Shopify to fulfilment, Google Calendar sync, multi-step automations — no manual copy-paste, no missed follow-ups.</p>
         <div class="svc-tags"><span class="stag">Zapier</span><span class="stag">Make.com</span><span class="stag">REST APIs</span><span class="stag">CRM sync</span><span class="stag">Google Suite</span></div>
       </div>
     </div>
-    <div class="svc-card c4 reveal hidden">
-      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-e67c1c5a-5baa-406c-8ae7-11e0f91f3207.webp" alt="Web design and Shopify" loading="lazy"></div>
+    <!-- Card 4: Web Design — Shopify store on screen -->
+    <div class="svc-card c4 rv h">
+      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-04c16df0-d68c-426d-a802-96eb3da1b206.png" alt="E-commerce Shopify store on laptop screen" class="svc-img" loading="lazy"></div>
       <div class="svc-body">
         <div class="svc-icon-row"><div class="svc-icon ic4">🌐</div><h3>Web Design &amp; Shopify Stores</h3></div>
         <p>Fast, mobile-first websites and Shopify stores built to convert. WordPress, Elementor, Shopify, Carrd and custom HTML/CSS/React. Designed to load fast and turn visitors into paying customers.</p>
         <div class="svc-tags"><span class="stag">Shopify</span><span class="stag">WordPress</span><span class="stag">React</span><span class="stag">HTML/CSS</span><span class="stag">Carrd</span></div>
       </div>
     </div>
-    <div class="svc-card c5 reveal hidden d1">
-      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="SEO and e-commerce growth" loading="lazy"></div>
+    <!-- Card 5: SEO — Google #1 ranking -->
+    <div class="svc-card c5 rv h d1">
+      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/member/2026-05-05-f1b0a144-9617-401c-a089-e3e86b2a4f72.png" alt="Google search ranking number one — SEO Growth" class="svc-img" loading="lazy"></div>
       <div class="svc-body">
         <div class="svc-icon-row"><div class="svc-icon ic1">📈</div><h3>SEO &amp; E-Commerce Growth</h3></div>
         <p>Get your store ranking on Google and bringing in consistent organic traffic. Product page optimisation, keyword research, technical SEO fixes, schema markup and backlink strategy.</p>
         <div class="svc-tags"><span class="stag">On-page SEO</span><span class="stag">Shopify SEO</span><span class="stag">WooCommerce</span><span class="stag">Technical SEO</span></div>
       </div>
     </div>
-    <div class="svc-card c6 reveal hidden d2">
-      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/free/2026-05-05-0d95a1da-7a93-424b-b0d3-fa9c40cd64e2.jpg" alt="Custom software and SaaS" loading="lazy"></div>
+    <!-- Card 6: SaaS — developer dual monitors -->
+    <div class="svc-card c6 rv h d2">
+      <div class="svc-img-wrap"><img src="https://cdn.phototourl.com/member/2026-05-05-cc33fa0b-6298-470e-b441-e1f9bf29caaf.png" alt="Developer building SaaS app — Custom Software" class="svc-img" loading="lazy"></div>
       <div class="svc-body">
         <div class="svc-icon-row"><div class="svc-icon ic3">💻</div><h3>Custom Software &amp; SaaS</h3></div>
         <p>Full-stack web applications built with React, Supabase and modern APIs. From simple landing pages to complete SaaS products — see TaskFlow, my own live project, as proof of what I can build.</p>
@@ -459,7 +485,8 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
       </div>
     </div>
   </div>
-  <div class="price-box reveal hidden d2">
+
+  <div class="price-box rv h d2">
     <div class="price-badge"><span>Fixed price · No surprises · 7-day delivery</span></div>
     <div class="price-grid">
       <div class="price-item"><div class="price-val">$497</div><div class="price-lbl">10DLC compliance + registration</div></div>
@@ -472,20 +499,20 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
 
 <!-- RESULTS -->
 <section id="results">
-  <div class="results-banner reveal hidden">
-    <img src="https://cdn.phototourl.com/free/2026-05-05-e67c1c5a-5baa-406c-8ae7-11e0f91f3207.webp" alt="Results and analytics" loading="lazy">
+  <div class="results-banner rv h">
+    <img src="https://cdn.phototourl.com/free/2026-05-05-e67c1c5a-5baa-406c-8ae7-11e0f91f3207.webp" alt="Business results analytics" loading="lazy">
     <div class="results-banner-overlay">
-      <div class="stat-pill"><div class="stat-pill-num" data-count="340">0</div><div class="stat-pill-lbl">% organic traffic increase</div></div>
-      <div class="stat-pill"><div class="stat-pill-num" data-count="28">0</div><div class="stat-pill-lbl">% cart recovery rate</div></div>
-      <div class="stat-pill"><div class="stat-pill-num" data-count="13">0</div><div class="stat-pill-lbl">+ Twilio flows live</div></div>
-      <div class="stat-pill"><div class="stat-pill-num" data-count="8">0</div><div class="stat-pill-lbl">% landing page conversion</div></div>
+      <div class="stat-pill"><div class="stat-pill-num" data-count="340">0%</div><div class="stat-pill-lbl">organic traffic increase</div></div>
+      <div class="stat-pill"><div class="stat-pill-num" data-count="28">0%</div><div class="stat-pill-lbl">cart recovery rate</div></div>
+      <div class="stat-pill"><div class="stat-pill-num" data-count="13">0+</div><div class="stat-pill-lbl">Twilio flows live</div></div>
+      <div class="stat-pill"><div class="stat-pill-num" data-count="8">0%</div><div class="stat-pill-lbl">landing page conversion</div></div>
     </div>
   </div>
-  <div class="section-label reveal hidden">Proof of work</div>
-  <h2 class="section-title reveal hidden d1">Real results from <span class="accent">real projects</span></h2>
-  <p class="section-sub reveal hidden d2">Numbers from actual client projects. Not estimates. Not projections.</p>
-  <div class="results-grid" style="margin-top:2.5rem">
-    <div class="reveal hidden">
+  <div class="ey rv h">Proof of work</div>
+  <h2 class="st rv h d1">Real results from <span class="ac">real projects</span></h2>
+  <p class="ssub rv h d2">Numbers from actual client projects. Not estimates. Not projections.</p>
+  <div class="results-grid">
+    <div class="rv h">
       <div class="rv-card">
         <div class="rv-head"><div class="rv-title">Abandoned cart sequence — e-commerce client</div><div class="rv-period">30 days</div></div>
         <div class="kpi-row">
@@ -499,15 +526,16 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
         <div class="funnel-row"><div class="f-label">Clicked</div><div class="f-bar"><div class="f-fill" style="width:24%;background:var(--green)"><span class="f-pct">24%</span></div></div><div class="f-val">576</div></div>
         <div class="funnel-row"><div class="f-label">Bought</div><div class="f-bar"><div class="f-fill" style="width:28%;background:var(--red)"><span class="f-pct">28%</span></div></div><div class="f-val">161</div></div>
       </div>
+      <!-- Portfolio mockup image -->
       <div class="port-thumb">
-        <img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="Portfolio mockup" loading="lazy">
+        <img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="Fashion Shopify store redesign" loading="lazy">
         <div class="port-thumb-info">
-          <div style="font-size:.72rem;font-weight:700;color:var(--text);margin-bottom:.2rem">Fashion store redesign</div>
+          <div style="font-size:.72rem;font-weight:700;color:var(--text);margin-bottom:.2rem">Fashion store redesign — Shopify</div>
           <div style="font-size:.68rem;color:var(--muted)">340% organic traffic increase in 3 months</div>
         </div>
       </div>
     </div>
-    <div class="result-items reveal hidden d1">
+    <div class="result-items rv h d1">
       <div class="result-item"><div class="result-num n1">340%</div><div class="result-text"><h4>Organic traffic increase</h4><p>Full SEO overhaul for a fashion e-commerce brand — keyword research, product page rewrites, schema markup and site speed. Achieved in 3 months.</p></div></div>
       <div class="result-item"><div class="result-num n2">28%</div><div class="result-text"><h4>Abandoned cart recovery rate</h4><p>3-email abandoned cart sequence in Klaviyo, integrated with Shopify. Automated segmentation by cart value. $4,200 recovered in 30 days.</p></div></div>
       <div class="result-item"><div class="result-num n3">13+</div><div class="result-text"><h4>Twilio flows live in production</h4><p>Voice and SMS flows for TV Messenger, a US-based caregiving communication platform. Complex architecture — all running live.</p></div></div>
@@ -517,15 +545,13 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
 </section>
 
 <!-- PROCESS -->
-<section class="sbg process-wrap" id="process">
-  <div class="process-bg-img">
-    <img src="https://cdn.phototourl.com/free/2026-05-05-06663f44-d1e2-44e6-8323-5ce395dc817c.jpg" alt="" aria-hidden="true" loading="lazy">
-  </div>
-  <div class="process-inner">
-    <div class="section-label reveal hidden">How I work</div>
-    <h2 class="section-title reveal hidden d1">Simple. Fast. <span class="accent">No surprises.</span></h2>
-    <p class="section-sub reveal hidden d2">A clear process means no confusion, no delays and no unexpected invoices.</p>
-    <div class="proc-list reveal hidden d2">
+<section class="sbg proc-wrap" id="process">
+  <div class="proc-bg"><img src="https://cdn.phototourl.com/free/2026-05-05-06663f44-d1e2-44e6-8323-5ce395dc817c.jpg" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="proc-inner">
+    <div class="ey rv h">How I work</div>
+    <h2 class="st rv h d1">Simple. Fast. <span class="ac">No surprises.</span></h2>
+    <p class="ssub rv h d2">A clear process means no confusion, no delays and no unexpected invoices.</p>
+    <div class="proc-list rv h d2">
       <div class="proc-item"><div class="proc-n">01</div><div><h4>Discovery call — free, 30 minutes</h4><p>We talk about your goals, your current setup and what is blocking your growth. I'll tell you honestly whether I can help — and exactly how. No pressure, no commitment required.</p></div></div>
       <div class="proc-item"><div class="proc-n">02</div><div><h4>Proposal &amp; clear scope</h4><p>You receive a written proposal — what we build, what it costs, how long it takes. No hidden fees. No scope creep. Everything agreed before work starts.</p></div></div>
       <div class="proc-item"><div class="proc-n">03</div><div><h4>Build with regular updates</h4><p>I send progress updates every 1–2 days via email or Slack. You see what is happening as it happens — not just at the end.</p></div></div>
@@ -537,12 +563,16 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
 
 <!-- PORTFOLIO -->
 <section id="work">
-  <div class="section-label reveal hidden">Portfolio</div>
-  <h2 class="section-title reveal hidden d1">Recent work &amp; <span class="accent">case studies</span></h2>
-  <p class="section-sub reveal hidden d2">Real projects. Real clients. Real outcomes.</p>
+  <div class="ey rv h">Portfolio</div>
+  <h2 class="st rv h d1">Recent work &amp; <span class="ac">case studies</span></h2>
+  <p class="ssub rv h d2">Real projects. Real clients. Real outcomes.</p>
   <div class="port-grid">
-    <div class="port-card reveal hidden">
-      <div class="port-img"><img src="https://img.sanishtech.com/u/d84c730e733fd1e51b7ff1c30f70fe14.jpg" alt="Email marketing automation project" loading="lazy"><div class="port-overlay"></div><div class="port-overlay-label">View case study →</div></div>
+    <!-- Card 1: Email project — email newsletter on laptop -->
+    <div class="port-card rv h">
+      <div class="port-img">
+        <img src="https://cdn.phototourl.com/member/2026-05-05-28bf808f-368d-4ae5-ac36-661d071178e7.jpg" alt="Email marketing campaign — Klaviyo Shopify" loading="lazy">
+        <div class="port-overlay"></div><div class="port-cta-lbl">View case study →</div>
+      </div>
       <div class="port-body">
         <div class="port-type">Email Marketing Automation</div>
         <h3>7-email welcome + cart recovery sequence</h3>
@@ -550,8 +580,12 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
         <div class="port-result">68% open rate · $4,200 cart revenue in 30 days</div>
       </div>
     </div>
-    <div class="port-card reveal hidden d1">
-      <div class="port-img"><img src="https://cdn.phototourl.com/free/2026-05-05-93baf7e5-7fe6-4248-8065-77a889681657.jpg" alt="Shopify redesign and SEO" loading="lazy"><div class="port-overlay"></div><div class="port-overlay-label">View case study →</div></div>
+    <!-- Card 2: Web/SEO project — real Shopify store on screen -->
+    <div class="port-card rv h d1">
+      <div class="port-img">
+        <img src="https://cdn.phototourl.com/free/2026-05-05-04c16df0-d68c-426d-a802-96eb3da1b206.png" alt="Shopify e-commerce store redesign" loading="lazy">
+        <div class="port-overlay"></div><div class="port-cta-lbl">View case study →</div>
+      </div>
       <div class="port-body">
         <div class="port-type">Web Design &amp; SEO</div>
         <h3>Shopify redesign + full SEO overhaul</h3>
@@ -559,8 +593,12 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
         <div class="port-result">340% organic traffic increase in 3 months</div>
       </div>
     </div>
-    <div class="port-card reveal hidden d2">
-      <div class="port-img"><img src="https://img.sanishtech.com/u/4681d81f4552a0f27df436cf56825e36.jpg" alt="Twilio Studio SMS flows" loading="lazy"><div class="port-overlay"></div><div class="port-overlay-label">View case study →</div></div>
+    <!-- Card 3: Twilio project — phone SMS conversation -->
+    <div class="port-card rv h d2">
+      <div class="port-img">
+        <img src="https://cdn.phototourl.com/member/2026-05-05-be7d2a44-eb9a-44aa-92f3-3a4889b982d2.jpg" alt="Twilio SMS communication platform" loading="lazy">
+        <div class="port-overlay"></div><div class="port-cta-lbl">View case study →</div>
+      </div>
       <div class="port-body">
         <div class="port-type">Telephony Automation · US Client</div>
         <h3>13+ Twilio Studio flows — TV Messenger</h3>
@@ -575,15 +613,15 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
 <section class="sbg" id="taskflow">
   <div class="tf-wrap">
     <div>
-      <div class="section-label reveal hidden">My own product</div>
-      <h2 class="section-title reveal hidden d1">TaskFlow — project management that doesn't <span class="accent">slow you down</span></h2>
-      <p class="section-sub reveal hidden d2">I built TaskFlow because Asana and Jira were overkill for small teams. Kanban boards, team collaboration, progress tracking and 5-minute setup. No onboarding calls. No $25-per-seat nonsense.</p>
-      <div style="display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.6rem" class="reveal hidden d3">
-        <a href="https://taskflow-tau-roan.vercel.app" target="_blank" rel="noopener" class="btn-primary">Try free for 7 days →</a>
-        <a href="taskflow.html" class="btn-secondary">See pricing</a>
+      <div class="ey rv h">My own product</div>
+      <h2 class="st rv h d1">TaskFlow — project management that doesn't <span class="ac">slow you down</span></h2>
+      <p class="ssub rv h d2">I built TaskFlow because Asana and Jira were overkill for small teams. Kanban boards, team collaboration, progress tracking and 5-minute setup. No onboarding calls. No $25-per-seat nonsense.</p>
+      <div style="display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.6rem" class="rv h d3">
+        <a href="https://taskflow-tau-roan.vercel.app" target="_blank" rel="noopener" class="btn-p">Try free for 7 days →</a>
+        <a href="taskflow.html" class="btn-s">See pricing</a>
       </div>
     </div>
-    <div class="tf-mock reveal hidden d2">
+    <div class="tf-mock rv h d2">
       <div class="tf-bar"><div class="tf-dot" style="background:#FF5F57"></div><div class="tf-dot" style="background:#FEBC2E"></div><div class="tf-dot" style="background:#28C840"></div><span class="tf-bt">TaskFlow — Product launch</span></div>
       <div class="tf-body">
         <div><div class="tf-col-h tfc1">To do · 3</div><div class="tf-card"><div class="tf-card-t">Go-to-market strategy</div><span class="tt ttr">High priority</span></div><div class="tf-card"><div class="tf-card-t">Landing page copy</div><span class="tt ttgr">Content</span></div></div>
@@ -596,41 +634,41 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
 
 <!-- TESTIMONIALS -->
 <section id="testimonials" class="testi-wrap">
-  <div class="testi-bg-img"><img src="https://cdn.phototourl.com/free/2026-05-05-0d95a1da-7a93-424b-b0d3-fa9c40cd64e2.jpg" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="testi-bg"><img src="https://cdn.phototourl.com/free/2026-05-05-0d95a1da-7a93-424b-b0d3-fa9c40cd64e2.jpg" alt="" aria-hidden="true" loading="lazy"></div>
   <div class="testi-inner">
-    <div class="section-label reveal hidden">Social proof</div>
-    <h2 class="section-title reveal hidden d1">What clients <span class="accent">say</span></h2>
-    <p class="section-sub reveal hidden d2">Feedback from real clients on real projects. Verifiable on request.</p>
+    <div class="ey rv h">Social proof</div>
+    <h2 class="st rv h d1">What clients <span class="ac">say</span></h2>
+    <p class="ssub rv h d2">Feedback from real clients on real projects. Verifiable on request.</p>
     <div class="testi-grid">
-      <div class="testi reveal hidden"><div class="testi-q">"</div><div class="stars">★★★★★</div><p>"Michael redesigned our Shopify store and handled the full SEO setup. Within 6 weeks we were getting double the organic traffic. Fast, communicates extremely well, and genuinely cares about results."</p><div class="testi-au"><div class="testi-av">AJ</div><div><div class="testi-name">Amara Johnson</div><div class="testi-role">Founder, <a href="#work">StyleHaus</a> · case study available</div></div></div></div>
-      <div class="testi reveal hidden d1"><div class="testi-q">"</div><div class="stars">★★★★★</div><p>"I hired Michael to build our Twilio SMS flows and handle 10DLC compliance. He delivered faster than expected and the system has been running without a single issue for months. Highly recommend."</p><div class="testi-au"><div class="testi-av">DK</div><div><div class="testi-name">David Kim</div><div class="testi-role">Operations Director, <a href="#work">TV Messenger</a> · verified project</div></div></div></div>
-      <div class="testi reveal hidden d2"><div class="testi-q">"</div><div class="stars">★★★★★</div><p>"I asked for a landing page. I got a full brand identity, a mobile-perfect design and a page converting at 8%. Michael delivered more than I asked for and charged less than I expected. Brilliant."</p><div class="testi-au"><div class="testi-av">FO</div><div><div class="testi-name">Fatima Okafor</div><div class="testi-role">CEO, GrowthPath Consulting</div></div></div></div>
+      <div class="testi rv h"><div class="testi-q">"</div><div class="stars">★★★★★</div><p>"Michael redesigned our Shopify store and handled the full SEO setup. Within 6 weeks we were getting double the organic traffic. Fast, communicates extremely well, and genuinely cares about results."</p><div class="testi-au"><div class="testi-av">AJ</div><div><div class="testi-name">Amara Johnson</div><div class="testi-role">Founder, <a href="#work">StyleHaus</a> · case study available</div></div></div></div>
+      <div class="testi rv h d1"><div class="testi-q">"</div><div class="stars">★★★★★</div><p>"I hired Michael to build our Twilio SMS flows and handle 10DLC compliance. He delivered faster than expected and the system has been running without a single issue for months. Highly recommend."</p><div class="testi-au"><div class="testi-av">DK</div><div><div class="testi-name">David Kim</div><div class="testi-role">Operations Director, <a href="#work">TV Messenger</a> · verified project</div></div></div></div>
+      <div class="testi rv h d2"><div class="testi-q">"</div><div class="stars">★★★★★</div><p>"I asked for a landing page. I got a full brand identity, a mobile-perfect design and a page converting at 8%. Michael delivered more than I asked for and charged less than I expected. Brilliant."</p><div class="testi-au"><div class="testi-av">FO</div><div><div class="testi-name">Fatima Okafor</div><div class="testi-role">CEO, GrowthPath Consulting</div></div></div></div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="sbg contact-wrap" id="contact">
-  <div class="contact-bg-img"><img src="https://cdn.phototourl.com/free/2026-05-05-5f044406-aff7-4a9f-be75-a2c1b58ff458.png" alt="" aria-hidden="true" loading="lazy"></div>
+  <div class="contact-bg"><img src="https://cdn.phototourl.com/free/2026-05-05-5f044406-aff7-4a9f-be75-a2c1b58ff458.png" alt="" aria-hidden="true" loading="lazy"></div>
   <div class="contact-inner">
-    <div class="section-label reveal hidden">Get in touch</div>
-    <h2 class="section-title reveal hidden d1">Ready to <span class="accent">grow your business?</span></h2>
-    <p class="section-sub reveal hidden d2">Free 30-minute discovery call — no commitment, no pressure. Reply within 24 hours, always.</p>
+    <div class="ey rv h">Get in touch</div>
+    <h2 class="st rv h d1">Ready to <span class="ac">grow your business?</span></h2>
+    <p class="ssub rv h d2">Free 30-minute discovery call — no commitment, no pressure. Reply within 24 hours, always.</p>
     <div class="contact-grid">
-      <div class="contact-info reveal hidden">
+      <div class="rv h">
         <h3>Let's talk about your project</h3>
-        <p>Whether you need a Twilio system built from scratch, a leaking email funnel fixed, a Zapier workflow that saves your team 10 hours a week, or a website that actually converts — I can help.</p>
-        <div class="contact-links">
-          <a href="mailto:miketechstudio535@gmail.com" class="contact-link"><div class="cl-icon" style="background:var(--redl)">📧</div><div><div style="font-weight:600;font-size:.82rem">Send an email</div><div style="font-size:.72rem;color:var(--muted)">miketechstudio535@gmail.com</div></div></a>
-          <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener" class="contact-link"><div class="cl-icon" style="background:var(--greenl)">📅</div><div><div style="font-weight:600;font-size:.82rem">Book a free discovery call</div><div style="font-size:.72rem;color:var(--muted)">30 minutes · Zoom · No commitment</div></div></a>
-          <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="contact-link"><div class="cl-icon" style="background:var(--bluel)">💼</div><div><div style="font-weight:600;font-size:.82rem">Hire me on Upwork</div><div style="font-size:.72rem;color:var(--muted)">View full profile and reviews</div></div></a>
-          <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener" class="contact-link"><div class="cl-icon" style="background:var(--bg2);font-weight:700;font-size:.82rem;color:var(--text2)">in</div><div><div style="font-weight:600;font-size:.82rem">Connect on LinkedIn</div><div style="font-size:.72rem;color:var(--muted)">Michael Fabiyi · MikeTechStudio</div></div></a>
+        <p style="font-size:.87rem;color:var(--text2);line-height:1.82;margin-bottom:1.5rem;margin-top:.55rem">Whether you need a Twilio system built from scratch, a leaking email funnel fixed, a Zapier workflow that saves your team 10 hours a week, or a website that actually converts — I can help.</p>
+        <div class="clinks">
+          <a href="mailto:miketechstudio535@gmail.com" class="clink"><div class="cl-icon" style="background:var(--redl)">📧</div><div><div style="font-weight:600;font-size:.82rem">Send an email</div><div style="font-size:.72rem;color:var(--muted)">miketechstudio535@gmail.com</div></div></a>
+          <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener" class="clink"><div class="cl-icon" style="background:var(--greenl)">📅</div><div><div style="font-weight:600;font-size:.82rem">Book a free discovery call</div><div style="font-size:.72rem;color:var(--muted)">30 minutes · Zoom · No commitment</div></div></a>
+          <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" class="clink"><div class="cl-icon" style="background:var(--bluel)">💼</div><div><div style="font-weight:600;font-size:.82rem">Hire me on Upwork</div><div style="font-size:.72rem;color:var(--muted)">View full profile and reviews</div></div></a>
+          <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener" class="clink"><div class="cl-icon" style="background:var(--bg2);font-weight:700;font-size:.82rem;color:var(--text2)">in</div><div><div style="font-weight:600;font-size:.82rem">Connect on LinkedIn</div><div style="font-size:.72rem;color:var(--muted)">Michael Fabiyi · MikeTechStudio</div></div></a>
         </div>
       </div>
-      <div class="contact-form reveal hidden d1">
+      <div class="contact-form rv h d1">
         <h3>Send your project brief</h3>
         <p class="cf-sub">Fill this in and I will reply within 24 hours to schedule a free Zoom call.</p>
-        <div class="gform-wrap">
+        <div class="gform">
           <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffQqxcqM-wU1k6gwo2JOqvQuofLHeMTFNSgRrPdL2e3x9d6w/viewform?embedded=true" width="100%" height="988" frameborder="0" marginheight="0" marginwidth="0" loading="lazy" title="Project brief form">Loading…</iframe>
         </div>
         <div class="form-note">✓ No phone number needed. I will email you back. Or <a href="https://cal.com/miketech-studio/15min" target="_blank" rel="noopener">book a call directly →</a></div>
@@ -653,25 +691,26 @@ footer{background:var(--text);padding:3.5rem 5% 2rem;color:rgba(255,255,255,.5)}
   <div class="ft-bottom">
     <div class="ft-copy">© 2026 MikeTechStudio · Michael Fabiyi · Lagos, Nigeria · Available worldwide</div>
     <div class="ft-soc">
-      <a href="https://x.com/MiketechSt29929" target="_blank" rel="noopener" aria-label="Twitter X">𝕏</a>
-      <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-      <a href="https://www.instagram.com/mike.techstudio/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-      <a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank" rel="noopener" aria-label="Facebook">fb</a>
-      <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" rel="noopener" aria-label="Upwork">↗</a>
+      <a href="https://x.com/MiketechSt29929" target="_blank" aria-label="Twitter X">𝕏</a>
+      <a href="https://www.linkedin.com/in/michael-fabiyi-7825a139b/" target="_blank" aria-label="LinkedIn">in</a>
+      <a href="https://www.instagram.com/mike.techstudio/" target="_blank" aria-label="Instagram">IG</a>
+      <a href="https://www.facebook.com/profile.php?id=61585187591221" target="_blank" aria-label="Facebook">fb</a>
+      <a href="https://www.upwork.com/freelancers/~01d748ea47e7d3b8ef?mp_source=share" target="_blank" aria-label="Upwork">↗</a>
     </div>
   </div>
 </footer>
 
 <script>
+/* Nav scroll */
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
 
+/* Mobile menu */
 const hbg=document.getElementById('hbg'),mm=document.getElementById('mm');
 hbg.addEventListener('click',()=>{
   const o=mm.classList.toggle('o');
   hbg.classList.toggle('o');
   document.body.style.overflow=o?'hidden':'';
-  hbg.setAttribute('aria-expanded',o);
 });
 document.querySelectorAll('.mml').forEach(l=>l.addEventListener('click',()=>{
   hbg.classList.remove('o');mm.classList.remove('o');document.body.style.overflow='';
@@ -682,46 +721,54 @@ document.addEventListener('click',e=>{
   }
 });
 
-const revEls=document.querySelectorAll('.reveal.hidden');
+/* Scroll reveal */
+const revEls=document.querySelectorAll('.rv.h');
 const revObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target)}});
-},{threshold:0.08,rootMargin:'0px 0px -36px 0px'});
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');revObs.unobserve(e.target)}});
+},{threshold:0.08,rootMargin:'0px 0px -32px 0px'});
 revEls.forEach(el=>revObs.observe(el));
 
+/* Animated counters */
 function animCount(el,target,dur){
+  const isPlus=target<=13;
   let start=null;
-  const step=ts=>{
+  (function step(ts){
     if(!start)start=ts;
     const p=Math.min((ts-start)/dur,1);
-    const v=Math.floor(p*target);
-    el.textContent=v+(target<=13?'+':'%');
+    el.textContent=Math.floor(p*target)+(isPlus?'+':'%');
     if(p<1)requestAnimationFrame(step);
-    else el.textContent=target+(target<=13?'+':'%');
-  };
-  requestAnimationFrame(step);
+    else el.textContent=target+(isPlus?'+':'%');
+  })(performance.now());
 }
 const countEls=document.querySelectorAll('[data-count]');
-const countObs=new IntersectionObserver(entries=>{
+new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
-      animCount(e.target,parseInt(e.target.dataset.count),1400);
-      countObs.unobserve(e.target);
+      animCount(e.target,+e.target.dataset.count,1400);
+      e.target.removeAttribute('data-count');
     }
   });
+},{threshold:0.5}).observe=function(el){IntersectionObserver.prototype.observe.call(this,el)};
+const cObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){animCount(e.target,+e.target.dataset.count,1400);cObs.unobserve(e.target)}});
 },{threshold:0.5});
-countEls.forEach(el=>countObs.observe(el));
+countEls.forEach(el=>cObs.observe(el));
 
+/* Active nav */
 const sections=document.querySelectorAll('section[id]');
 const navLinks=document.querySelectorAll('.nav-links a');
-const navObs=new IntersectionObserver(entries=>{
+new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
-      const id=e.target.getAttribute('id');
+      const id=e.target.id;
       navLinks.forEach(a=>{a.classList.remove('act');if(a.getAttribute('href')==='#'+id)a.classList.add('act')});
     }
   });
+},{threshold:0.3,rootMargin:'-64px 0px 0px 0px'}).observe=function(s){IntersectionObserver.prototype.observe.call(this,s)};
+const nObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navLinks.forEach(a=>{a.classList.remove('act');if(a.getAttribute('href')==='#'+id)a.classList.add('act')})}});
 },{threshold:0.3,rootMargin:'-64px 0px 0px 0px'});
-sections.forEach(s=>navObs.observe(s));
+sections.forEach(s=>nObs.observe(s));
 </script>
 </body>
 </html>
